@@ -1,0 +1,11 @@
+:root{
+ --text-color:rgb(12,51,58)
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  color: var(--text-color)!important;
+    overflow-x: hidden;
+}
