@@ -1,6 +1,5 @@
 import React from "react";
 
-import {makeStyles,Theme} from "@material-ui/core";
 
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -34,14 +33,32 @@ const countries = [
     }
 ];
 
-const useStyles = makeStyles((theme:Theme) => {
-    return {
+// const useStyles = makeStyles((theme:Theme) => {
+//
+//     console.log(theme.spacing(2))
+//     return {
+//         button: {
+//             display: "block",
+//             marginTop: theme.spacing(2)
+//         },
+//         formControl: {
+//             margin: theme.spacing(5),
+//             minWidth: 120,
+//             backgroundColor: "transparent"
+//         },
+//         select: {
+//             textAlign: "center",
+//             textDecoration: "none"
+//         }
+//     }
+// });
+const useStyles = {
         button: {
             display: "block",
-            marginTop: theme.spacing(2)
+            marginTop: '10px'
         },
         formControl: {
-            margin: theme.spacing(5),
+            margin: '35px',
             minWidth: 120,
             backgroundColor: "transparent"
         },
@@ -49,16 +66,15 @@ const useStyles = makeStyles((theme:Theme) => {
             textAlign: "center",
             textDecoration: "none"
         }
-    }
-});
+};
+
 
 
 const Languages = () => {
 
 
 
-    const classes = useStyles()
-
+    const classes = useStyles
 
 
     const [country, setCountry] = React.useState(English);
@@ -78,7 +94,7 @@ const Languages = () => {
 
     return (
         <form autoComplete="off">
-            <FormControl className={classes.formControl}>
+            <FormControl>
                 <InputLabel htmlFor="open-select" />
                 <Select
                     open={open}
