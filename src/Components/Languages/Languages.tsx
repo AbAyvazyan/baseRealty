@@ -33,25 +33,7 @@ const countries = [
     }
 ];
 
-// const useStyles = makeStyles((theme:Theme) => {
-//
-//     console.log(theme.spacing(2))
-//     return {
-//         button: {
-//             display: "block",
-//             marginTop: theme.spacing(2)
-//         },
-//         formControl: {
-//             margin: theme.spacing(5),
-//             minWidth: 120,
-//             backgroundColor: "transparent"
-//         },
-//         select: {
-//             textAlign: "center",
-//             textDecoration: "none"
-//         }
-//     }
-// });
+
 const useStyles = {
         button: {
             display: "block",

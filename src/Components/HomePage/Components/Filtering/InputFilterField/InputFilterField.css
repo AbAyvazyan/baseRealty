@@ -1,0 +1,32 @@
+.input_filter_form{
+    width: 100%;
+}
+
+.input_filtering_field{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+}
+
+.input_filtering_field div{
+    height: 65px;
+    border-right: 1px  solid rgba(150, 150, 150,0.3);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.input_filtering_field div:first-child{
+    border-bottom-left-radius: 7px;
+}
+
+
+.input_filtering_field div:last-child{
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-right: none;
+}

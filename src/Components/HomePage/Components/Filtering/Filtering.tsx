@@ -1,6 +1,7 @@
 import './Filtering.css'
 
 import HouseButtons from "./HouseBottons/HouseButtons";
+import InputFilterField from "./InputFilterField";
 
 const  Filtering = () =>{
 
@@ -13,8 +14,15 @@ const  Filtering = () =>{
 
             </div>
 
-            <div></div>
-            <div></div>
+            <div>
+
+                <InputFilterField/>
+
+            </div>
+
+            <div>
+                <div className={'search_button'}> Search </div>
+            </div>
         </div>
     )
 }
