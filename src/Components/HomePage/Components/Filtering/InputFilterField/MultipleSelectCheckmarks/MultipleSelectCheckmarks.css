@@ -1,0 +1,19 @@
+.multiple_select{
+    position: relative;
+}
+
+.multiple_select span{
+    /*width: 10px;;*/
+    position: absolute;
+    right: 15px;
+}
+
+.select_arrow_clicked{
+    transform: scale(-1,-1);
+    font-size: 20px;
+}
+
+
+.select_arrow{
+    font-size: 20px;
+}

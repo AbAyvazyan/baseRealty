@@ -20,12 +20,11 @@
     font-size: 15px;
 }
 
-.input_filtering_field div:first-child{
+.input_filtering_field > div:first-child{
     border-bottom-left-radius: 7px;
 }
 
-
-.input_filtering_field div:last-child{
+.input_filtering_field >div:last-child{
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
     border-right: none;

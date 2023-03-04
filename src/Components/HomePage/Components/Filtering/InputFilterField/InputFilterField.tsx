@@ -1,14 +1,16 @@
 import './InputFilterField.css'
 
+import MultipleSelectCheckmarks from "./MultipleSelectCheckmarks/MultipleSelectCheckmarks";
+
 const InputFilterField = () =>{
     return(
         <form action="" className={'input_filter_form'}>
             <div className={'input_filtering_field'}>
-                <div>Tun</div>
-                <div>Senyak</div>
-                <div>Hark</div>
-                <div>Gin</div>
-                <div>taracq</div>
+                <MultipleSelectCheckmarks holder={'type'}/>
+                <MultipleSelectCheckmarks holder={'rooms'}/>
+                <MultipleSelectCheckmarks holder={'floor'}/>
+                <MultipleSelectCheckmarks holder={'price'}/>
+                <MultipleSelectCheckmarks holder={'place'}/>
             </div>
         </form>
     )
