@@ -33,7 +33,7 @@ const imageStyles={
 
 const SlideShow = () => {
     return (
-        <div className="slide-container" style={{height:'200px',width:'100%'}}>
+        <div className="slide-container" style={{height:'200px',width:'100%',marginTop:'80px'}}>
             <Fade arrows={false}>
                 {fadeImages.map((fadeImage, index) => (
                     <div key={index}>

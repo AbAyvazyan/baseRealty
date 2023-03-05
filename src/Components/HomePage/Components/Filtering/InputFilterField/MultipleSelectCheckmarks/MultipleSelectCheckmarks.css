@@ -1,11 +1,7 @@
 .multiple_select{
     position: relative;
-}
-
-.multiple_select span{
-    /*width: 10px;;*/
-    position: absolute;
-    right: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .select_arrow_clicked{
@@ -16,4 +12,68 @@
 
 .select_arrow{
     font-size: 20px;
+}
+
+.multiple_select_modal{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-radius: 4px;
+    padding: 10px!important;
+    border: none!important;
+    flex-wrap: wrap;
+    z-index: 500;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.multiple_select_modal >div{
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: default;
+    border:none;
+}
+
+.checkobox_modal_selects{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+
+    border-bottom: 1px solid grey;
+    padding: 0!important;
+}
+
+
+.form-control {
+    font-size: 17px;
+    font-weight: 400;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.multiple_select_modal > div:last-child{
+    border-bottom: none;
+}
+
+.from_to_modal{
+    width: 250px;
+    height: 50px;
+    background-color: red;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.from_to_modal input{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(122,122,122,0.5);
+    outline: none;
+    padding: 0 10px;
 }

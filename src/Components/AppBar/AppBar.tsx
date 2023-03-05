@@ -49,7 +49,7 @@ const AppBar = () =>{
 
     return (
         <>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg={'white'} className="fixed-top"   style={{width:'100%'}}>
                 <Container>
                     <NavLink to="/"><img src={menuLogo} width='90' height='90'/></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
