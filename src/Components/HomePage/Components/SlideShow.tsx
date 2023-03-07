@@ -24,23 +24,16 @@ const fadeImages = [
     },
 ];
 
-const imageStyles={
-    width: '100%',
-    height:'60vh',
-    opacity:'0.8',
-
-}
-
 const SlideShow = () => {
     return (
-        <div className="slide-container" style={{height:'200px',width:'100%',marginTop:'80px'}}>
+        <section className="slide-container" style={{width:'100%'}}>
             <Fade arrows={false}>
                 {fadeImages.map((fadeImage, index) => (
                     <div key={index}>
 
                         <div style={{backgroundImage:`url(${fadeImage.url})`,
                                          width: '100%',
-                                         height:'60vh',
+                                         height:'70vh',
                                          opacity:'0.8',
                                          backgroundPosition: '70% 70%',
                                          backgroundRepeat: 'no-repeat',
@@ -58,7 +51,7 @@ const SlideShow = () => {
                     </div>
                 ))}
             </Fade>
-        </div>
+        </section>
     )
 }
 

@@ -48,7 +48,7 @@ const AppBar = () =>{
 
 
     return (
-        <>
+        <header style={{height:'100px',width:'100%'}}>
             <Navbar bg={'white'} className="fixed-top"   style={{width:'100%'}}>
                 <Container>
                     <NavLink to="/"><img src={menuLogo} width='90' height='90'/></NavLink>
@@ -72,7 +72,7 @@ const AppBar = () =>{
                     <Languages/>
                 </Container>
             </Navbar>
-        </>
+        </header>
     );
 }
 

@@ -21,7 +21,7 @@
     border-radius: 4px;
     padding: 10px!important;
     border: none!important;
-    flex-wrap: wrap;
+    flex-direction: column;
     z-index: 500;
     max-height: 200px;
     overflow-y: auto;

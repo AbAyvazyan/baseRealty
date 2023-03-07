@@ -1,0 +1,39 @@
+.swiper_section{
+    width: 100%;
+    height: 600px;
+    margin-top: 5vh;
+    padding: 5vh 5vw;
+    box-sizing: border-box;
+}
+
+.swiper_section h2{
+    margin-bottom: 15vh;
+    text-align: center;
+    color: rgb(63,168,171);
+    border-bottom: 2px solid rgb(63,168,171);
+    height: 7vh;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
