@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import menuLogo from '../../assets/images/logo.png';
 
-// import {useNavigate} from "react-router";
+
 
 import Languages from "../Languages/Languages";
 import {NavLink} from "react-router-dom";
@@ -48,8 +48,8 @@ const AppBar = () =>{
 
 
     return (
-        <header style={{height:'100px',width:'100%'}}>
-            <Navbar bg={'white'} className="fixed-top"   style={{width:'100%'}}>
+        <header style={{height:'100px',width:'100%'}} >
+            <Navbar bg={'white'} className="fixed-top" expand={'lg'} >
                 <Container>
                     <NavLink to="/"><img src={menuLogo} width='90' height='90'/></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -72,7 +72,7 @@ const AppBar = () =>{
                     <Languages/>
                 </Container>
             </Navbar>
-        </header>
+         </header>
     );
 }
 
