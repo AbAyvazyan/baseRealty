@@ -8,7 +8,6 @@ import {Routes,Route} from "react-router";
 import HomePage from "./Components/HomePage";
 
 
-
 const routes = [
     {
         path:'/',

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import './MultipleSelectCheckmarks.css'
-import {FC, useEffect, useId, useRef, useState} from "react";
-
-import uuid from "react-uuid";
+import { FC,  useEffect,  useRef, useState} from "react";
 
 
 
@@ -17,10 +15,13 @@ type Tmodels={
 interface TSelect {
     holder:string,
     models?:Tmodels[],
-    fromTo:boolean
+    fromTo:boolean,
+    openModalHandler:(_id:string | undefined)=>void,
+    _id:string,
+    isOpen:boolean,
 }
 
-const MultipleSelectCheckmarks:FC<TSelect> = ({holder,models,fromTo}) => {
+const MultipleSelectCheckmarks:FC<TSelect> = ({_id,holder,models,isOpen,fromTo,openModalHandler}) => {
 
     const [checkboxesModal,setcheckboxesModal] = useState<Tmodels[]>()
 
@@ -28,33 +29,32 @@ const MultipleSelectCheckmarks:FC<TSelect> = ({holder,models,fromTo}) => {
         setcheckboxesModal(models)
     },[])
 
-    const [arrowPos,setArrowPos] = useState(false)
-    const [modal,setModal] = useState(false)
 
     const modalRef = useRef(null)
-    const arrowRef = useRef(null)
-    const spanRef = useRef(null)
 
 
-
-    const openModalHandler = (e:React.MouseEvent) =>{
-        if (modalRef.current  === e.target || arrowRef.current ===e.target || spanRef.current ===e.target){
-            setArrowPos(!arrowPos)
-            setModal(!modal)
-        }else{
-            return false
+    useEffect(()=>{
+        const listener = (e:MouseEvent)=>{
+            if(e.target !== modalRef.current){
+                openModalHandler(undefined)
+            }
         }
-
-
-    }
+        window.addEventListener('click',listener)
+        return ()=>{
+            window.removeEventListener('click',listener);
+        }
+    },[])
 
     return(<>
 
-        <div className={'multiple_select'} onClick={(e)=>openModalHandler(e)} ref={modalRef}>
+        <div className={'multiple_select'} onClick={(e)=>{
+            e.stopPropagation()
+            openModalHandler(_id)
+        }} ref={modalRef}>
             {holder}
-            <span ref={spanRef} className={arrowPos ? 'select_arrow_clicked' : 'select_arrow'} ><i className="fa fa-angle-down" ref={arrowRef}></i></span>
+            <span  className={isOpen ? 'select_arrow_clicked' : 'select_arrow'} ><i className="fa fa-angle-down" ></i></span>
 
-            {modal && <div className={'multiple_select_modal'}>
+            {isOpen ? <div className={'multiple_select_modal'}>
 
 
                     { !fromTo &&( checkboxesModal && checkboxesModal.map((item,index)=>{
@@ -76,12 +76,8 @@ const MultipleSelectCheckmarks:FC<TSelect> = ({holder,models,fromTo}) => {
 
                     </div>
                 }
+            </div> : null}
 
-
-
-
-
-            </div>}
         </div>
 
 
