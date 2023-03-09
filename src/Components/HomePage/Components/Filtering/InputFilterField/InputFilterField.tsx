@@ -1,6 +1,6 @@
 import './InputFilterField.css'
 
-import MultipleSelectCheckmarks from "./MultipleSelectCheckmarks/MultipleSelectCheckmarks";
+import MultipleSelectCheckmarks, {Tmodels} from "./MultipleSelectCheckmarks/MultipleSelectCheckmarks";
 import uuid from "react-uuid";
 import * as React from "react";
 import {useCallback, useEffect, useState} from "react";
@@ -10,7 +10,7 @@ export type Tstate = {
     holder:string;
     fromTo:boolean;
     isOpen:boolean;
-    models?:{title:string}[]
+    models?:Tmodels[]
 }
 
 const initialState:Tstate[] = [
@@ -19,7 +19,9 @@ const initialState:Tstate[] = [
         holder:'Apartment',
         models:[
             {
-                title:'Newly Built'
+                title:'Newly Built',
+                isChecked:false,
+                _id:uuid()
             }
         ],
         fromTo:false,
@@ -51,13 +53,19 @@ const initialState:Tstate[] = [
         holder:'Place',
         models:[
             {
-                title:'Arabkir'
+                title:'Arabkir',
+                isChecked:false,
+                _id:uuid()
             },
             {
-                title:'Kentron'
+                title:'Kentron',
+                isChecked:false,
+                _id:uuid()
             },
             {
-                title:'Ajapnyak'
+                title:'Ajapnyak',
+                isChecked:false,
+                _id:uuid()
             }
         ],
         fromTo:false,
