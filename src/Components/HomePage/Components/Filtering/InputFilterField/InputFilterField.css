@@ -3,6 +3,7 @@
 }
 
 .input_filtering_field{
+    z-index: 100;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
     height: 65px;
@@ -30,3 +31,4 @@
     border-bottom-right-radius: 7px;
     border-right: none;
 }
+
