@@ -3,13 +3,13 @@
 }
 
 .input_filtering_field{
+    z-index: 100;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
     height: 65px;
 }
 
 .input_filtering_field div{
-    /*height: 65px;*/
     border-right: 1px  solid rgba(150, 150, 150,0.3);
     background-color: white;
     display: flex;
@@ -30,3 +30,4 @@
     border-bottom-right-radius: 7px;
     border-right: none;
 }
+
