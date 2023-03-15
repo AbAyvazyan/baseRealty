@@ -6,6 +6,7 @@ import {Routes,Route} from "react-router";
 
 
 import HomePage from "./Components/HomePage";
+import Footer from "./Components/Footer";
 
 
 
@@ -27,6 +28,7 @@ const App=()=>{
               return <Route path={path} key={index} element={<Component/>}/>
           })}
       </Routes>
+      <Footer/>
     </>
   );
 }

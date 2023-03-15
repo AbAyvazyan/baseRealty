@@ -75,37 +75,6 @@ const SwiperElement:FC<Tswiper> = ({heading}) =>{
                         })
                     }
 
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
-
-                    {/*<SwiperSlide>*/}
-                    {/*    <SlideCard/>*/}
-                    {/*</SwiperSlide>*/}
                 </Swiper>
 
             </section>

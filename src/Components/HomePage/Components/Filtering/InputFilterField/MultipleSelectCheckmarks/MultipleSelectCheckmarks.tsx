@@ -45,7 +45,6 @@ const MultipleSelectCheckmarks:FC<TSelect> = ({holder,models,fromTo}) => {
             return false
         }
 
-
     }
 
     return(<>
