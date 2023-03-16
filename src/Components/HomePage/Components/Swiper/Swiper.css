@@ -13,6 +13,10 @@
     height: 7vh;
 }
 
+.slide-container{
+    position: relative;
+}
+
 
 .swiper {
     width: 100%;
