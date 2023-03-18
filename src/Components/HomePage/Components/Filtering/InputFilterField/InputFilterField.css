@@ -26,7 +26,6 @@
 }
 
 .input_filtering_field >div:last-child{
-    border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
     border-right: none;
 }

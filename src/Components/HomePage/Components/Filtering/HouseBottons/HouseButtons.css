@@ -1,5 +1,6 @@
 .house_types{
     display:flex;
+    justify-content: space-between;
     padding: 0;
     margin: 0;
 }
@@ -32,4 +33,19 @@
 .disactiveLi:hover{
     background-color: rgba(255,255,255,0.7);
     color: rgb(var(--text-color));
+}
+
+.codeSearchLi{
+    width: 170px !important;
+    background-color: white;
+    border-bottom: 1px solid rgba(var(--text-color),0.5);
+    cursor: text;
+}
+
+.codeSearchLi input{
+    width: 90%;
+    border: none;
+    padding-left: 10px;
+    outline: none;
+    background-color: transparent;
 }
