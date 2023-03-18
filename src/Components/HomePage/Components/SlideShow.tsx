@@ -26,7 +26,7 @@ const fadeImages = [
 
 const SlideShow = () => {
     return (
-        <section className="slide-container" style={{width:'100%'}}>
+        <section className="slide-container" style={{width:'100%' , height:'70vh'}}>
             <Fade arrows={false}>
                 {fadeImages.map((fadeImage, index) => (
                     <div key={index}>
@@ -44,13 +44,14 @@ const SlideShow = () => {
                                          alignItems:'center'
                         }} >
 
-                            <Filtering/>
+                            
 
 
                         </div>
                     </div>
                 ))}
             </Fade>
+            <Filtering/>
         </section>
     )
 }

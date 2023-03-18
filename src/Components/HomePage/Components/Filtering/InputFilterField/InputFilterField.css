@@ -32,3 +32,10 @@
     border-right: none;
 }
 
+@media screen and (max-width:650px) {
+    .input_filtering_field{
+        grid-template-columns: repeat(auto-fill, 100px );
+        height: auto;
+    }
+}
+
