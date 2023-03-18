@@ -40,3 +40,11 @@
     height: 100%;
     object-fit: cover;
 }
+
+.swiper-button-next, .swiper-button-prev{
+    color: rgb(63,168,171)!important;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet{
+    background-color: rgb(63,168,171)!important;
+}

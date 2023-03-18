@@ -36,10 +36,16 @@ const HouseButtons = () =>{
     return(
 
         <ul className={'house_types'}>
+            <div style={{display:'flex'}}>
             {houses.map(({active,position,type})=>{
                 return <li className={active ? 'activeLi' : 'disactiveLi'} key={position}  onClick={()=>activeTypeHandler(position)}>{type}</li>
             })
             }
+            </div>
+
+            <label style={{margin:'0'}}>
+            <li className={' codeSearchLi'} ><input type="text" placeholder={'Code'}/></li>
+            </label>
         </ul>
 
 
