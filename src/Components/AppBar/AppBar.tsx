@@ -32,9 +32,8 @@ const categories:Tcategorise[] = [
 
 let activeStyle = {
     fontWeight:'500',
-    textDecoration:'underline',
     color:'rgb(12,51,58)',
-    fontSize:'18    px'
+    fontSize:'20px'
 };
 
 let simpleStyle = {

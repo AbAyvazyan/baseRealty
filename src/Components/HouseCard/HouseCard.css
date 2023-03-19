@@ -1,0 +1,33 @@
+.house_card{
+    width: 90%;
+    height: 400px;
+    background-color: white;
+    margin-bottom: 5vh;
+    border-radius: 7px;
+    padding: 33px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    border:1px solid  rgb(223, 223, 223);
+    flex-wrap: nowrap;
+}
+
+.house_card_image{
+    height: 100%;
+    width: 40%;
+    background-position: center;
+    background-size: cover;
+}
+
+.house_card_about{
+    width: 60%;
+    height: 100%;
+    padding: 33px;
+    box-sizing: border-box;
+}
+
+.house_card_about_price{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}

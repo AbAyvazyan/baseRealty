@@ -1,0 +1,29 @@
+.sale_page{
+    width: 100%;
+    padding: 10vh 0;
+}
+
+.sale_page_content{
+    width: 95%;
+    border-radius: 7px;
+    margin: 10vh auto;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 33px;
+    justify-content: space-between;
+}
+
+.sale_page_content article{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.sale_page_content aside{
+    width: 30%;
+    height: 500px;
+    background-color: rgba(102,111,200,0.5);
+}

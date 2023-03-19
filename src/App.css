@@ -8,3 +8,11 @@ body{
   padding: 0;
   color: rgb(var(--text-color));
 }
+
+h1{
+    text-align: center;
+}
+
+main{
+    background-color: rgba(243, 243, 243, 0.5);
+}
