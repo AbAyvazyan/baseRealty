@@ -17,8 +17,6 @@ interface TSelect {
   isOpen: boolean;
 }
 
-type Tfrom_to = { from: number | undefined; to: number | undefined };
-
 const MultipleSelectCheckmarks: FC<TSelect> = ({
   _id,
   holder,
@@ -29,10 +27,8 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
 }) => {
   const [checkboxesModal, setCheckboxesModal] = useState<Tmodels[]>();
   const [Chosen, setChosen] = useState<string[]>([]);
-  const [from_to_obj, set_from_to_obj] = useState<Tfrom_to>({
-    from: undefined,
-    to: undefined,
-  });
+  const [from, setFrom] = useState<string>("");
+  const [to, setTo] = useState<string>("");
 
   useEffect(() => {
     setCheckboxesModal(models);
@@ -58,10 +54,10 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
     _id: string,
     isChecked: boolean
   ): void => {
-    setCheckboxesModal((p) => {
+    setCheckboxesModal((prevState) => {
       return (
-        p &&
-        p.map((v) => {
+        prevState &&
+        prevState.map((v) => {
           if (v._id === _id) {
             v.isChecked = !v.isChecked;
           }
@@ -69,10 +65,10 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
         })
       );
     });
-    setChosen((p) =>
+    setChosen((prevState) =>
       isChecked
-        ? [...p.filter((v) => v !== target.value)]
-        : [...p, target.value]
+        ? [...prevState.filter((v) => v !== target.value)]
+        : [...prevState, target.value]
     );
   };
 
@@ -88,14 +84,16 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
       >
         <>
           {!Chosen.length ? (
-              <>
-                {from_to_obj.from ? <span>from:{from_to_obj.from}</span> : <span>{holder}</span>}
-                {from_to_obj.to && <span>to:{from_to_obj.to}</span>}
-              </>
+            <>
+              {from ? <span>from:{from}</span> : <span>{holder}</span>}
+              {to && <span>to:{to}</span>}
+            </>
           ) : Chosen.length >= 3 ? (
-            [Chosen[0], Chosen[1]].map((v, i) => <span key={i}>{v}</span>)
+            [Chosen[0], Chosen[1]].map((placeName, i) => (
+              <span key={i}>{placeName}</span>
+            ))
           ) : (
-            Chosen.map((v, i) => <span key={i}>{v}</span>)
+            Chosen.map((placeName, i) => <span key={i}>{placeName}</span>)
           )}
           {Chosen.length >= 3 && <span>...</span>}
           <span className={isOpen ? "select_arrow_clicked" : "select_arrow"}>
@@ -105,22 +103,22 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
 
         {isOpen ? (
           <div
-            className={"multiple_select_modal"}
+            className="multiple_select_modal"
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
             {!fromTo &&
               checkboxesModal &&
-              checkboxesModal.map(({ title, _id, isChecked }, index) => {
+              checkboxesModal.map(({ title, _id, isChecked }) => {
                 return (
-                  <div key={_id} className={"checkobox_modal_selects"}>
+                  <div key={_id} className="checkobox_modal_selects">
                     <label className="form-control">
                       <input
+                        value={title}
                         type="checkbox"
                         name="checkbox"
                         checked={isChecked}
-                        value={title}
                         onChange={(e) => handleCheckbox(e, _id, isChecked)}
                       />
                       {title}
@@ -130,26 +128,23 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
               })}
 
             {fromTo && (
-              <div className={"from_to_modal"}>
+              <div className="from_to_modal">
                 <input
+                  value={from}
                   type="number"
-                  placeholder={"from"}
-                  value={from_to_obj.from}
+                  placeholder="from"
                   onChange={(e) =>
-                    set_from_to_obj((p) => {
-                      return { to: from_to_obj.to, from: +e.target.value };
-                    })
+                    +e.target.value >= 0 && setFrom(e.target.value)
                   }
                 />
                 <input
+                  value={to}
                   type="number"
-                  placeholder={"to"}
-                  value={ from_to_obj.from && from_to_obj.to && from_to_obj.from > from_to_obj.to ? from_to_obj.from : from_to_obj.to}
+                  placeholder="to"
                   onChange={(e) =>
-                    set_from_to_obj((p) => {
-
-                      return { to: +e.target.value, from: from_to_obj.from };
-                    })
+                    +e.target.value <= +from
+                      ? setTo(from)
+                      : setTo(e.target.value)
                   }
                 />
               </div>

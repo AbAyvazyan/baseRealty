@@ -10,23 +10,23 @@ import {NavLink} from "react-router-dom";
 
 type Tcategorise={
     routeTo:string,
-    categorieName:string
+    categoryName:string
 }
 
 const categories:Tcategorise[] = [
     {
         routeTo:'sale',
-        categorieName:'For Sale'
+        categoryName:'For Sale'
     },
 
     {
         routeTo:'rent',
-        categorieName:'For Rent'
+        categoryName:'For Rent'
     },
 
     {
         routeTo:'contact',
-        categorieName:'Contact Us'
+        categoryName:'Contact Us'
     },
 ]
 
@@ -60,7 +60,7 @@ const AppBar = () =>{
                                 return <NavLink to={item.routeTo}
                                                 style={({ isActive }) =>
                                                     isActive ? activeStyle : simpleStyle
-                                                }  key={index} className={'nav_categories mr-5'}>{item.categorieName}</NavLink>
+                                                }  key={index} className={'nav_categories mr-5'}>{item.categoryName}</NavLink>
                             })}
 
 
