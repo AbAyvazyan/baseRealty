@@ -10,6 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import {FC} from "react";
+import HouseCard from "../../../../HouseCard";
 
 
 

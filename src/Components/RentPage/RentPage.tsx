@@ -3,6 +3,7 @@ import HouseCard from "../HouseCard";
 import {ThouseCard} from "../HouseCard/HouseCard";
 import uuid from "react-uuid";
 import PaginationGroup from "../PaginationGroup/PaginationGroup";
+import MainFiltering from "../MainFiltering";
 
 
 
@@ -85,7 +86,11 @@ const RentPage = () =>{
                         return <HouseCard {...house} key={uuid()}/>
                     })}
                 </article>
-                <aside></aside>
+
+
+                <aside>
+                    <MainFiltering/>
+                </aside>
             </div>
 
             <PaginationGroup/>
