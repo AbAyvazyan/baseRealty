@@ -1,5 +1,15 @@
 import './MainFiltering.css'
 import AccordionSelect from "./AccordionSelect/AccordionSelect";
+import FromToSelect from "./FromToSelect/FromToSelect";
+
+const filterList = [
+    {
+        component:AccordionSelect
+    },
+    {
+        component:FromToSelect
+    }
+]
 
 export default function MainFiltering() {
 
@@ -9,6 +19,7 @@ export default function MainFiltering() {
             {/*   ste inchqan agardyon ka pti etdra tvyalnerov object verevy unenanq arrayi mej u map franq            */}
 
             <AccordionSelect/>
+            <FromToSelect></FromToSelect>
             {/*<Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>*/}
             {/*    <AccordionSummary*/}
             {/*        expandIcon={<ExpandMoreIcon />}*/}
