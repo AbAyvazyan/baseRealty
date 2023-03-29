@@ -6,15 +6,21 @@ import Typography from "@mui/material/Typography";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
+import {FC} from "react";
+
+type TFromToSelect = {
+    id:number,
+    paragraph:string
+}
 
 
-const  FromToSelect = () =>{
+const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
 
 
     return(
             <AccordionSummary
-                aria-controls="panel1bh-content"
-                id="panel1bh-header"
+                aria-controls={`panel${id}bh-content`}
+                id={`panel${id}bh-header`}
                 sx={{
                     padding:'0.5vh 16px',
                     boxShadow: "none",
@@ -26,7 +32,7 @@ const  FromToSelect = () =>{
                 }}
             >
                 <Typography sx={{ width: '33%', flexShrink: 0,display:'flex',alignItems:'center'}}>
-                    Price
+                    {paragraph}
                 </Typography>
                 <Typography sx={{ color: 'text.secondary',gap:'25px',padding:'0 25px',boxSizing:'b',display:'flex',alignItems:'center' }}>
                     <div>

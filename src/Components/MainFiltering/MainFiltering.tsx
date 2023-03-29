@@ -1,194 +1,130 @@
 import './MainFiltering.css'
 import AccordionSelect from "./AccordionSelect/AccordionSelect";
 import FromToSelect from "./FromToSelect/FromToSelect";
+import {Component} from "react";
 
 const filterList = [
     {
+        id:1,
+        paragraph:'Location',
+        selects:[
+            'All',
+            'Arabkir',
+            'Charbax',
+        ],
         component:AccordionSelect
     },
     {
+        id:2,
+        paragraph:'Price',
         component:FromToSelect
-    }
+    },
+    {
+        id:3,
+        paragraph:'Construction Type',
+        selects:[
+            'All',
+            'Stone',
+            'Panels',
+            'Bricks',
+            'Cassette',
+            'Wooden',
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:4,
+        paragraph:'New Construction',
+        selects:[
+            'All',
+            'No',
+            'Yes'
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:5,
+        paragraph:'Elevetor',
+        selects:[
+            'All',
+            'Available',
+            'Not Available'
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:6,
+        paragraph:'FloorArea',
+        component:FromToSelect
+    },
+    {
+        id:7,
+        paragraph:'Number of Rooms',
+        selects:[
+            'All',
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6+'
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:7,
+        paragraph:'Number of Bathrooms',
+        selects:[
+            'All',
+            '1',
+            '2',
+            '3+',
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:8,
+        paragraph:'Floor',
+        component:FromToSelect
+    },
+    {
+        id:9,
+        paragraph:'Furniture',
+        selects:[
+            'All',
+            'Available',
+            'Not Available',
+            'Partial Furniture',
+            'By agreement'
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:10,
+        paragraph:'Renovation',
+        selects:[
+            'All',
+            'No Renovation',
+            'Not Old Renovation',
+            'Partial Renovation',
+            'Cosmetic Renovation',
+            'Euro Renovation',
+            'Designer Renovation',
+            'Major Renovation',
+        ],
+        component:AccordionSelect
+    },
 ]
 
 export default function MainFiltering() {
 
     return (
-        <div>
+        <div className={'main_filtering'}>
 
-            {/*   ste inchqan agardyon ka pti etdra tvyalnerov object verevy unenanq arrayi mej u map franq            */}
+            {filterList.map(({id,component:Component,paragraph,selects})=>{
+                return <Component id={id} paragraph={paragraph} key={id} selects={selects}/>
+            })}
 
-            <AccordionSelect/>
-            <FromToSelect></FromToSelect>
-            {/*<Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel1bh-content"*/}
-            {/*        id="panel1bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            Location*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>All</Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.*/}
-            {/*            Aliquam eget maximus est, id dignissim quam.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-
-            {/*<Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel2bh-content"*/}
-            {/*        id="panel2bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>Construction Type</Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,*/}
-            {/*            varius pulvinar diam eros in elit. Pellentesque convallis laoreet*/}
-            {/*            laoreet.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-
-            {/*<Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel3bh-content"*/}
-            {/*        id="panel3bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            New Construction*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit*/}
-            {/*            amet egestas eros, vitae egestas augue. Duis vel est augue.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-
-            {/*<Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel3bh-content"*/}
-            {/*        id="panel3bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            Elevator*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit*/}
-            {/*            amet egestas eros, vitae egestas augue. Duis vel est augue.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-
-            {/*<Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel3bh-content"*/}
-            {/*        id="panel3bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            Number of Rooms*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit*/}
-            {/*            amet egestas eros, vitae egestas augue. Duis vel est augue.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-            {/*<Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel3bh-content"*/}
-            {/*        id="panel3bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            Number of Bathrooms*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit*/}
-            {/*            amet egestas eros, vitae egestas augue. Duis vel est augue.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-            {/*<Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel3bh-content"*/}
-            {/*        id="panel3bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            Furniture*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit*/}
-            {/*            amet egestas eros, vitae egestas augue. Duis vel est augue.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
-
-
-            {/*<Accordion expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>*/}
-            {/*    <AccordionSummary*/}
-            {/*        expandIcon={<ExpandMoreIcon />}*/}
-            {/*        aria-controls="panel3bh-content"*/}
-            {/*        id="panel3bh-header"*/}
-            {/*    >*/}
-            {/*        <Typography sx={{ width: '33%', flexShrink: 0 }}>*/}
-            {/*            Renovation*/}
-            {/*        </Typography>*/}
-            {/*        <Typography sx={{ color: 'text.secondary' }}>*/}
-            {/*            All*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionSummary>*/}
-            {/*    <AccordionDetails>*/}
-            {/*        <Typography>*/}
-            {/*            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit*/}
-            {/*            amet egestas eros, vitae egestas augue. Duis vel est augue.*/}
-            {/*        </Typography>*/}
-            {/*    </AccordionDetails>*/}
-            {/*</Accordion>*/}
         </div>
     );
 }

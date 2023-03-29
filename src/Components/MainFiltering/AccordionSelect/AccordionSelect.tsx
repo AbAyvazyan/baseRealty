@@ -7,15 +7,17 @@ import * as React from "react";
 import MenuItem from "@mui/material/MenuItem";
 import {Checkbox} from "@mui/material";
 import {ListItemText} from "@mui/material";
-
-const names = [
-    'Oliver Hansen',
-    'Van Henry',
-    'April Tucker',
-];
+import {FC} from "react";
 
 
-const AccordionSelect = () =>{
+
+type TAccordionSelect = {
+    id:number,
+    paragraph:string,
+    selects?:string[]
+}
+
+const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
 
     const [expanded, setExpanded] = React.useState<string | false>(false);
     const [personName, setPersonName] = React.useState<string[]>([]);
@@ -30,21 +32,21 @@ const AccordionSelect = () =>{
 
 
         ////es paneli koxqi tivnel pti unique lini pti poxances verevic
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <Accordion expanded={expanded === `panel${id}`} onChange={handleChange(`panel${id}`)}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1bh-content"
-                id="panel1bh-header"
+                id={`panel${id}bh-header`}
             >
-                <Typography sx={{ width: '33%', flexShrink: 0}}>
-                    Location
+                <Typography sx={{ width: '33%', flexShrink: 0,color:'rgb(12,51,58)'}}>
+                    {paragraph}
                 </Typography>
                 <Typography sx={{ color: 'text.secondary',margin:'0 33px 0 auto',display:'flex',alignItems:'center' }}>All</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
-                    {names.map((name) => (
-                        <MenuItem key={name} value={name}>
+                    {selects && selects.map((name) => (
+                        <MenuItem key={name} value={name} sx={{color:'rgb(12,51,58)'}}>
                             <Checkbox checked={personName.indexOf(name) > -1} />
                             <ListItemText primary={name} />
                         </MenuItem>

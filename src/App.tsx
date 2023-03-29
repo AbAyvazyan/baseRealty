@@ -9,6 +9,7 @@ import HomePage from "./Components/HomePage";
 import Footer from "./Components/Footer";
 import SalePage from "./Components/SalePage";
 import RentPage from "./Components/RentPage";
+import ContactPage from "./Components/ContactPage";
 
 
 const routes = [
@@ -23,6 +24,10 @@ const routes = [
     {
         path:'/rent',
         component:RentPage
+    },
+    {
+        path:'/contact',
+        component:ContactPage
     },
 ]
 
