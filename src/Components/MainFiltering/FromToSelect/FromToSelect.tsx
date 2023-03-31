@@ -25,7 +25,9 @@ const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
                     padding:'0.5vh 16px',
                     boxShadow: "none",
                     borderRadius: 0,
-                    border: "1px solid rgba(0, 0, 0, 0.12)",
+                    borderLeft: "1px solid rgba(0, 0, 0, 0.09)",
+                    borderRight: "1px solid rgba(0, 0, 0, 0.09)",
+                    borderTop: "1px solid rgba(0, 0, 0, 0.09)",
                     backgroundColor:"white",
                     width: "calc(100% + 2px)",
                     marginLeft:'-1px'

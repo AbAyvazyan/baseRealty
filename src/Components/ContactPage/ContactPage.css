@@ -1,0 +1,92 @@
+.contact_us_page{
+    padding:10vh 0;
+}
+
+
+.contact_part{
+    width: 80%;
+    /*height: 1000px;*/
+    background-color:white ;
+    margin:10vh auto 0;
+    border-radius: 7px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact_form_part{
+    width: 100%;
+    display: flex;
+}
+
+.contact_form_part > div{
+    width: 50%;
+}
+
+
+.contact_form_input input{
+    width: 40%;
+    height: 5vh;
+    margin: 10px;
+    padding-left: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(196, 196, 196);
+    outline: none;
+}
+
+.contact_form_input textarea{
+    width: calc(80% + 20px);
+    margin: 1vh 10px;
+    min-height: 170px;
+    max-height: 400px;
+    padding: 10px;
+    border: 1px solid rgb(196, 196, 196);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.contact_button{
+    width: 170px;
+    height: 50px;
+    margin-left: 10px;
+    background-color:rgb(var(--text-color)) ;
+}
+
+.contact_about_part{
+    padding: 10px;
+}
+
+.contact_about_part p{
+    margin: 7vh 0;
+}
+
+.contact_about_part h5{
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.contact_about_tel_part{
+    display: flex;
+    gap: 10px;
+}
+
+.contact_about_part a{
+    text-decoration: none;
+    color: rgb(38, 110, 107);
+    margin: 0 15px;
+}
+
+.contact_about_social_part{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contact_about_social_part > div{
+    width: 50%;
+}
+
+.contact_map_part{
+    width: 100%;
+}
