@@ -1,4 +1,5 @@
 import './ContactPage.css'
+import YandexMap from "./OurLocation/OurLocation";
 
 
 
@@ -31,9 +32,9 @@ const ContactPage = () =>{
                                     Contact us today for personalized service and expert guidance.
                                 </h5>
 
-                                <p className={'contact_about_tel_part'}>Telephone.: <a href="tel:+1234567890">+374 00 00 00 00</a> | <a href="tel:+1234567890">+374 00 00 00 00</a></p>
+                                <div className={'contact_about_tel_part'}>Telephone.: <a href="tel:+1234567890">+374 00 00 00 00</a> | <a href="tel:+1234567890">+374 00 00 00 00</a></div>
 
-                                <p className={'contact_about_social_part'}>
+                                <div className={'contact_about_social_part'}>
                                     <div>
                                         <div>Viber: <a href="tel:+1234567890">+374 00 00 00 00</a></div>
                                         <div>Address: <a href="tel:+1234567890">Charbax</a></div>
@@ -42,12 +43,14 @@ const ContactPage = () =>{
                                         <div>Whatsap: <a href="tel:+1234567890">+374 00 00 00 00</a></div>
                                         <div>Email: <a href="mailto:someone@example.com">info@baserealty.am</a></div>
                                     </div>
-                                </p>
+                                </div>
                             </div>
                     </div>
 
 
-                    <div className={'contact_map_part'}></div>
+                    <div className={'contact_map_part'}>
+                        <YandexMap address="улица Хачатура Абовяна, 3/1" />
+                    </div>
             </div>
 
         </section>

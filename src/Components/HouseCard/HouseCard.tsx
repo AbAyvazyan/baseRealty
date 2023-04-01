@@ -4,6 +4,7 @@ import { faStairs,faHouse} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import {FC} from "react";
+import {useNavigate} from "react-router";
 
 const stairsIcon: IconProp = faStairs;
 const houseIcon: IconProp = faHouse;
@@ -29,8 +30,18 @@ const HouseCard:FC<ThouseCard> = (
         building_floors,rooms,house_space
     }
     ) =>{
+
+    const navigate = useNavigate()
+
+
+    const singleHouseRouteHandler = () =>{
+        // navigate(`/house/${code}`)
+        window.open(`http://localhost:3000/house/${code}`, '_blank');
+    }
+
+
     return(
-        <div className={'house_card'}>
+        <div className={'house_card'} onClick={()=>singleHouseRouteHandler()}>
             <div className={'house_card_image'} style={{backgroundImage:`url(${src})`}}></div>
             <div className={'house_card_about'}>
                 <div style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>code: {code}</span></div>

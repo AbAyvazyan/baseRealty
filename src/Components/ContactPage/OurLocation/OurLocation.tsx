@@ -1,27 +1,44 @@
-import React, { useRef, useEffect } from 'react';
-import ymaps from 'yandex-maps';
+import React, { useEffect } from 'react';
 
-interface MapProps {
-    center: [number, number];
-    zoom: number;
+interface YandexMapProps {
+    address: string;
 }
 
-const Map: React.FC<MapProps> = ({ center, zoom }) => {
-    // const mapRef = useRef(null);
-    //
-    // useEffect(() => {
-    //     ymaps.ready(() => {
-    //         const map = new ymaps.Map(mapRef.current, {
-    //             center,
-    //             zoom,
-    //         });
-    //     });
-    // }, [center, zoom]);
+declare global {
+    interface Window {
+        ymaps: any;
+    }
+}
 
-    return (
-        // <div ref={mapRef} style={{ width: '100%', height: '400px' }} />;
-        <></>
-    )
+const YandexMap = ({ address }: YandexMapProps) => {
+    useEffect(() => {
+        window.ymaps.ready(() => {
+            window.ymaps.geocode(address).then((result: any) => {
+                const coordinates = result.geoObjects.get(0).geometry.getCoordinates();
+                const map = new window.ymaps.Map('map', {
+                    center: coordinates,
+                    zoom: 15,
+                });
+                const placemark = new window.ymaps.Placemark(coordinates, {
+                    balloonContent: address,
+                });
+                map.geoObjects.add(placemark);
+
+                map.events.add('wheel', (e: any) => {
+                    if (!e.get('shiftKey')) {
+                        e.preventDefault();
+                    }
+                });
+        });
+        });
+    }, [address]);
+
+    return(
+        <>
+            <div id="map" style={{ width: '100%', height: '400px' }}></div>
+            <p>Shift+scroll to zoom</p>
+        </>
+    );
 };
 
-export default Map;
+export default YandexMap;

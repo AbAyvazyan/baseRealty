@@ -30,8 +30,6 @@ const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
 
     return (
 
-
-        ////es paneli koxqi tivnel pti unique lini pti poxances verevic
         <Accordion expanded={expanded === `panel${id}`} onChange={handleChange(`panel${id}`)}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -44,14 +42,12 @@ const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
                 <Typography sx={{ color: 'text.secondary',margin:'0 33px 0 auto',display:'flex',alignItems:'center' }}>All</Typography>
             </AccordionSummary>
             <AccordionDetails>
-                <Typography>
                     {selects && selects.map((name) => (
                         <MenuItem key={name} value={name} sx={{color:'rgb(12,51,58)'}}>
                             <Checkbox checked={personName.indexOf(name) > -1} />
                             <ListItemText primary={name} />
                         </MenuItem>
                     ))}
-                </Typography>
             </AccordionDetails>
         </Accordion>
     )

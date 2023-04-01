@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 import SalePage from "./Components/SalePage";
 import RentPage from "./Components/RentPage";
 import ContactPage from "./Components/ContactPage";
+import SingleHouse from "./Components/SingleHouse";
 
 
 const routes = [
@@ -28,6 +29,10 @@ const routes = [
     {
         path:'/contact',
         component:ContactPage
+    },
+    {
+        path:'/house/:code',
+        component:SingleHouse
     },
 ]
 

@@ -14,11 +14,11 @@ const filterList = [
         ],
         component:AccordionSelect
     },
-    {
-        id:2,
-        paragraph:'Price',
-        component:FromToSelect
-    },
+     {
+         id:2,
+         paragraph:'Price',
+         component:FromToSelect
+     },
     {
         id:3,
         paragraph:'Construction Type',
@@ -72,7 +72,7 @@ const filterList = [
         component:AccordionSelect
     },
     {
-        id:7,
+        id:8,
         paragraph:'Number of Bathrooms',
         selects:[
             'All',
@@ -83,12 +83,12 @@ const filterList = [
         component:AccordionSelect
     },
     {
-        id:8,
+        id:9,
         paragraph:'Floor',
         component:FromToSelect
     },
     {
-        id:9,
+        id:10,
         paragraph:'Furniture',
         selects:[
             'All',
@@ -100,7 +100,7 @@ const filterList = [
         component:AccordionSelect
     },
     {
-        id:10,
+        id:11,
         paragraph:'Renovation',
         selects:[
             'All',

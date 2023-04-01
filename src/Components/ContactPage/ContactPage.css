@@ -57,7 +57,7 @@
     padding: 10px;
 }
 
-.contact_about_part p{
+.contact_about_part >div{
     margin: 7vh 0;
 }
 
@@ -89,4 +89,6 @@
 
 .contact_map_part{
     width: 100%;
+    margin: 10vh 0 5vh;
 }
+

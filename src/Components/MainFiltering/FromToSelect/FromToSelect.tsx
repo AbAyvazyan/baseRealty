@@ -36,7 +36,7 @@ const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
                 <Typography sx={{ width: '33%', flexShrink: 0,display:'flex',alignItems:'center'}}>
                     {paragraph}
                 </Typography>
-                <Typography sx={{ color: 'text.secondary',gap:'25px',padding:'0 25px',boxSizing:'b',display:'flex',alignItems:'center' }}>
+                <div style={{ color: 'text.secondary',gap:'25px',padding:'0 25px',boxSizing:'border-box',display:'flex',alignItems:'center' }}>
                     <div>
                         <TextField id="standard-basic" placeholder={'From'} variant="standard" />
                     </div>
@@ -44,7 +44,7 @@ const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
                     <div>
                         <TextField id="standard-basic-1" placeholder={'To'} variant="standard" />
                     </div>
-                </Typography>
+                </div>
 
 
             </AccordionSummary>
