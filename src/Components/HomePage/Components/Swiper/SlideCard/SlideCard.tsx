@@ -32,7 +32,7 @@ const SlideCard:FC<IslideCard> = ({houses:{image,heading,about}}) => {
                 <CardMedia
                     component="img"
                     width='100%'
-                    height='300px'
+                    sx={{height:'300px!important'}}
                     image={image}
                     alt="green iguana"
                 />

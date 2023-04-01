@@ -1,5 +1,4 @@
-import React, {ReactNode} from 'react';
-import {FC} from "react";
+import React from 'react';
 import './App.css';
 import AppBar from "./Components/AppBar/AppBar";
 import {Routes,Route} from "react-router";

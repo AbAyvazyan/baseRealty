@@ -1,1 +1,49 @@
+.single_house_section{
+    width: 100%;
+    height: 200vh;
+    padding: 10vh 0;
+}
 
+
+.single_house{
+    width: 95%;
+    border-radius: 7px;
+    margin: 10vh auto;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 45px 33px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.single_house article{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.single_house aside{
+    width: 25%;
+    padding: 0 33px 33px;
+    box-sizing: border-box;
+}
+
+.single_house_options{
+    width: 90%;
+    height: 80px;
+    border: 2px solid rgb(var(--text-color));
+    margin: 2vh auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 50px;
+    font-size: 23px;
+    border-radius: 7px;
+}
+
+.single_house_options > div:first-child{
+    display: flex;
+    gap: 20px;
+}
