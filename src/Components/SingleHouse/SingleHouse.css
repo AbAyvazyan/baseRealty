@@ -1,7 +1,7 @@
 .single_house_section{
     width: 100%;
     height: 200vh;
-    padding: 10vh 0;
+    padding: 5vh 0 10vh ;
 }
 
 
@@ -25,7 +25,6 @@
 
 .single_house aside{
     width: 25%;
-    padding: 0 33px 33px;
     box-sizing: border-box;
 }
 
@@ -46,4 +45,29 @@
 .single_house_options > div:first-child{
     display: flex;
     gap: 20px;
+}
+
+.single_house_advantages{
+    width: 90%;
+    min-height: 200px;
+    border: 2px solid rgb(var(--text-color));
+    margin: 5vh auto;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-rows: 40px;
+    padding: 50px 70px;
+    justify-items: center;
+}
+
+.single_house_map_part{
+    width: 90%;
+    height: 400px;
+    margin: 5vh auto;
+}
+
+.single_house_aside_content{
+    width: 100%;
+    margin: 5vh 0 ;
+
 }
