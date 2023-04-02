@@ -36,7 +36,7 @@ const HouseCard:FC<ThouseCard> = (
 
     const singleHouseRouteHandler = () =>{
         // navigate(`/house/${code}`)
-        window.open(`http://localhost:3000/house/${code}`, '_blank');
+        window.open(`https://base-realty.vercel.app/house/${code}`, '_blank');
     }
 
 
