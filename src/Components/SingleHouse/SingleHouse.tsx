@@ -49,7 +49,10 @@ const SingleHouse = () =>{
                         </div>
                     </div>
 
-                    <div className={'single_house_advantages'}>
+
+                    <div  className={'single_house_advantages'}>
+                        <h4 style={{textAlign:'center',marginTop:'5vh'}}>More Information</h4>
+                        <div className={'single_house_advantages_part'}>
                             <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
                             <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
                             <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
@@ -66,6 +69,7 @@ const SingleHouse = () =>{
                             <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
                             <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
                             <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
+                        </div>
                     </div>
 
 
