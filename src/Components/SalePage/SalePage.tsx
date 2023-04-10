@@ -81,14 +81,15 @@ const SalePage = () =>{
             <h1>Sale Page</h1>
 
             <div className={'sale_page_content'}>
+
+                <aside>
+                    <MainFiltering/>
+                </aside>
                 <article>
                     {houses.map(house=>{
                         return <HouseCard {...house} key={uuid()}/>
                     })}
                 </article>
-                <aside>
-                    <MainFiltering/>
-                </aside>
             </div>
 
             <PaginationGroup/>

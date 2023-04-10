@@ -17,22 +17,26 @@ const homes = [
     {
         image: 'http://cdn.home-designing.com/wp-content/uploads/2014/06/marble-finish-room-divider.jpeg',
         heading: 'For Sale',
-        about: 'This apartment is for Sale'
+        place: 'Mongholistan',
+        price: '333.333'
     },
     {
         image: 'http://cdn.home-designing.com/wp-content/uploads/2014/06/white-modern-studio-design.jpeg',
         heading: 'For Rent',
-        about: 'This apartment is for Rent'
+        place: 'Mongholistan',
+        price: '333.333'
     },
     {
         image: 'http://cdn.home-designing.com/wp-content/uploads/2014/06/marble-finish-room-divider.jpeg',
         heading: 'For Sale',
-        about: 'This apartment is for Sale'
+        place: 'Mongholistan',
+        price: '333.333'
     },
     {
         image: 'http://www.contemporist.com/wp-content/uploads/2019/10/modern-apartment-design-hidden-lighting-111019-1249-01-800x408.jpg',
         heading: 'For Rent',
-        about: 'This apartment is for Rent'
+        place: 'Mongholistan',
+        price: '333.333'
     },
 ]
 
@@ -55,6 +59,8 @@ const SwiperElement:FC<Tswiper> = ({heading}) =>{
                         delay: 5000,
                         disableOnInteraction: false,
                     }}
+                    loop={true}
+
                     pagination={{
                         clickable: true,
                     }}
@@ -66,9 +72,9 @@ const SwiperElement:FC<Tswiper> = ({heading}) =>{
 
                     {
                         homes.map((item,index)=>{
-                            return <SwiperSlide key={index}>
+                            return <SwiperSlide key={index} style={{opacity:1}}>
                                 <SlideCard houses={{image: item.image,
-                                    heading: item.heading, about: item.about}}/>
+                                    heading: item.heading, place: item.place,price:item.price}}/>
                             </SwiperSlide>
                         })
                     }

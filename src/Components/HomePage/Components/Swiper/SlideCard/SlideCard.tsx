@@ -11,13 +11,16 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import {FC} from "react";
 import HouseCard from "../../../../HouseCard";
+import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 
 type Thouse = {
     image:string;
     heading:string;
-    about:string
+    place:string,
+    price:string
 }
 
 
@@ -25,27 +28,19 @@ interface IslideCard {
     houses:Thouse
 }
 
-const SlideCard:FC<IslideCard> = ({houses:{image,heading,about}}) => {
+const SlideCard:FC<IslideCard> = ({houses:{image,heading,place,price}}) => {
     return (
-        <Card sx={{ maxWidth: '100%',height:'100%',padding:'5vh 7vw',color:'rgb(12,51,58)' }}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    width='100%'
-                    sx={{height:'300px!important'}}
-                    image={image}
-                    alt="green iguana"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {heading}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {about}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+        <div className={'slide_card'}>
+            <div className={'slide_card_image'} style={{backgroundImage:`url(${image})`}}></div>
+            <div className={'slide_card_about'}>
+                <h4 style={{textAlign:'center'}}>{heading}</h4>
+
+                <div className={'slide_card_about_content'}>
+                    <p><FontAwesomeIcon icon={faLocationDot} />{place}</p>
+                    <p>${price}</p>
+                </div>
+            </div>
+        </div>
     );
 }
 

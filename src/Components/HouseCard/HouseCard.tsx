@@ -44,21 +44,21 @@ const HouseCard:FC<ThouseCard> = (
         <div className={'house_card'} onClick={()=>singleHouseRouteHandler()}>
             <div className={'house_card_image'} style={{backgroundImage:`url(${src})`}}></div>
             <div className={'house_card_about'}>
-                <div style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>code: {code}</span></div>
+                <div className={'house_card_code_part'} style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>code: {code}</span></div>
 
-                <div style={{display:'flex',justifyContent:'space-between',margin:'3vh 0'}}>
+                <div className={'house_card_main_text_part'} >
 
                     <div>
-                        <p>Build type - {build_type}</p>
-                        <p style={{fontSize:'30px'}}> {location}</p>
-                        <p> Condition - {condition}</p>
+                        <p className={'house_card_just_text'}>Build type - {build_type}</p>
+                        <p className={'house_card_location_text'}> {location}</p>
+                        <p className={'house_card_just_text'}> Condition - {condition}</p>
                     </div>
 
                     <div className={'house_card_about_price'}>${price}</div>
 
                 </div>
 
-                <div style={{fontSize:'20px',display:'flex',gap:'20px'}}>
+                <div className={'house_card_info'}>
                     <span><FontAwesomeIcon icon={stairsIcon} /> Floor {floor}/{building_floors}</span>
                     <span><FontAwesomeIcon icon={houseIcon} /> Rooms {rooms}</span>
                     <span><i className="fa fa-solid fa-filter"></i> Total space {house_space} M²</span>

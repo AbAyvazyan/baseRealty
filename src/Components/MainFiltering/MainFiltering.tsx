@@ -125,6 +125,11 @@ export default function MainFiltering() {
                 return <Component id={id} paragraph={paragraph} key={id} selects={selects}/>
             })}
 
+            <div style={{display:'flex',justifyContent:'flex-end'}}>
+                <div className='single_button filter_button' style={{marginRight:'5px'}}><i className="fa fa-solid fa-filter"></i> </div>
+                <div className='single_button search_button'> Search </div>
+            </div>
+
         </div>
     );
 }

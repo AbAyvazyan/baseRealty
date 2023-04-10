@@ -21,7 +21,6 @@
 
 .house_card_about{
     width: 65%;
-    height: 100%;
     padding: 33px;
     box-sizing: border-box;
 }
@@ -30,4 +29,123 @@
     display: flex;
     align-items: center;
     font-size: 30px;
+}
+
+.house_card_info {
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.house_card_main_text_part{
+    display:flex;
+    justify-content:space-between;
+    margin:3vh 0;
+}
+
+
+.house_card_location_text{
+    font-size:30px;
+}
+
+@media only screen and (max-width: 1410px) {
+    .house_card_info{
+        font-size:17px;
+    }
+}
+
+@media only screen and (max-width: 1265px){
+
+    .house_card_info{
+        font-size:14px;
+    }
+
+    .house_card_about_price{
+        font-size: 25px;
+    }
+
+    .house_card_location_text{
+        font-size:25px;
+    }
+}
+
+@media only screen and (max-width: 1155px){
+
+    .house_card{
+        flex-wrap: wrap;
+        height: 700px;
+    }
+
+    .house_card_about{
+        width: 100%;
+    }
+
+
+    .house_card_image{
+        height: 50%;
+        width: 100%;
+    }
+
+    .house_card_info{
+        font-size:20px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1055px){
+    .house_card_info{
+        font-size:14px;
+    }
+}
+
+
+@media only screen and (max-width: 630px){
+
+    .house_card{
+        height: 650px;
+    }
+
+    .house_card_info{
+        font-size:10px;
+    }
+
+    .house_card_about_price{
+        font-size: 20px;
+    }
+
+    .house_card_location_text{
+        font-size:20px;
+    }
+
+    .house_card_just_text{
+        font-size:13px;
+    }
+
+    .house_card_code_part{
+        font-size:14px;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .house_card_main_text_part{
+        flex-wrap: wrap;
+    }
+    .house_card_about{
+        padding: 0;
+    }
+
+    .house_card{
+        width: 100%;
+        padding: 15px;
+        height: 600px;
+    }
+
+    .house_card_info{
+        font-size: 10px;
+    }
+
+    .house_card_image{
+        height: 40%;
+    }
 }
