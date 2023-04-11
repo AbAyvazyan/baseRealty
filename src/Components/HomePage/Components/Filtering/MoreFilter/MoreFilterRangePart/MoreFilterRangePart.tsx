@@ -8,8 +8,8 @@ type TMoreFilterRange = {
 
 const MoreFilterRangePart:FC<TMoreFilterRange> = ({name}) =>{
     return(
-        <div className={'more_filter_range_part'}>
-            <span>{name}</span>
+        <div className={'more_filter_range_part  mf_all'}>
+            <div>{name}</div>
             <div className="more_filter_from_to">
                 <div>
                     <input

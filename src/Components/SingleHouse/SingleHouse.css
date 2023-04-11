@@ -75,3 +75,267 @@
     padding: 50px 70px;
     justify-items: center;
 }
+
+.single_house_heading{
+    width:100%;
+    padding: 0 10%;
+    display:flex;
+    justify-content:space-between
+}
+
+.single_house_price{
+    font-size:27px
+}
+
+
+
+@media only screen and (max-width: 1450px) {
+    .single_house_heading{
+        gap: 50px;
+        padding: 0 5%;
+    }
+
+    .single_house_options > div:first-child{
+        gap: 20px;
+    }
+
+    .single_house_options{
+        padding: 0 30px;
+        gap: 35px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .single_house_options{
+        font-size: 19px;
+    }
+
+    .single_house_price{
+        font-size:25px
+    }
+
+}
+
+
+@media only screen and (max-width: 1145px) {
+
+    .single_house_options{
+        font-size: 16px;
+    }
+
+    .single_house_price{
+        font-size:23px
+    }
+
+    .single_house_heading{
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 1040px) {
+
+    .single_house_options{
+        font-size: 15px;
+    }
+
+    .single_house_price{
+        font-size:22px
+    }
+
+    .single_house_heading{
+        font-size: 20px;
+    }
+
+    .single_house_options > div:first-child{
+        gap: 10px;
+    }
+
+    .single_house_options{
+        padding: 0 20px;
+    }
+
+}
+
+
+@media only screen and (max-width: 950px) {
+
+    .single_house{
+        flex-wrap: wrap;
+    }
+
+    .single_house article{
+        width: 100%;
+    }
+
+    .single_house aside{
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    .single_house_options{
+        font-size: 19px;
+    }
+
+    .single_house_options > div:first-child{
+        gap: 20px;
+    }
+
+    .single_house_price{
+        font-size:25px
+    }
+
+    .single_house_heading{
+        font-size: 23px;
+    }
+
+}
+
+@media only screen and (max-width: 830px) {
+
+    .single_house_options{
+        font-size: 16px;
+    }
+
+    .single_house_options > div:first-child{
+        gap: 13px;
+    }
+
+    .single_house_price{
+        font-size:20px
+    }
+
+    .single_house_heading{
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 690px) {
+
+    .single_house_options{
+        font-size: 14px;
+    }
+
+    .single_house_options > div:first-child{
+        gap: 10px;
+    }
+
+    .single_house_price{
+        font-size:18px
+    }
+
+    .single_house_heading{
+        font-size: 18px;
+    }
+
+    .single_house_advantages_part{
+        grid-template-columns:repeat(4,1fr);
+        padding:35px 55px;
+    }
+
+}
+
+
+@media only screen and (max-width: 630px) {
+
+    .single_house_options {
+        font-size: 12px;
+    }
+
+    .single_house_options > div:first-child {
+        gap: 5px;
+    }
+
+    .single_house_price {
+        font-size: 16px
+    }
+
+    .single_house_heading {
+        font-size: 16px;
+    }
+
+    .single_house_advantages_part {
+        grid-template-columns:repeat(3, 1fr);
+        padding: 20px 40px;
+    }
+
+}
+
+@media only screen and (max-width: 540px) {
+
+    .single_house_options {
+        flex-wrap: wrap;
+        height: 120px;
+        padding: 10px 20px;
+        font-size: 15px;
+        gap: 0;
+    }
+
+    .single_house_options > div:first-child {
+        justify-content: space-between;
+        width: 100%;
+        order: 2;
+    }
+
+    .single_house_price {
+        font-size: 25px;
+        order:1;
+    }
+
+    .single_house_heading {
+        flex-wrap: wrap;
+        gap: 17px;
+        font-size: 18px
+    }
+
+    .single_house_advantages_part {
+        grid-template-columns:repeat(3, 1fr);
+        padding: 20px 40px;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    .single_house_options {
+        padding: 10px ;
+        font-size: 13px;
+    }
+
+
+    .single_house_price {
+        font-size: 20px
+    }
+
+    .single_house_heading {
+        font-size: 17px
+    }
+
+    .single_house_advantages_part {
+        grid-template-columns:repeat(3, 1fr);
+        padding: 20px 10px;
+    }
+
+}
+
+@media only screen and (max-width: 370px) {
+
+    .single_house_options {
+        padding: 10px 5px ;
+        font-size: 11px;
+    }
+
+
+    .single_house_price {
+        font-size: 17px
+    }
+
+
+    .single_house_advantages_part {
+        grid-template-columns:repeat(2, 1fr);
+        padding: 20px 10px;
+    }
+
+}

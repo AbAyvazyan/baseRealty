@@ -2,8 +2,8 @@
 
 const SingleCheck = () =>{
     return(
-        <div className={'mf_single_check'}>
-            <span>Lift</span>
+        <div className={'mf_single_check mf_all'}>
+            <div>Lift</div>
             <div>
                 <label>
                     <input type="checkbox" style={{width:'30px',height:'30px'}}/>

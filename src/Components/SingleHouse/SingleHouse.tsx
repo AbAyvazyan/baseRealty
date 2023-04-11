@@ -31,7 +31,7 @@ const SingleHouse = () =>{
 
             <div className={'single_house'}>
                 <article>
-                    <h3 style={{width:'100%',padding:' 0 10%',display:'flex',justifyContent:'space-between'}}><span>40, 3 Mesrop Mashtots Ave, Yerevan 0002</span><span>Code:{houseCode}</span></h3>
+                    <h3 className={'single_house_heading'}><span>40, 3 Mesrop Mashtots Ave, Yerevan 0002</span><span>Code:{houseCode}</span></h3>
                     <div style={{width:'100%',height:'600px',padding:'33px 0',marginBottom:'5vh'}}>
                         <SingleHouseSlider/>
                     </div>
@@ -45,7 +45,7 @@ const SingleHouse = () =>{
                             <span><FontAwesomeIcon icon={faBath } /> 3</span>
                         </div>
                         <div>
-                            <span style={{fontSize:'27px'}}>Price: $3.333.333</span>
+                            <span className={'single_house_price'}>Price: $3.333.333</span>
                         </div>
                     </div>
 

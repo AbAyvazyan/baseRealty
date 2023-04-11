@@ -19,3 +19,45 @@
     padding: 1vh 10px;
     font-size: 25px;
 }
+
+
+.little_house_main_heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+.little_house_main_heading > span:last-child{
+    margin-left: 15px;
+}
+
+
+@media only screen and (max-width: 1250px) {
+
+    .little_house_main_heading > span:first-child{
+        font-size: 20px;
+    }
+
+    .single_house{
+        padding: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 1130px) {
+
+    .little_house_main_heading > span:first-child{
+        font-size: 17px;
+    }
+
+    .little_house_info > p:last-child{
+        font-size: 20px;
+    }
+
+    .little_house_info{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
