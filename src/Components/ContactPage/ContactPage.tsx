@@ -47,8 +47,8 @@ const ContactPage = () =>{
                             </div>
                     </div>
 
-
                     <div className={'contact_map_part'}>
+                        <h3 style={{margin:'0 0 5vh 0',textAlign:'center',width:'100%'}}>Our Location</h3>
                         <YandexMap address="улица Хачатура Абовяна, 3/1" />
                     </div>
             </div>

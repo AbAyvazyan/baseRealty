@@ -92,3 +92,100 @@
     margin: 10vh 0 5vh;
 }
 
+@media screen and (max-width: 1320px) {
+    .contact_about_social_part{
+        font-size: 14px;
+        gap: 0;
+    }
+
+    .contact_about_tel_part{
+        font-size: 15px;
+        gap: 5px;
+    }
+
+    .contact_about_part{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .contact_about_tel_part a{
+        margin: 0;
+    }
+
+    .contact_about_social_part div{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .contact_form_part{
+        flex-wrap: wrap;
+    }
+
+    .contact_about_part h5{
+        text-align: center;
+    }
+
+    .contact_form_part > div{
+        width: 100%;
+    }
+
+    .contact_about_part{
+        order: 1;
+    }
+
+    .contact_form_input{
+        order: 2;
+    }
+
+    .contact_form_input form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact_about_social_part > div{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .contact_part{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .contact_part{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .contact_about_social_part{
+        flex-wrap: wrap;
+    }
+
+    .contact_about_social_part > div{
+        width: 100%;
+        margin: 1vh 0;
+    }
+
+    .contact_about_part >div{
+        margin: 3vh 0;
+    }
+
+    .contact_about_tel_part{
+        flex-wrap: wrap;
+    }
+
+    .contact_form_input input {
+        width: 100%;
+    }
+
+    .contact_form_input textarea {
+        width: 100%;
+    }
+
+    }
