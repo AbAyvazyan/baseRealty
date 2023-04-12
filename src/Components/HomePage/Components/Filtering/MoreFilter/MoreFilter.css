@@ -200,7 +200,7 @@
 
 @media only screen and (max-width: 360px) {
     .more_filter_content{
-        padding: 10px 15px 10px 10px;
+        padding: 10px 20px 10px 10px;
     }
 
     .multiple_house_types_checks{
@@ -208,6 +208,6 @@
     }
 
     .mf_button_part button{
-        font-size: 13px;
+        font-size: 12px;
     }
 }

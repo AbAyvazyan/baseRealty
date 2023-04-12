@@ -10,6 +10,7 @@ import SalePage from "./Components/SalePage";
 import RentPage from "./Components/RentPage";
 import ContactPage from "./Components/ContactPage";
 import SingleHouse from "./Components/SingleHouse";
+import Login from "./Login";
 
 
 const routes = [
@@ -32,6 +33,10 @@ const routes = [
     {
         path:'/house/:code',
         component:SingleHouse
+    },
+    {
+        path:'/login',
+        component:Login
     },
 ]
 
