@@ -10,50 +10,47 @@ export type Tstate = {
     holder:string;
     fromTo:boolean;
     isOpen:boolean;
-    models?:Tmodels[]
+    models?:Tmodels[];
+    singleCheck:boolean;
+
 }
 
 const initialState:Tstate[] = [
     {
         _id:uuid(),
-        holder:'Apartment',
+        holder:'Property Type',
         models:[
             {
-                title:'Newly Built',
+                title:'Apartment',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'House',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Commercial',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Land',
                 isChecked:false,
                 _id:uuid()
             }
         ],
         fromTo:false,
-        isOpen:false
-    },
-    {
-        _id:uuid(),
-        holder:'Rooms',
-        fromTo:true,
-        isOpen:false
-
-    },
-    {
-        _id:uuid(),
-        holder:'Floor',
-        fromTo:true,
-        isOpen:false
-
-    },
-    {
-        _id:uuid(),
-        holder:'Price',
-        fromTo:true,
-        isOpen:false
-
+        isOpen:false,
+        singleCheck:false
     },
     {
         _id:uuid(),
         holder:'Place',
         models:[
             {
-                title:'Arabkir',
+                title:'Yerevan',
                 isChecked:false,
                 _id:uuid()
             },
@@ -63,15 +60,135 @@ const initialState:Tstate[] = [
                 _id:uuid()
             },
             {
-                title:'Ajapnyak',
+                title:'Arabkir',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Achapnyak',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Avan',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Qanaqer-Zeytun',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Davtashen',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Erebuni',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Malatia-Sebastia',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Nor-Nork',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Norq-Marash',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Shengavit',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'Nubarashen',
                 isChecked:false,
                 _id:uuid()
             }
         ],
         fromTo:false,
-        isOpen:false
+        isOpen:false,
+        singleCheck:false
 
     },
+    {
+        _id:uuid(),
+        holder:'Rooms',
+        models:[
+            {
+                title:'1',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'2',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'3',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'4',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'5',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'6',
+                isChecked:false,
+                _id:uuid()
+            },
+            {
+                title:'7+',
+                isChecked:false,
+                _id:uuid()
+            }
+        ],
+        fromTo:false,
+        isOpen:false,
+        singleCheck:false
+    },
+    {
+        _id:uuid(),
+        holder:'Area',
+        fromTo:true,
+        isOpen:false,
+        singleCheck:false
+
+    },
+    {
+        _id:uuid(),
+        holder:'Price',
+        fromTo:true,
+        isOpen:false,
+        singleCheck:false
+
+    },
+    {
+        _id:uuid(),
+        holder:'Price',
+        fromTo:false,
+        isOpen:false,
+        singleCheck:true
+
+    },
+
 ]
 
 const InputFilterField = () =>{

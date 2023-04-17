@@ -5,7 +5,7 @@
 .input_filtering_field{
     z-index: 100;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    grid-template-columns: 2fr repeat(5,1fr);
     height: 65px;
 }
 

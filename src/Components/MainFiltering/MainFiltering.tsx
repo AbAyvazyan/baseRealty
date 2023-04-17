@@ -2,74 +2,78 @@ import './MainFiltering.css'
 import AccordionSelect from "./AccordionSelect/AccordionSelect";
 import FromToSelect from "./FromToSelect/FromToSelect";
 import {Component} from "react";
+import uuid from "react-uuid";
 
 const filterList = [
     {
         id:1,
+        paragraph:'Property Type',
+        selects:[
+            'Apartment',
+            'House',
+            'Commercial',
+            'Land'
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:2,
         paragraph:'Location',
         selects:[
-            'All',
+            'Yerevan',
+            'Kentron',
             'Arabkir',
-            'Charbax',
+            'Achapnyak',
+            'Avan',
+            'Qanaqer-Zeytun',
+            'Davtashen',
+            'Erebuni',
+            'Malatia-Sebastia',
+            'Nor-Nork',
+            'Norq-Marash',
+            'Shengavit',
+            'Nubarashen',
         ],
         component:AccordionSelect
     },
      {
-         id:2,
-         paragraph:'Price',
-         component:FromToSelect
+         id:3,
+         paragraph:'Rooms',
+         selects:[
+             '1',
+             '2',
+             '3',
+             '4',
+             '5',
+             '6',
+             '7+',
+         ],
+         component:AccordionSelect
      },
-    {
-        id:3,
-        paragraph:'Construction Type',
-        selects:[
-            'All',
-            'Stone',
-            'Panels',
-            'Bricks',
-            'Cassette',
-            'Wooden',
-        ],
-        component:AccordionSelect
-    },
+
     {
         id:4,
-        paragraph:'New Construction',
-        selects:[
-            'All',
-            'No',
-            'Yes'
-        ],
-        component:AccordionSelect
-    },
-    {
-        id:5,
-        paragraph:'Elevetor',
-        selects:[
-            'All',
-            'Available',
-            'Not Available'
-        ],
-        component:AccordionSelect
-    },
-    {
-        id:6,
-        paragraph:'FloorArea',
+        paragraph:'Area',
         component:FromToSelect
     },
     {
-        id:7,
-        paragraph:'Number of Rooms',
+        id:5,
+        paragraph:'Price',
+        component:FromToSelect
+    },
+    {
+        id:6,
+        paragraph:'Newly Built',
         selects:[
-            'All',
-            '1',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6+'
+            'Yes',
+            'No',
         ],
         component:AccordionSelect
+    },
+    {
+        id:7,
+        paragraph:'Floor',
+        component:FromToSelect
     },
     {
         id:8,
@@ -89,28 +93,37 @@ const filterList = [
     },
     {
         id:10,
-        paragraph:'Furniture',
+        paragraph:'Building Floors',
+        component:FromToSelect
+    },
+    {
+        id:11,
+        paragraph:'Building Type',
         selects:[
+            'Stone',
+            'Monolith',
+            'Panel',
             'All',
-            'Available',
-            'Not Available',
-            'Partial Furniture',
-            'By agreement'
         ],
         component:AccordionSelect
     },
     {
-        id:11,
+        id:12,
         paragraph:'Renovation',
         selects:[
-            'All',
-            'No Renovation',
-            'Not Old Renovation',
-            'Partial Renovation',
-            'Cosmetic Renovation',
-            'Euro Renovation',
-            'Designer Renovation',
-            'Major Renovation',
+            'Zero Condition',
+            'Newly repaired',
+            'Good',
+            'Old Renovation',
+        ],
+        component:AccordionSelect
+    },
+    {
+        id:12,
+        paragraph:'List',
+        selects:[
+            'Yes',
+            'No',
         ],
         component:AccordionSelect
     },
@@ -126,7 +139,6 @@ export default function MainFiltering() {
             })}
 
             <div style={{display:'flex',justifyContent:'flex-end'}}>
-                <div className='single_button filter_button' style={{marginRight:'5px'}}><i className="fa fa-solid fa-filter"></i> </div>
                 <div className='single_button search_button'> Search </div>
             </div>
 

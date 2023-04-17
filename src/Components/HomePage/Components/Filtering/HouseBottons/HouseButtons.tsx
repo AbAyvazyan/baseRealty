@@ -17,6 +17,11 @@ const houseActionTypes:ThouseAction[]=[
         position: 2,
         type:'Rent',
         active: false
+    },
+    {
+        position: 3,
+        type:'Daily Wage',
+        active: false
     }
 ]
 

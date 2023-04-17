@@ -15,6 +15,7 @@ interface TSelect {
   openModalHandler: (_id: string | undefined) => void;
   _id: string;
   isOpen: boolean;
+  singleCheck:boolean
 }
 
 const MultipleSelectCheckmarks: FC<TSelect> = ({
@@ -24,6 +25,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
   isOpen,
   fromTo,
   openModalHandler,
+  singleCheck,
 }) => {
   const [checkboxesModal, setCheckboxesModal] = useState<Tmodels[]>();
   const [Chosen, setChosen] = useState<string[]>([]);
@@ -74,7 +76,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
 
   return (
     <>
-      <div
+      {!singleCheck ? <div
         className={"multiple_select"}
         onClick={(e) => {
           e.stopPropagation();
@@ -110,10 +112,11 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
           >
             {!fromTo &&
               checkboxesModal &&
-              checkboxesModal.map(({ title, _id, isChecked }) => {
+              checkboxesModal.map(({ title, _id, isChecked },index) => {
                 return (
                   <div key={_id} className="checkobox_modal_selects">
-                    <label className="form-control">
+                    {/*{state_squares}*/}
+                    <label className="form-control ">
                       <input
                         value={title}
                         type="checkbox"
@@ -151,7 +154,16 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
             )}
           </div>
         ) : null}
-      </div>
+
+
+      </div> :
+
+          <div className={'single_check'}>
+            <label>
+              <input type="checkbox"/> <span>Newly Built</span>
+            </label>
+          </div>
+      }
     </>
   );
 };

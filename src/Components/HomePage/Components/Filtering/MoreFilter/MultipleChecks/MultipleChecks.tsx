@@ -6,39 +6,20 @@ const MultipleChecks = () =>{
             <div>House Type</div>
             <div className={'multiple_house_types_checks'}>
                 <label>
-                    <input type="checkbox"/>New
+                    <input type="checkbox"/>Stone
                 </label>
 
                 <label>
-                    <input type="checkbox"/>New
+                    <input type="checkbox"/>Monolith
                 </label>
 
                 <label>
-                    <input type="checkbox"/>New
+                    <input type="checkbox"/>Panel
                 </label>
 
-                <label>
-                    <input type="checkbox"/>New
-                </label>
 
                 <label>
-                    <input type="checkbox"/>New
-                </label>
-
-                <label>
-                    <input type="checkbox"/>New
-                </label>
-
-                <label>
-                    <input type="checkbox"/>New
-                </label>
-
-                <label>
-                    <input type="checkbox"/>New
-                </label>
-
-                <label>
-                    <input type="checkbox"/>New
+                    <input type="checkbox"/>Other
                 </label>
             </div>
         </div>

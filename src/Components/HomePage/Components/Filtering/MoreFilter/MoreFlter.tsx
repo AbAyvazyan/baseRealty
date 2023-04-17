@@ -24,19 +24,44 @@ const MoreFilter:FC<TMoreFilter> = ({closeModalHandler}) =>{
                 </div>
 
                 <div className={'more_filter_content'}>
-                        <MoreFilterRangePart name={'Area'}/>
+                        <div className={'mf_all'}>
+                            <span>Street</span>
+
+                            <div>
+                                <input type="text" placeholder={'Street'}/>
+                            </div>
+                        </div>
                         <MoreFilterRangePart name={'Floor'}/>
                         <MoreFilterRangePart name={'Building Floors'}/>
 
                         <MoreFilterButtonGroup/>
-                        <MoreFilterButtonGroup/>
-                        <MoreFilterButtonGroup/>
 
-                        <SingleCheck/>
 
                         <MultipleChecks/>
 
-                        <SingleCheck/>
+
+                    <div className={'multiple_checks mf_all'}>
+                        <div>Renovation</div>
+                        <div className={'multiple_house_types_checks'}>
+                            <label>
+                                <input type="checkbox"/>Zero Condition
+                            </label>
+
+                            <label>
+                                <input type="checkbox"/>Newly repaired
+                            </label>
+
+                            <label>
+                                <input type="checkbox"/>Good
+                            </label>
+
+                            <label>
+                                <input type="checkbox"/>Old Renovation
+                            </label>
+                        </div>
+                    </div>
+
+
                         <SingleCheck/>
                     </div>
                 </div>

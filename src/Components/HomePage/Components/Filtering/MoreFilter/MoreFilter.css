@@ -40,7 +40,7 @@
 
 .more_filter_from_to input{
     width: 70px;
-    margin: 0 5px;
+    margin: 0 5px 0 0;
 }
 
 
@@ -99,6 +99,7 @@
 .more_filter_from_to > div:first-child{
     display: flex;
 }
+
 
 @media only screen and (max-width: 1650px) {
     .more_filter_content {

@@ -23,8 +23,9 @@
     border: none!important;
     flex-direction: column;
     z-index: 500;
-    max-height: 200px;
+    max-height: 240px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .multiple_select_modal >div{
@@ -38,7 +39,6 @@
 .checkobox_modal_selects{
     width: 300px;
     height: 40px;
-    margin: 15px 0 0;
 
     border-bottom: 1px solid grey;
     padding: 0!important;
@@ -55,6 +55,13 @@
     border: none;
     border-radius: 0;
     cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.state_squares{
+    padding-left: 60px;
 }
 
 .multiple_select_modal > div:last-child{
@@ -76,4 +83,23 @@
     border: 1px solid rgba(122,122,122,0.5);
     outline: none;
     padding: 0 10px;
+}
+
+.single_check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single_check label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.single_check label input{
+    height: 17px;
+    width: 17px;
 }
