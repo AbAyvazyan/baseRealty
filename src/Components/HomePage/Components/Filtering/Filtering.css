@@ -1,7 +1,6 @@
 .home_page_filtering {
   position: absolute;
   width: 50%;
-  height: 170px;
   left: 50%;
   bottom: 50%;
   right: -50%;
@@ -45,4 +44,29 @@
 
 .filter_button:hover {
   background-color:rgb(101, 117, 40) ;
+}
+
+
+@media screen and (max-width:1100px) {
+  .home_page_filtering{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:810px) {
+  .home_page_filtering{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:710px) {
+  .home_page_filtering{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .home_page_filtering{
+    width: 95%;
+  }
 }

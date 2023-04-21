@@ -49,3 +49,29 @@
     outline: none;
     background-color: transparent;
 }
+
+@media screen and (max-width:600px) {
+    .house_types li{
+        width: 70px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .codeSearchLi{
+        width: 115px!important;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .house_types li{
+        width: 55px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+
+
+    .codeSearchLi{
+        width: 100px!important;
+    }
+}

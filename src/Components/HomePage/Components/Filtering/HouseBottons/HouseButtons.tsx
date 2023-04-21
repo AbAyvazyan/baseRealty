@@ -20,7 +20,7 @@ const houseActionTypes:ThouseAction[]=[
     },
     {
         position: 3,
-        type:'Daily Wage',
+        type:'Daily',
         active: false
     }
 ]

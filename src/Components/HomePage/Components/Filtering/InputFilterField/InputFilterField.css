@@ -6,7 +6,7 @@
     z-index: 100;
     display: grid;
     grid-template-columns: 2fr repeat(5,1fr);
-    height: 65px;
+    min-height: 65px;
 }
 
 .input_filtering_field div{
@@ -30,10 +30,17 @@
     border-right: none;
 }
 
-@media screen and (max-width:650px) {
+
+@media screen and (max-width:600px) {
     .input_filtering_field{
-        grid-template-columns: repeat(auto-fill, 100px );
-        height: auto;
+        grid-template-columns:repeat(1,1fr);
+    }
+
+    .input_filtering_field > div:first-child{
+        border-bottom-left-radius: 0;
+    }
+
+    .input_filtering_field >div:last-child{
+        border-bottom-right-radius: 0;
     }
 }
-

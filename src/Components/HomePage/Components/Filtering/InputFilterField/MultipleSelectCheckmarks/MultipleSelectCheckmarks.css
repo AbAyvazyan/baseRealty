@@ -17,6 +17,7 @@
 .multiple_select_modal{
     position: absolute;
     top: 70px;
+    width: 250px;
     left: 0;
     border-radius: 4px;
     padding: 10px!important;
@@ -37,7 +38,7 @@
 }
 
 .checkobox_modal_selects{
-    width: 300px;
+    width: 250px;
     height: 40px;
 
     border-bottom: 1px solid grey;
@@ -93,13 +94,74 @@
 
 .single_check label{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .single_check label input{
     height: 17px;
     width: 17px;
 }
+
+@media screen and (max-width:800px) {
+
+    .multiple_select_modal{
+        width: 200px!important;
+    }
+
+    .from_to_modal{
+        width: 180px;
+    }
+
+    .from_to_modal input{
+        width: 60px;
+        font-size: 11px;
+    }
+
+    .checkobox_modal_selects{
+        width: 200px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .multiple_select > span{
+        font-size: 15px;
+    }
+
+    .single_check > label > span{
+        font-size: 13px;
+    }
+
+    .multiple_select{
+        height: 40px;
+        position: unset;
+    }
+
+    .multiple_select_modal{
+        top: 85%;
+    }
+
+    .single_check{
+        justify-content: flex-start;
+        height: 40px;
+    }
+
+    .multiple_select_modal{
+        width: 250px!important;
+    }
+
+    .from_to_modal{
+        width: 150px;
+    }
+
+
+    .checkobox_modal_selects{
+        width: 250px;
+    }
+}
+
