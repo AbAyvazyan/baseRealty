@@ -52,6 +52,7 @@ const initialState:Tstate[] = [
             {
                 title:'Yerevan',
                 isChecked:false,
+                state:true,
                 _id:uuid()
             },
             {

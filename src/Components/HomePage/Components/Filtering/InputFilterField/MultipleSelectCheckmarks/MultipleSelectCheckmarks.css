@@ -42,7 +42,7 @@
     height: 40px;
 
     border-bottom: 1px solid grey;
-    padding: 0!important;
+    padding: 10px!important;
 }
 
 
@@ -62,7 +62,10 @@
 }
 
 .state_squares{
-    padding-left: 60px;
+    width: 250px;
+    height: 40px;
+    border-bottom: 1px solid grey;
+    padding-left: 25px!important;
 }
 
 .multiple_select_modal > div:last-child{
@@ -124,6 +127,12 @@
 
     .checkobox_modal_selects{
         width: 200px;
+        padding-left: 3px!important;
+    }
+
+    .state_squares{
+        width: 200px;
+        padding-left: 10px!important;
     }
 
 }
@@ -131,6 +140,10 @@
 @media screen and (max-width:600px) {
     .multiple_select > span{
         font-size: 15px;
+    }
+
+    .multiple_select_modal{
+        width: 100%!important;
     }
 
     .single_check > label > span{
@@ -151,14 +164,13 @@
         height: 40px;
     }
 
-    .multiple_select_modal{
-        width: 250px!important;
-    }
-
     .from_to_modal{
-        width: 150px;
+        width: 100%;
     }
 
+    .from_to_modal input{
+        width: 48%;
+    }
 
     .checkobox_modal_selects{
         width: 250px;

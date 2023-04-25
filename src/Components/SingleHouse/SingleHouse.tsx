@@ -9,6 +9,8 @@ import SingleHouseSlider from "./SingleHouseSlider/SingleHouseSlider";
 import YandexMap from "../ContactPage/OurLocation/OurLocation";
 import * as React from "react";
 import LittleHouseCard from "./LittleHouseCard/LittleHouseCard";
+import HouseAdvantages from "./HouseAdvantages/HouseAdvantages";
+import MapComponent from "../HouseMap/HouseMap";
 
 
 
@@ -38,11 +40,17 @@ const SingleHouse = () =>{
 
                     <div className={'single_house_options'}>
                         <div>
-                            <span><FontAwesomeIcon icon={faBed} /> 3 rooms</span>
-                            <span><FontAwesomeIcon icon={faHome} /> 333 M²</span>
-                            <span><FontAwesomeIcon icon={faBuilding} /> 3/5</span>
-                            <span><FontAwesomeIcon icon={faArrowsAltV } /> 3m</span>
-                            <span><FontAwesomeIcon icon={faBath } /> 3</span>
+                            <div className={'single_house_option_icons'}>
+                                <span><FontAwesomeIcon icon={faBed} /> 3 rooms</span>
+                                <span><FontAwesomeIcon icon={faHome} /> 333 M²</span>
+                                <span><FontAwesomeIcon icon={faBuilding} /> 3/5</span>
+                                <span><FontAwesomeIcon icon={faArrowsAltV } /> 3m</span>
+                                <span><FontAwesomeIcon icon={faBath } /> 3</span>
+                            </div>
+                            <div>
+                                <span>Building Type : Monolith</span>
+                                <span>Renovation : Newly repaired</span>
+                            </div>
                         </div>
                         <div>
                             <span className={'single_house_price'}>Price: $3.333.333</span>
@@ -50,32 +58,17 @@ const SingleHouse = () =>{
                     </div>
 
 
-                    <div  className={'single_house_advantages'}>
-                        <h4 style={{textAlign:'center',marginTop:'5vh'}}>More Information</h4>
-                        <div className={'single_house_advantages_part'}>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                            <span><FontAwesomeIcon icon={faCheck} style={{color:'rgb(122,141,51)'}}/> Balcon</span>
-                        </div>
+                   <HouseAdvantages sectionName={'FACILITIES'} advantages={['Gas','Electricity','Heating','Internet','Hot Water','Sewerage',' Canalization','Water']}/>
+                   <HouseAdvantages sectionName={'More Information'} advantages={['FURNITURE','SUNNY','SUNNY','VIEW','OPEN BALCONY','EQUIPMENT','  BUS STATION','SCHOOL']}/>
+
+
+                    <div className={'number_for_contact'}>
+                            <div><input type="text" placeholder={'Your Number'}/></div>
+                            <div><div>Contact Me</div></div>
                     </div>
 
-
-
                     <div className={'single_house_map_part'}>
-                        <YandexMap address={'40, 3 Mesrop Mashtots Ave, Yerevan 0002'}/>
+                        <MapComponent address={'Anastas Mikoyan 2/2'}/>
                     </div>
 
                 </article>

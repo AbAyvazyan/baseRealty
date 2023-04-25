@@ -5,6 +5,7 @@ import { ChangeEvent, FC, useEffect, useRef, useState } from "react";
 export type Tmodels = {
   title: string;
   isChecked: boolean;
+  state?:boolean,
   _id: string;
 };
 
@@ -112,9 +113,9 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
           >
             {!fromTo &&
               checkboxesModal &&
-              checkboxesModal.map(({ title, _id, isChecked },index) => {
+              checkboxesModal.map(({ title, _id, isChecked,state },index) => {
                 return (
-                  <div key={_id} className="checkobox_modal_selects">
+                  <div key={_id} className={state?'checkobox_modal_selects':'state_squares'}>
                     {/*{state_squares}*/}
                     <label className="form-control ">
                       <input

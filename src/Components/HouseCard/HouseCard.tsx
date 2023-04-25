@@ -1,6 +1,6 @@
 import './HouseCard.css'
 
-import { faStairs,faHouse} from '@fortawesome/free-solid-svg-icons';
+import { faStairs,faHouse,faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import {FC} from "react";
@@ -64,6 +64,8 @@ const HouseCard:FC<ThouseCard> = (
                     <span><i className="fa fa-solid fa-filter"></i> Total space {house_space} M²</span>
                 </div>
             </div>
+
+
         </div>
     )
 }

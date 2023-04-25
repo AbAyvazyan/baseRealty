@@ -10,6 +10,7 @@
     display: flex;
     border:1px solid  rgb(223, 223, 223);
     flex-wrap: nowrap;
+    position: relative;
 }
 
 .house_card_image{

@@ -6,15 +6,36 @@
 }
 
 .house_posting > div{
-    width: 100%;
-    margin: 2vh 0;
+    margin: 2vh auto;
 }
 
+.posting_guyq{
+    width: 95%;
+    display: flex;
+    gap: 30px;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 50px;
+}
+
+.line{
+    width: 1px;
+    height: 100%;
+    background-color: black;
+}
+
+.div_radios > span:first-child{
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
 
 
 .div_radios > div{
     display: flex;
     gap: 15px;
+    margin-top: 2vh;
 }
 
 .div_radios div > label{
@@ -29,17 +50,22 @@
 }
 
 .div_selects > div{
-    display: flex;
-    gap: 15px;
+    width: 50%;
 }
 
-.div_inputs > div{
-    display: flex;
-    gap: 15px;
+.div_selects > div input{
+    width: 75%;
+    height: 40px;
+}
+
+.div_selects > div select{
+    width: 75%;
+    height: 40px;
 }
 
 .div_checkboxes{
     display: flex;
+    width: 50%;
     flex-wrap: wrap;
 }
 
@@ -60,7 +86,7 @@
 }
 
 .file_input_part{
-    width: 100%;
+    width: 30%;
     height: 150px;
 }
 
@@ -92,4 +118,97 @@
     align-items: center;
     font-weight: bold;
     cursor: pointer;
+}
+
+.div_textarea textarea{
+    width: 100%;
+    min-height: 250px;
+    max-height: 500px;
+    padding: 5px;
+}
+
+.nkaragrutyun_holder{
+    display: flex;
+    gap: 50px;
+}
+
+.location_part_posting{
+    min-height: 350px;
+    display: flex;
+    width: 95%;
+    border: 1px solid black;
+    padding: 50px;
+}
+
+.location_part_posting > div:first-child{
+    width: 60%;
+}
+
+.location_part_posting > div:last-child{
+    width: 40%!important;
+}
+
+
+.nkaragrutyun_holder{
+    min-height: 350px;
+    display: flex;
+    width: 95%;
+    border: 1px solid black;
+    padding: 50px;
+}
+
+.nkaragrutyun_holder > div{
+    width: 100%;
+}
+
+.div_textarea{
+    width: 90%;
+    margin-top: 2vh;
+}
+
+.nkaragrutyun_himnakan > div{
+    margin: 5vh 0;
+}
+
+.hasce{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.hasce input{
+    width: 30%;
+    margin-right: 200px;
+    height: 40px;
+}
+
+.information_posting{
+    width: 95%;
+    display: flex;
+    gap: 30px;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 50px;
+}
+
+.images_posting{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 50px;
+}
+
+.images_posting > div{
+    width: 100%;
+    display: flex;
+}
+
+.images_shower{
+    width: 80%;
+    height: 100%;
+    border: 1px solid black;
+    overflow-x: auto;
 }

@@ -8,6 +8,10 @@ const HousePosting = () =>{
                <input type="text" placeholder={'username'}/>
            </div>
 
+
+
+           <div className={'posting_guyq'}>
+
            <div className={'div_radios'}>
                <span>ԳՈՒՅՔԻ ՆԿԱՐԱԳՐՈՒԹՅՈՒՆԸ</span>
                <div>
@@ -20,15 +24,23 @@ const HousePosting = () =>{
                        <input type="radio"/>
                        Վարձ
                    </label>
+
+                   <label>
+                       <input type="radio"/>
+                       Օրավարձ
+                   </label>
+
                </div>
            </div>
+
+               <div className={'line'}></div>
 
 
            <div  className={'div_radios'}>
                <span>ԳՈՒՅՔԻ ՏԻՊԸ</span>
                <div>
                    <label>
-                        <input type="radio"/>
+                       <input type="radio"/>
                        Բնակարան
                    </label>
 
@@ -49,237 +61,216 @@ const HousePosting = () =>{
                </div>
            </div>
 
-
-           <div className={'div_selects'}>
-               <div>
-                    <span>ՄԱՐԶ</span>
-                    <select>
-                        <option value="Yerevan">Երևան</option>
-                    </select>
-               </div>
-
-               <div>
-                   <span>ՀԱՄԱՅՆՔ</span>
-                   <select>
-                       <option value="Arabkir">Արաբկիր</option>
-                   </select>
-               </div>
-           </div>
-
-           <div className={'div_inputs'}>
-               <span>ՀԱՍՑԵ</span>
-               <div>
-                   <input type="text" placeholder={'Փողոց'}/>
-                   <input type="text" placeholder={'շենք'}/>
-                   <input type="text" placeholder={'Բնակարան'}/>
-               </div>
-           </div>
-
-           <div className={'div_inputs'}>
-               <span>ԳԻՆ</span>
-               <div>
-                   <input type="text" placeholder={'price'}/>
-               </div>
-           </div>
-
-
-
-           <div className={'div_selects'}>
-               <div>
-                   <span>ՀԱՐԿ</span>
-                   <select>
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                       <option value="6">6</option>
-                   </select>
-               </div>
-
-               <div>
-                   <span>ՀԱՐԿԱՅՆՈՒԹՅՈՒՆ</span>
-                   <select>
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                       <option value="6">6</option>
-                   </select>
-               </div>
-           </div>
-
-
-           <div className={'div_inputs'}>
-               <span>ԸՆԴՀԱՆՈՒՐ ՄԱԿԵՐԵՍ</span>
-               <div>
-                   <input type="number" placeholder={'Ք.Մ'}/>
-               </div>
-           </div>
-
+               <div className={'line'}></div>
 
            <div className={'div_radios'}>
-               <span>ՍԵՆՅԱԿՆԵՐ</span>
-               <div >
+               <span>Կարգավիճակ</span>
+               <div>
                    <label>
                        <input type="radio"/>
-                       1
+                       Ակտիվ
                    </label>
 
                    <label>
                        <input type="radio"/>
-                       2
+                       Ժամանակավոր դադար
                    </label>
 
                    <label>
                        <input type="radio"/>
-                       3
+                       Վաճառված
                    </label>
 
                    <label>
                        <input type="radio"/>
-                       4
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       5
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       6
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       7+
+                       Չանրադառնալ
                    </label>
                </div>
            </div>
 
-
-           <div className={'div_radios'}>
-               <span>ՍԱՆՀԱՆԳՈՒՅՑ</span>
-               <div >
-                   <label>
-                       <input type="radio"/>
-                       1
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       2
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       3
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       4
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       5+
-                   </label>
-               </div>
            </div>
 
 
-           <div className={'div_radios'}>
-               <span>ՇԻՆՈՒԹՅԱՆ ՏԻՊԸ</span>
-               <div >
-                   <label>
-                       <input type="radio"/>
-                       Մոնոլիտ
-                   </label>
+            <div className={'location_part_posting'}>
 
-                   <label>
-                       <input type="radio"/>
-                       Քարե
-                   </label>
 
-                   <label>
-                       <input type="radio"/>
-                       Պանելային
-                   </label>
+                    <div className={'location_type_part'}>
 
-                   <label>
-                       <input type="radio"/>
-                       Այլ
-                   </label>
+                        <div className={'div_selects'}>
 
-                   <label>
-                       <input type="checkbox"/>
-                       Նորակառույց
-                   </label>
-               </div>
+
+                                    <div>
+                                        <span>ՄԱՐԶ</span>
+                                        <div >
+
+                                            <select>
+                                                <option value="Yerevan">Երևան</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <span>ՀԱՄԱՅՆՔ</span>
+                                        <div >
+
+                                            <select>
+                                                <option value="Arabkir">Արաբկիր</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                        </div>
+
+
+                <div style={{marginTop:'3vh'}}>
+                    <span>ՀԱՍՑԵ</span>
+                    <div className={'hasce'}>
+                        <input type="text" placeholder={'Փողոց'}/>
+                        <input type="text" placeholder={'շենք'}/>
+                        <input type="text" placeholder={'Բնակարան'}/>
+                    </div>
+                </div>
+                    </div>
+
+                <div style={{color:'red' ,width:'100%',height:'100%',backgroundColor:'rgba(189,189,189,0.3)'}}>
+                    qartez
+                </div>
+
            </div>
 
 
-           <div className={'div_radios'}>
-               <span>ԱՌԱՍՏԱՂԻ ԲԱՐՁՐՈՒԹՅՈՒՆ</span>
-               <div >
-                   <label>
-                       <input type="radio"/>
-                       2.6Մ
-                   </label>
+           <div className={'nkaragrutyun_holder'}>
+               <div>
+                    <div className={'div_textarea'}>
+                        <textarea placeholder={'Նկարագրություն...'}></textarea>
+                    </div>
 
-                   <label>
-                       <input type="radio"/>
-                       2.8Մ
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       3.0Մ
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       3.2Մ
-                   </label>
-
-                   <label>
-                       <input type="checkbox"/>
-                       3.8Մ
-                   </label>
-
-                   <label>
-                       <input type="checkbox"/>
-                       5Մ+
-                   </label>
+                    <div className={'div_textarea'}>
+                        <textarea placeholder={'Լրացուցիչ դաշտ...'}></textarea>
+                    </div>
                </div>
+
+
+               <div className={'nkaragrutyun_himnakan'}>
+                   <div className={'div_selects'}>
+                    <div>
+                        <span>ԳԻՆ</span>
+                        <div>
+                            <input type="text" placeholder={'Թիվ'}/>
+                        </div>
+                    </div>
+
+                   <div>
+                       <span>ՇԻՆՈՒԹՅԱՆ ՏԻՊԸ</span>
+                       <div >
+
+                           <select>
+                               <option value="Arabkir">Մոնոլիտ</option>
+                               <option value="Arabkir">Քարե</option>
+                               <option value="Arabkir">Պանելային</option>
+                               <option value="Arabkir">Նորակառույց</option>
+                               <option value="Arabkir">Այլ</option>
+                           </select>
+                       </div>
+                   </div>
+                   </div>
+
+
+                   <div className={'div_selects'}>
+                       <div>
+                           <span>ԸՆԴՀԱՆՈՒՐ ՄԱԿԵՐԵՍ</span>
+                           <div>
+                               <input type="number" placeholder={'մետր քառակուսի'}/>
+                           </div>
+                       </div>
+
+                       <div>
+                           <span>ՍԵՆՅԱԿՆԵՐ</span>
+                           <div>
+                               <input type="number" placeholder={'Թիվ'}/>
+                           </div>
+                       </div>
+                   </div>
+
+                    <div className={'div_selects'}>
+                        <div>
+                            <span>ՀԱՐԿ</span>
+                            <div>
+                                <input type="number" placeholder={'Թիվ'}/>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span>ՀԱՐԿԱՅՆՈՒԹՅՈՒՆ</span>
+                            <div>
+                                <input type="number" placeholder={'Թիվ'}/>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div className={'div_selects'}>
+
+                            <div className={'div_inputs'}>
+                                <span>ՍԱՆՀԱՆԳՈՒՅՑ</span>
+                                    <div>
+                                        <input type="number" placeholder={'Թիվ'}/>
+                                    </div>
+                            </div>
+
+
+
+
+
+                            <div className={'div_inputs'}>
+                                <span>ԱՌԱՍՏԱՂԻ ԲԱՐՁՐՈՒԹՅՈՒՆ</span>
+                                <div >
+
+
+                                        <select>
+                                            <option value="2.45">2.45</option>
+                                            <option value="2.55">2.55</option>
+                                            <option value="2.75<">2.75</option>
+                                            <option value="3">3</option>
+                                            <option value="3.20">3.20</option>
+                                        </select>
+
+                                </div>
+                            </div>
+
+
+                            <div className={'div_inputs'}>
+                                <span>ՎԻՃԱԿԸ</span>
+                                <div >
+
+
+                                    <select>
+                                        <option value="2.45">2.45</option>
+                                        <option value="2.55">2.55</option>
+                                        <option value="2.75<">2.75</option>
+                                        <option value="3">3</option>
+                                        <option value="3.20">3.20</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+                    </div>
+
+               </div>
+
+
            </div>
 
 
-           <div className={'div_radios'}>
-               <span>ՎԻՃԱԿԸ</span>
-               <div >
-                   <label>
-                       <input type="radio"/>
-                       Վերանորոգված
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       Լավ
-                   </label>
-
-                   <label>
-                       <input type="radio"/>
-                       Զրոյական
-                   </label>
-               </div>
-           </div>
+           <div className={'information_posting'}>
 
            <div className={'div_checkboxes'}>
-                <div>ԿՈՄՈՒՆԱԼ ՀԱՐՄԱՐՈՒԹՅՈՒՆՆԵՐ & ԼՐԱՑՈՒՑԻՉ</div>
+                <div>ԿՈՄՈՒՆԱԼ</div>
                 <div>
                     <label>
                         <input type="checkbox"/>
@@ -313,12 +304,84 @@ const HousePosting = () =>{
                 </div>
            </div>
 
+               <div className={'div_checkboxes'}>
+                   <div>ԼՐԱՑՈՒՑԻՉ ՀԱՐՄԱՐՈՒԹՅՈՒՆՆԵՐ</div>
+                   <div>
+                       <label>
+                           <input type="checkbox"/>
+                           Ջեռուցում
+                       </label>
 
-           <div className={'file_input_part'}>
-               <label className={'file_input_label'}>
-                   <input type="file" multiple={true} hidden/>
-                   <span>Add Images</span>
-               </label>
+                       <label>
+                           <input type="checkbox"/>
+                           Ջեռուցում
+                       </label>
+
+                       <label>
+                           <input type="checkbox"/>
+                           Ջեռուցում
+                       </label>
+
+                       <label>
+                           <input type="checkbox"/>
+                           Ջեռուցում
+                       </label>
+
+                       <label>
+                           <input type="checkbox"/>
+                           Ջեռուցում
+                       </label>
+
+                       <label>
+                           <input type="checkbox"/>
+                           Ջեռուցում
+                       </label>
+                   </div>
+               </div>
+
+           </div>
+
+
+           <div className={'images_posting'}>
+
+               <div>
+                    <div className={'file_input_part'}>
+                        <label className={'file_input_label'}>
+                            <input type="file" multiple={true} hidden/>
+                            <span>Լուսանկար</span>
+                        </label>
+                    </div>
+
+                   <div className={'images_shower'}>
+
+                   </div>
+               </div>
+
+               <div>
+                   <div className={'file_input_part'}>
+                       <label className={'file_input_label'}>
+                           <input type="file" multiple={true} hidden/>
+                           <span>Լուսանկար</span>
+                       </label>
+                   </div>
+
+                   <div className={'images_shower'}>
+
+                   </div>
+               </div>
+
+               <div>
+                   <div className={'file_input_part'}>
+                       <label className={'file_input_label'}>
+                           <input type="file" multiple={true} hidden/>
+                           <span>Լուսանկար</span>
+                       </label>
+                   </div>
+
+                   <div className={'images_shower'}>
+
+                   </div>
+               </div>
 
 
            </div>

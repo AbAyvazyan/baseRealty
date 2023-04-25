@@ -119,8 +119,8 @@ const filterList = [
         component:AccordionSelect
     },
     {
-        id:12,
-        paragraph:'List',
+        id:13,
+        paragraph:'Lift',
         selects:[
             'Yes',
             'No',
