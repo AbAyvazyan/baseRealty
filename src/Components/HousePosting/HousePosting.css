@@ -1,6 +1,5 @@
 .house_posting{
     width: 100%;
-    padding: 50px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -12,11 +11,13 @@
 .posting_guyq{
     width: 95%;
     display: flex;
-    gap: 30px;
+    gap: 70px;
     border: 1px solid black;
     justify-content: center;
     padding: 50px;
 }
+
+
 
 .line{
     width: 1px;
@@ -27,7 +28,7 @@
 .div_radios > span:first-child{
     width: 100%;
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
 }
 
@@ -36,6 +37,7 @@
     display: flex;
     gap: 15px;
     margin-top: 2vh;
+    font-size: 14px;
 }
 
 .div_radios div > label{
@@ -139,15 +141,13 @@
     width: 95%;
     border: 1px solid black;
     padding: 50px;
+    box-sizing: border-box;
 }
 
 .location_part_posting > div:first-child{
     width: 60%;
 }
 
-.location_part_posting > div:last-child{
-    width: 40%!important;
-}
 
 
 .nkaragrutyun_holder{
@@ -170,6 +170,8 @@
 .nkaragrutyun_himnakan > div{
     margin: 5vh 0;
 }
+
+
 
 .hasce{
     display: flex;
@@ -236,7 +238,7 @@
 }
 
 .owner_contact_posting > div:last-child {
-    width: 20%;
+    width: 10%;
     display: flex;
     justify-content: space-between;
 }
@@ -266,4 +268,128 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
+}
+
+
+.map_posting{
+    width: 40%;
+    background-color: red;
+    height: 400px;
+}
+
+@media only screen and (max-width: 1620px) {
+    .posting_guyq {
+        flex-wrap: wrap;
+    }
+
+    .posting_guyq > div{
+        width: 100%!important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .images_posting{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+    .information_posting{
+        flex-wrap: wrap;
+    }
+
+    .information_posting > .div_checkboxes{
+        width: 100%;
+        margin: 2vh 0;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .contact_input_posting{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact_input_posting input{
+        width: 100%;
+        margin-bottom: 1vh;
+    }
+
+    .div_checkboxes > div:nth-child(2) {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .nkaragrutyun_holder{
+        flex-wrap: wrap;
+    }
+
+    .nkaragrutyun_holder > div{
+        width: 100%!important;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+
+    .posting_guyq > div > div{
+        flex-wrap: wrap!important;
+    }
+
+    .location_part_posting{
+        flex-wrap: wrap;
+    }
+
+    .location_type_part{
+        width: 100%!important;
+    }
+
+    .map_posting{
+        margin-top: 2vh;
+        width: 100%!important;
+    }
+
+    .hasce input{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .nkaragrutyun_himnakan > .div_selects{
+        flex-wrap: wrap;
+    }
+
+    .nkaragrutyun_himnakan > .div_selects > div{
+        width: 100%;
+    }
+
+    .nkaragrutyun_himnakan > .div_selects input{
+        width: 100%;
+    }
+
+    .nkaragrutyun_himnakan > .div_selects select{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .div_checkboxes > div:nth-child(2) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+
+    .posting_guyq {
+        padding-left: 20px;
+    }
+
+    .location_type_part > .div_selects{
+        flex-wrap: wrap;
+    }
+
+    .location_type_part > .div_selects > div{
+        width: 100%!important;
+    }
 }

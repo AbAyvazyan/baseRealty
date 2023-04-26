@@ -33,7 +33,6 @@ const HousePosting = () =>{
                </div>
            </div>
 
-               <div className={'line'}></div>
 
 
            <div  className={'div_radios'}>
@@ -61,7 +60,6 @@ const HousePosting = () =>{
                </div>
            </div>
 
-               <div className={'line'}></div>
 
            <div className={'div_radios'}>
                <span>Կարգավիճակ</span>
@@ -144,7 +142,7 @@ const HousePosting = () =>{
                 </div>
                     </div>
 
-                <div style={{color:'red' ,width:'100%',height:'100%',backgroundColor:'rgba(189,189,189,0.3)'}}>
+                <div className={'map_posting'} >
                     qartez
                 </div>
 
@@ -308,7 +306,7 @@ const HousePosting = () =>{
 
            <div className={'div_checkboxes'}>
                 <div>ԿՈՄՈՒՆԱԼ</div>
-                <div style={{gridTemplateColumns:'1fr 1fr'}}>
+                <div>
                     <label>
                         <input type="checkbox"/>
                         Գազ
