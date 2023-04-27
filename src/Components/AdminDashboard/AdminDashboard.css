@@ -1,0 +1,80 @@
+.admin_dashboard{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.dashboard_sidebar{
+    width: 10%;
+    border-right: 1px solid  rgb(var(--text-color));
+    border-top: 6px solid  rgb(var(--text-color));
+    position: relative;
+
+}
+
+.dashboard_sidebar > div{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+    border-top: 1px solid rgb(var(--text-color));
+    cursor: pointer;
+}
+
+.dashboard_sidebar > div > label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.go_admin_button{
+    position: absolute!important;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.dash_part{
+    width: 90%;
+    display: flex;
+    flex-wrap:wrap;
+
+}
+
+.dash_part > div{
+    width: 100%;
+}
+
+.dashboard_input_part{
+    height: 55%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1vh 10%;
+    border-bottom: 1px solid rgb(var(--text-color));
+}
+
+.dashboard_input_part label{
+    display: grid;
+    grid-template-columns:  0.5fr;
+}
+
+.main_dashboard_part{
+    display: flex;
+    height: 45%!important;
+    overflow: auto;
+}
+
+.single_dash_item{
+    width: 150px;
+    border-right: 1px solid rgb(var(--text-color));
+}
+
+.single_dash_item > div:first-child{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgb(var(--text-color));
+}

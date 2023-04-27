@@ -1,0 +1,64 @@
+.add_street_section{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 15px;
+}
+
+.add_street_part{
+    width: 100%;
+    display: flex;
+}
+
+.add_street_part > div{
+    width: 50%;
+}
+
+.add_street_part > div:first-child{
+    display: flex;
+    gap: 50px;
+}
+
+.add_street_part > div:first-child input{
+    width: 200px;
+    height: 40px;
+}
+
+.add_button_panel{
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: rgb(var(--text-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+.street_shower > div:first-child{
+    width: 50%;
+    height: 400px;
+    border: 1px solid rgb(var(--text-color));
+    overflow-y: auto;
+}
+
+.single_street_panel{
+    width: 100%;
+    display: grid;
+    padding-inline: 15px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    grid-template-rows: 40px;
+    grid-template-columns: 10fr 1fr;
+}
+
+.single_street_panel span{
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

@@ -93,6 +93,21 @@
 
 }
 
+.single_house_about{
+    width: 90%;
+    min-height: 200px;
+    /*border: 2px solid rgb(var(--text-color));*/
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 5vh auto;
+    padding: 2vh;
+    /*border-radius: 7px;*/
+    font-size: 14px;
+}
+
+.single_house_about p{
+    margin: 3vh auto 0;
+}
 
 .single_house_advantages_part{
     display: grid;

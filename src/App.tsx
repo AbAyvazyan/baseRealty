@@ -12,6 +12,9 @@ import ContactPage from "./Components/ContactPage";
 import SingleHouse from "./Components/SingleHouse";
 import Login from './Components/Login'
 import HousePosting from "./Components/HousePosting";
+import AddStreet from "./Components/AddStreet";
+import AdminPanel from "./Components/AdminPanel";
+import AdminDashboard from "./Components/AdminDashboard";
 
 
 const routes = [
@@ -42,6 +45,18 @@ const routes = [
     {
         path:'/housePosting',
         component:HousePosting
+    },
+    {
+        path:'/admin--add--street',
+        component:AddStreet
+    },
+    {
+        path:'/admin--panel',
+        component:AdminPanel
+    },
+    {
+        path:'/admin--dashboard',
+        component:AdminDashboard
     },
 ]
 
