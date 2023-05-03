@@ -14,7 +14,8 @@ import Login from './Components/Login'
 import HousePosting from "./Components/HousePosting";
 import AddStreet from "./Components/AddStreet";
 import AdminPanel from "./Components/AdminPanel";
-import AdminDashboard from "./Components/AdminDashboard";
+// import AdminDashboard from "./Components/AdminDashboard";
+import Dashboard from "./Components/Dashboard";
 
 
 const routes = [
@@ -56,7 +57,7 @@ const routes = [
     },
     {
         path:'/admin--dashboard',
-        component:AdminDashboard
+        component:Dashboard
     },
 ]
 

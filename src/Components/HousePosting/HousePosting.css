@@ -273,8 +273,7 @@
 
 .map_posting{
     width: 40%;
-    background-color: red;
-    height: 400px;
+    height: 500px;
 }
 
 @media only screen and (max-width: 1620px) {

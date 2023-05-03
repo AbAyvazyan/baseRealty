@@ -11,6 +11,7 @@ import * as React from "react";
 import LittleHouseCard from "./LittleHouseCard/LittleHouseCard";
 import HouseAdvantages from "./HouseAdvantages/HouseAdvantages";
 import MapComponent from "../HouseMap/HouseMap";
+import {log} from "util";
 
 
 
@@ -22,6 +23,35 @@ const SingleHouse = () =>{
 
     const routeParameter = useParams()
     const [houseCode,setHouseCode] = useState('')
+
+
+
+    const handleSendMail = () => {
+
+        const url = 'https://api.emailjs.com/api/v1.0/email/send';
+
+        const data = {
+            service_id: 'service_p13pwe8',
+            template_id: 'template_byqww2o',
+            user_id: '54pI2oNq9FQygveb4',
+            template_params: {
+                from_name: 'Client',
+                message: 'message',
+            },
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res=>console.log('elav'))
+            .catch(err=> console.log(err))
+
+    }
+
 
     useEffect(()=>{
         routeParameter.code && setHouseCode(routeParameter.code)
@@ -75,7 +105,7 @@ const SingleHouse = () =>{
 
                     <div className={'number_for_contact'}>
                             <div><input type="text" placeholder={'Your Number'}/></div>
-                            <div><div>Contact Me</div></div>
+                            <div><div  onClick={handleSendMail}>Contact Me</div></div>
                     </div>
 
                     <div className={'single_house_map_part'}>

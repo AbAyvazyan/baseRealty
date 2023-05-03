@@ -1,4 +1,6 @@
 import './HousePosting.css'
+import StreetNameAutocomplete from "./StreetNameAutocomplete";
+import MapComponent from "../HouseMap/HouseMap";
 
 const HousePosting = () =>{
     return(
@@ -135,7 +137,8 @@ const HousePosting = () =>{
                 <div style={{marginTop:'3vh'}}>
                     <span>ՀԱՍՑԵ</span>
                     <div className={'hasce'}>
-                        <input type="text" placeholder={'Փողոց'}/>
+                        {/*<input type="text" placeholder={'Փողոց'}/>*/}
+                        <StreetNameAutocomplete/>
                         <input type="text" placeholder={'շենք'}/>
                         <input type="text" placeholder={'Բնակարան'}/>
                     </div>
@@ -143,7 +146,7 @@ const HousePosting = () =>{
                     </div>
 
                 <div className={'map_posting'} >
-                    qartez
+                    <MapComponent address={'Gyulbenkyan'} />
                 </div>
 
            </div>
