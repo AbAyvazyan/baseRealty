@@ -66,7 +66,6 @@ const HouseCard:FC<ThouseCard> = (
                 </div>
             </div>
 
-
         </div>
     )
 }
