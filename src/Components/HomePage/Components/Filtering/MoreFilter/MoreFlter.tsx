@@ -9,6 +9,7 @@ import MoreFilterRangePart from "./MoreFilterRangePart/MoreFilterRangePart";
 import MoreFilterButtonGroup from "./MoreFilterButtonGroup/MoreFilterButtonGroup";
 import SingleCheck from "./SingleCheck/SingleCheck";
 import MultipleChecks from "./MultipleChecks/MultipleChecks";
+import {useTranslation} from "react-i18next";
 
 
 type TMoreFilter = {
@@ -16,50 +17,31 @@ type TMoreFilter = {
 }
 
 const MoreFilter:FC<TMoreFilter> = ({closeModalHandler}) =>{
+
+    const {t} = useTranslation()
     return(
         <div className={'more_filter'}>
                 <div className={'more_filter_upper_part'}>
-                    <span>More Filters</span>
+                    <span>{t('More_Filters')}</span>
                     <span style={{cursor:'pointer'}} onClick={()=>closeModalHandler()}><FontAwesomeIcon icon={faXmark} /></span>
                 </div>
 
                 <div className={'more_filter_content'}>
                         <div className={'mf_all'}>
-                            <span>Street</span>
+                            <div>{t("Street")}</div>
 
                             <div>
                                 <input type="text" placeholder={'Street'}/>
                             </div>
                         </div>
                         <MoreFilterRangePart name={'Floor'}/>
-                        <MoreFilterRangePart name={'Building Floors'}/>
+                        <MoreFilterRangePart name={'Building_Floors'}/>
 
                         <MoreFilterButtonGroup/>
 
 
-                        <MultipleChecks/>
-
-
-                    <div className={'multiple_checks mf_all'}>
-                        <div>Renovation</div>
-                        <div className={'multiple_house_types_checks'}>
-                            <label>
-                                <input type="checkbox"/>Zero Condition
-                            </label>
-
-                            <label>
-                                <input type="checkbox"/>Newly repaired
-                            </label>
-
-                            <label>
-                                <input type="checkbox"/>Good
-                            </label>
-
-                            <label>
-                                <input type="checkbox"/>Old Renovation
-                            </label>
-                        </div>
-                    </div>
+                        <MultipleChecks title={'House_Type'} houseTypes={['Stone','Monolith','Panel','Other']}/>
+                        <MultipleChecks title={'Renovation'} houseTypes={['Zero Condition','Newly repaired','Good','Old Renovation']}/>
 
 
                         <SingleCheck/>

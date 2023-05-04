@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./MultipleSelectCheckmarks.css";
 import { ChangeEvent, FC, useEffect, useRef, useState } from "react";
+import {useTranslation} from "react-i18next";
 
 export type Tmodels = {
   title: string;
@@ -32,6 +33,11 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
   const [Chosen, setChosen] = useState<string[]>([]);
   const [from, setFrom] = useState<string>("");
   const [to, setTo] = useState<string>("");
+
+  const {t} = useTranslation()
+
+  const fromPLaceHolder = t('from')
+  const toPLaceHolder = t('to')
 
   useEffect(() => {
     setCheckboxesModal(models);
@@ -86,19 +92,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
         ref={modalRef}
       >
         <>
-          {!Chosen.length ? (
-            <>
-              {from ? <span>from:{from}</span> : <span>{holder}</span>}
-              {to && <span>to:{to}</span>}
-            </>
-          ) : Chosen.length >= 3 ? (
-            [Chosen[0], Chosen[1]].map((placeName, i) => (
-              <span key={i}>{placeName}</span>
-            ))
-          ) : (
-            Chosen.map((placeName, i) => <span key={i}>{placeName}</span>)
-          )}
-          {Chosen.length >= 3 && <span>...</span>}
+          {t(holder)}
           <span className={isOpen ? "select_arrow_clicked" : "select_arrow"}>
             <i className="fa fa-angle-down"></i>
           </span>
@@ -125,18 +119,19 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
                         checked={isChecked}
                         onChange={(e) => handleCheckbox(e, _id, isChecked)}
                       />
-                      {title}
+                      {t(title)}
                     </label>
                   </div>
                 );
               })}
 
             {fromTo && (
+
               <div className="from_to_modal">
                 <input
                   value={from}
                   type="number"
-                  placeholder="from"
+                  placeholder={fromPLaceHolder}
                   onChange={(e) =>
                     +e.target.value >= 0 && setFrom(e.target.value)
                   }
@@ -144,7 +139,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
                 <input
                   value={to}
                   type="number"
-                  placeholder="to"
+                  placeholder={toPLaceHolder}
                   onChange={(e) =>
                     +e.target.value <= +from
                       ? setTo(from)
@@ -161,7 +156,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
 
           <div className={'single_check'}>
             <label>
-              <input type="checkbox"/> <span>Newly Built</span>
+              <input type="checkbox"/> <span>{t('Newly Built')}</span>
             </label>
           </div>
       }

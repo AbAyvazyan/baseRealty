@@ -1,5 +1,6 @@
 import './HouseButtons.css'
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 type ThouseAction={
     position:number,
@@ -10,24 +11,28 @@ type ThouseAction={
 const houseActionTypes:ThouseAction[]=[
     {
         position:1,
-        type:'Buy',
+        type:'BUY',
         active:true
     },
     {
         position: 2,
-        type:'Rent',
+        type:'RENTING',
         active: false
     },
     {
         position: 3,
-        type:'Daily',
+        type:'DAILY',
         active: false
     }
 ]
 
 const HouseButtons = () =>{
 
+    const {t} = useTranslation()
+
     const [houses,setHouses] = useState(houseActionTypes)
+
+    const codePlaceHolder = t('Code')
 
     const activeTypeHandler = (num:number) =>{
         setHouses(prevState => {
@@ -43,13 +48,13 @@ const HouseButtons = () =>{
         <ul className={'house_types'}>
             <div style={{display:'flex'}}>
             {houses.map(({active,position,type})=>{
-                return <li className={active ? 'activeLi' : 'disactiveLi'} key={position}  onClick={()=>activeTypeHandler(position)}>{type}</li>
+                return <li className={active ? 'activeLi' : 'disactiveLi'} key={position}  onClick={()=>activeTypeHandler(position)}>{t(type)}</li>
             })
             }
             </div>
 
             <label style={{margin:'0'}}>
-            <li className={' codeSearchLi'} ><input type="text" placeholder={'Code'}/></li>
+            <li className={' codeSearchLi'} ><input type="text" placeholder={codePlaceHolder}/></li>
             </label>
         </ul>
 

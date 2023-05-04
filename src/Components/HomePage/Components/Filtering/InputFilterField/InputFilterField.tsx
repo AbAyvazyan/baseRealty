@@ -18,7 +18,7 @@ export type Tstate = {
 const initialState:Tstate[] = [
     {
         _id:uuid(),
-        holder:'Property Type',
+        holder:'Property_Type',
         models:[
             {
                 title:'Apartment',
@@ -183,7 +183,7 @@ const initialState:Tstate[] = [
     },
     {
         _id:uuid(),
-        holder:'Price',
+        holder:'',
         fromTo:false,
         isOpen:false,
         singleCheck:true

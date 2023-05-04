@@ -4,6 +4,7 @@ import {ThouseCard} from "../HouseCard/HouseCard";
 import uuid from "react-uuid";
 import PaginationGroup from "../PaginationGroup/PaginationGroup";
 import MainFiltering from "../MainFiltering";
+import {useTranslation} from "react-i18next";
 
 
 
@@ -76,9 +77,11 @@ const houses:ThouseCard[] = [
 ]
 
 const RentPage = () =>{
+
+    const { t } = useTranslation()
     return(
         <section className={'rent_page'}>
-            <h1>Rent Page</h1>
+            <h1>{t("Rent_Page")}</h1>
 
             <div className={'rent_page_content'}>
                 <article>

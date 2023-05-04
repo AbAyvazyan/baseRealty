@@ -7,6 +7,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
 import {FC} from "react";
+import {useTranslation} from "react-i18next";
 
 type TFromToSelect = {
     id:number,
@@ -15,6 +16,11 @@ type TFromToSelect = {
 
 
 const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
+
+    const { t } = useTranslation()
+
+    const from = t('from')
+    const to = t('to')
 
 
     return(
@@ -34,15 +40,15 @@ const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
                 }}
             >
                 <Typography sx={{ width: '33%', flexShrink: 0,display:'flex',alignItems:'center'}}>
-                    {paragraph}
+                    {t(paragraph)}
                 </Typography>
                 <div style={{ color: 'text.secondary',gap:'25px',padding:'0 25px',boxSizing:'border-box',display:'flex',alignItems:'center' }}>
                     <div>
-                        <TextField id="standard-basic" placeholder={'From'} variant="standard" />
+                        <TextField id="standard-basic" placeholder={from} variant="standard" />
                     </div>
 
                     <div>
-                        <TextField id="standard-basic-1" placeholder={'To'} variant="standard" />
+                        <TextField id="standard-basic-1" placeholder={to} variant="standard" />
                     </div>
                 </div>
 

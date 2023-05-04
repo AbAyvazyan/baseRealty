@@ -43,10 +43,6 @@ const SlideShow = () => {
                                          justifyContent:'center',
                                          alignItems:'center'
                         }} >
-
-                            
-
-
                         </div>
                     </div>
                 ))}

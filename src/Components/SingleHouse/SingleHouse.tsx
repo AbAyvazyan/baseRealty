@@ -12,6 +12,7 @@ import LittleHouseCard from "./LittleHouseCard/LittleHouseCard";
 import HouseAdvantages from "./HouseAdvantages/HouseAdvantages";
 import MapComponent from "../HouseMap/HouseMap";
 import {log} from "util";
+import {useTranslation} from "react-i18next";
 
 
 
@@ -24,7 +25,9 @@ const SingleHouse = () =>{
     const routeParameter = useParams()
     const [houseCode,setHouseCode] = useState('')
 
+    const { t } = useTranslation()
 
+    const yourName = t('Your_Number')
 
     const handleSendMail = () => {
 
@@ -63,7 +66,7 @@ const SingleHouse = () =>{
 
             <div className={'single_house'}>
                 <article>
-                    <h3 className={'single_house_heading'}><span>40, 3 Mesrop Mashtots Ave, Yerevan 0002</span><span>Code:{houseCode}</span></h3>
+                    <h3 className={'single_house_heading'}><span>40, 3 Mesrop Mashtots Ave, Yerevan 0002</span><span>{t("Code")}:{houseCode}</span></h3>
                     <div style={{width:'100%',height:'600px',padding:'33px 0',marginBottom:'5vh'}}>
                         <SingleHouseSlider/>
                     </div>
@@ -71,25 +74,25 @@ const SingleHouse = () =>{
                     <div className={'single_house_options'}>
                         <div>
                             <div className={'single_house_option_icons'}>
-                                <span><FontAwesomeIcon icon={faBed} /> 3 rooms</span>
-                                <span><FontAwesomeIcon icon={faHome} /> 333 M²</span>
+                                <span><FontAwesomeIcon icon={faBed} /> 3 {t("Rooms")}</span>
+                                <span><FontAwesomeIcon icon={faHome} /> 333 {t("M")}²</span>
                                 <span><FontAwesomeIcon icon={faBuilding} /> 3/5</span>
-                                <span><FontAwesomeIcon icon={faArrowsAltV } /> 3m</span>
+                                <span><FontAwesomeIcon icon={faArrowsAltV } /> 3{t("M")}</span>
                                 <span><FontAwesomeIcon icon={faBath } /> 3</span>
                             </div>
                             <div>
-                                <span>Building Type : Monolith</span>
-                                <span>Renovation : Newly repaired</span>
+                                <span>{t("Building_Type")} : Monolith</span>
+                                <span>{t("Renovation")} : Newly repaired</span>
                             </div>
                         </div>
                         <div>
-                            <span className={'single_house_price'}>Price: $3.333.333</span>
+                            <span className={'single_house_price'}>{t("Price")}: $3.333.333</span>
                         </div>
                     </div>
 
 
                     <div className={'single_house_about'}>
-                        <h3 style={{textAlign:'center'}}>About</h3>
+                        <h3 style={{textAlign:'center'}}>{t("About")}</h3>
 
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -100,12 +103,12 @@ const SingleHouse = () =>{
 
 
                    <HouseAdvantages sectionName={'FACILITIES'} advantages={['Gas','Electricity','Heating','Internet','Hot Water','Sewerage',' Canalization','Water']}/>
-                   <HouseAdvantages sectionName={'More Information'} advantages={['FURNITURE','SUNNY','SUNNY','VIEW','OPEN BALCONY','EQUIPMENT','  BUS STATION','SCHOOL']}/>
+                   <HouseAdvantages sectionName={'More_Information'} advantages={['FURNITURE','SUNNY','SUNNY','VIEW','OPEN BALCONY','EQUIPMENT','  BUS STATION','SCHOOL']}/>
 
 
                     <div className={'number_for_contact'}>
-                            <div><input type="text" placeholder={'Your Number'}/></div>
-                            <div><div  onClick={handleSendMail}>Contact Me</div></div>
+                            <div><input type="text" placeholder={yourName}/></div>
+                            <div><div  onClick={handleSendMail}>{t("Contact_Me")}</div></div>
                     </div>
 
                     <div className={'single_house_map_part'}>
@@ -115,7 +118,7 @@ const SingleHouse = () =>{
                 </article>
 
                 <aside>
-                    <h3 style={{textAlign:'center'}}>Best Offers</h3>
+                    <h3 style={{textAlign:'center'}}>{t("BEST_OFFERS!")}</h3>
 
                     <div className={'single_house_aside_content'}>
                         <LittleHouseCard/>

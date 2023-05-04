@@ -12,8 +12,8 @@ const HomePage = () =>{
         <>
             <SlideShow/>
             <SwiperElement heading={'NEW'}/>
-            <SwiperElement heading={'BEST OFFERS!'}/>
-            <SwiperElement heading={'FREQUENTLY ASKED'}/>
+            <SwiperElement heading={'BEST_OFFERS!'}/>
+            <SwiperElement heading={'FREQUENTLY_ASKED'}/>
         </>
     )
 }

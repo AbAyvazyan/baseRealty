@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 
 
 import { Autoplay, Pagination, Navigation } from "swiper";
+import {useTranslation} from "react-i18next";
 
 const homes = [
     {
@@ -46,11 +47,14 @@ type Tswiper={
 }
 
 const SwiperElement:FC<Tswiper> = ({heading}) =>{
+
+    const {t} = useTranslation()
+
     return(
         <>
             <section className={'swiper_section'}>
 
-                <h2>{heading}</h2>
+                <h2>{t(heading)}</h2>
 
                 <Swiper
                     spaceBetween={30}

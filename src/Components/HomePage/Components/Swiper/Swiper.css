@@ -1,8 +1,13 @@
-.swiper_section{
+.swiper_section {
     width: 100%;
     margin-top: 5vh;
     padding: 5vh 5vw;
     box-sizing: border-box;
+}
+
+
+.swiper_section:last-child{
+    padding-bottom: 15vh;
 }
 
 .swiper_section h2{

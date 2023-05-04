@@ -1,26 +1,33 @@
+import {FC, useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 
 
-const MultipleChecks = () =>{
+type TMultyChecks = {
+    houseTypes:string[],
+    title:string
+}
+
+const MultipleChecks:FC<TMultyChecks> = ({houseTypes,title}) =>{
+
+    const [typeNames,setTypeNames] = useState<string[]>([])
+
+    const {t} = useTranslation()
+
+    useEffect(()=>{
+        setTypeNames(houseTypes)
+    },[houseTypes])
+
     return(
         <div className={'multiple_checks mf_all'}>
-            <div>House Type</div>
+            <div>{t(title)}</div>
             <div className={'multiple_house_types_checks'}>
-                <label>
-                    <input type="checkbox"/>Stone
-                </label>
-
-                <label>
-                    <input type="checkbox"/>Monolith
-                </label>
-
-                <label>
-                    <input type="checkbox"/>Panel
-                </label>
-
-
-                <label>
-                    <input type="checkbox"/>Other
-                </label>
+                {typeNames.map((item,index)=>{
+                    return (
+                        <label key={index}>
+                            <input type="checkbox"/>{t(item)}
+                        </label>
+                    )
+                })}
             </div>
         </div>
     )

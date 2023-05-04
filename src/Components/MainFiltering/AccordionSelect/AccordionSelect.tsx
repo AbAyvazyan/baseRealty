@@ -8,6 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import {Checkbox} from "@mui/material";
 import {ListItemText} from "@mui/material";
 import {FC} from "react";
+import {useTranslation} from "react-i18next";
 
 
 
@@ -21,6 +22,8 @@ const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
 
     const [expanded, setExpanded] = React.useState<string | false>(false);
     const [personName, setPersonName] = React.useState<string[]>([]);
+
+    const {t} = useTranslation()
 
     const handleChange =
         (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -37,7 +40,7 @@ const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
                 id={`panel${id}bh-header`}
             >
                 <Typography sx={{ width: '33%', flexShrink: 0,color:'rgb(12,51,58)'}}>
-                    {paragraph}
+                    {t(paragraph)}
                 </Typography>
                 <Typography sx={{ color: 'text.secondary',margin:'0 33px 0 auto',display:'flex',alignItems:'center' }}>All</Typography>
             </AccordionSummary>
@@ -45,7 +48,7 @@ const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
                     {selects && selects.map((name) => (
                         <MenuItem key={name} value={name} sx={{color:'rgb(12,51,58)'}}>
                             <Checkbox checked={personName.indexOf(name) > -1} />
-                            <ListItemText primary={name} />
+                            <ListItemText primary={t(name)} />
                         </MenuItem>
                     ))}
             </AccordionDetails>

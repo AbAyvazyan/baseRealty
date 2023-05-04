@@ -8,6 +8,7 @@ import Select from '@mui/material/Select';
 import English from "../../assets/flags/english.png";
 import Armenian from '../../assets/flags/armenian.png';
 import Russian from "../../assets/flags/russian.png";
+import i18n from "i18next";
 
 
 
@@ -62,9 +63,19 @@ const Languages = () => {
     const [country, setCountry] = React.useState(English);
     const [open, setOpen] = React.useState(false);
 
-    const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-        setCountry(event.target.value);
+
+    const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
+
+        const language = event.target.value
+
+        setCountry(language);
+
+        countries.map(singleCountry=>{
+            singleCountry.src === language && i18n.changeLanguage(singleCountry.value)
+        })
     };
+
+    console.log(country)
 
     const handleClose = () => {
         setOpen(false);

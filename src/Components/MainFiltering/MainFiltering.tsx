@@ -3,6 +3,7 @@ import AccordionSelect from "./AccordionSelect/AccordionSelect";
 import FromToSelect from "./FromToSelect/FromToSelect";
 import {Component} from "react";
 import uuid from "react-uuid";
+import {useTranslation} from "react-i18next";
 
 const filterList = [
     {
@@ -87,11 +88,6 @@ const filterList = [
         component:AccordionSelect
     },
     {
-        id:9,
-        paragraph:'Floor',
-        component:FromToSelect
-    },
-    {
         id:10,
         paragraph:'Building Floors',
         component:FromToSelect
@@ -131,6 +127,8 @@ const filterList = [
 
 export default function MainFiltering() {
 
+    const { t } =  useTranslation()
+
     return (
         <div className={'main_filtering'}>
 
@@ -139,7 +137,7 @@ export default function MainFiltering() {
             })}
 
             <div style={{display:'flex',justifyContent:'flex-end'}}>
-                <div className='single_button search_button'> Search </div>
+                <div className='single_button search_button'> {t("Search")} </div>
             </div>
 
         </div>
