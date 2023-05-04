@@ -62,7 +62,7 @@ const AppBar = () =>{
                     <NavLink to="/" onClick={routeClickHandler}><img src={menuLogo} width='90' height='90'/></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto mr-5 ">
+                        <Nav className="ml-auto mr-5 mt-3 mb-3">
 
 
                             {categories.map((item,index)=>{
@@ -70,7 +70,7 @@ const AppBar = () =>{
                                                 onClick={routeClickHandler}
                                                 style={({ isActive }) =>
                                                     isActive ? activeStyle : simpleStyle
-                                                }  key={index} className={'nav_categories mr-5'}>{t(item.categoryName)}</NavLink>
+                                                }  key={index} className={'nav_categories mr-5 mt-1'}>{t(item.categoryName)}</NavLink>
                             })}
 
 
@@ -78,7 +78,9 @@ const AppBar = () =>{
                     </Navbar.Collapse>
                     <Languages/>
                 </Container>
+
             </Navbar>
+
          </header>
     );
 }

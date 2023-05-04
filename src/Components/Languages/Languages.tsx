@@ -60,7 +60,7 @@ const Languages = () => {
     const classes = useStyles
 
 
-    const [country, setCountry] = React.useState(English);
+    const [country, setCountry] = React.useState(Armenian);
     const [open, setOpen] = React.useState(false);
 
 
@@ -74,8 +74,6 @@ const Languages = () => {
             singleCountry.src === language && i18n.changeLanguage(singleCountry.value)
         })
     };
-
-    console.log(country)
 
     const handleClose = () => {
         setOpen(false);
