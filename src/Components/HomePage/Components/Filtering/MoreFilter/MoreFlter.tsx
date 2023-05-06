@@ -27,13 +27,7 @@ const MoreFilter:FC<TMoreFilter> = ({closeModalHandler}) =>{
                 </div>
 
                 <div className={'more_filter_content'}>
-                        <div className={'mf_all'}>
-                            <div>{t("Street")}</div>
 
-                            <div>
-                                <input type="text" placeholder={'Street'}/>
-                            </div>
-                        </div>
                         <MoreFilterRangePart name={'Floor'}/>
                         <MoreFilterRangePart name={'Building_Floors'}/>
 
@@ -41,10 +35,9 @@ const MoreFilter:FC<TMoreFilter> = ({closeModalHandler}) =>{
 
 
                         <MultipleChecks title={'House_Type'} houseTypes={['Stone','Monolith','Panel','Other']}/>
-                        <MultipleChecks title={'Renovation'} houseTypes={['Zero Condition','Newly repaired','Good','Old Renovation']}/>
+                        <MultipleChecks title={'Renovation'} houseTypes={['Zero_Condition','Newly_repaired','Good','Old_Renovation']}/>
 
 
-                        <SingleCheck/>
                     </div>
                 </div>
     )

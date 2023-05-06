@@ -156,7 +156,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
 
           <div className={'single_check'}>
             <label>
-              <input type="checkbox"/> <span>{t('Newly Built')}</span>
+              <input type="checkbox"/> <span>{t('Newly_Built')}</span>
             </label>
           </div>
       }

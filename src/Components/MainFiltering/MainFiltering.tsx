@@ -8,7 +8,7 @@ import {useTranslation} from "react-i18next";
 const filterList = [
     {
         id:1,
-        paragraph:'Property Type',
+        paragraph:'Property_Type',
         selects:[
             'Apartment',
             'House',
@@ -64,7 +64,7 @@ const filterList = [
     },
     {
         id:6,
-        paragraph:'Newly Built',
+        paragraph:'Newly_Built',
         selects:[
             'Yes',
             'No',
@@ -78,7 +78,7 @@ const filterList = [
     },
     {
         id:8,
-        paragraph:'Number of Bathrooms',
+        paragraph:'Number_of_Bathrooms',
         selects:[
             'All',
             '1',
@@ -89,12 +89,12 @@ const filterList = [
     },
     {
         id:10,
-        paragraph:'Building Floors',
+        paragraph:'Building_Floors',
         component:FromToSelect
     },
     {
         id:11,
-        paragraph:'Building Type',
+        paragraph:'Building_Type',
         selects:[
             'Stone',
             'Monolith',
@@ -107,10 +107,10 @@ const filterList = [
         id:12,
         paragraph:'Renovation',
         selects:[
-            'Zero Condition',
-            'Newly repaired',
+            'Zero_Condition',
+            'Newly_repaired',
             'Good',
-            'Old Renovation',
+            'Old_Renovation',
         ],
         component:AccordionSelect
     },
