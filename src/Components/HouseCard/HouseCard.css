@@ -11,6 +11,13 @@
     border:1px solid  rgb(223, 223, 223);
     flex-wrap: nowrap;
     position: relative;
+    text-decoration: none;
+    color: rgb(var(--text-color));
+}
+
+.house_card:hover{
+    text-decoration: none;
+    color: rgb(14,50,58);
 }
 
 .house_card_image{

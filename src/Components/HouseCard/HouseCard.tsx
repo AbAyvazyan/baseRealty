@@ -36,13 +36,8 @@ const HouseCard:FC<ThouseCard> = (
     const { t } = useTranslation()
 
 
-    const singleHouseRouteHandler = () =>{
-        window.open(`https://base-realty.vercel.app/house/${code}`, '_blank');
-    }
-
-
     return(
-        <div className={'house_card'} onClick={()=>singleHouseRouteHandler()}>
+        <a href={`/house/${code}`} target={'_blank'} className={'house_card'}>
             <div className={'house_card_image'} style={{backgroundImage:`url(${src})`}}></div>
             <div className={'house_card_about'}>
                 <div className={'house_card_code_part'} style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>{t("Code")}: {code}</span></div>
@@ -66,7 +61,7 @@ const HouseCard:FC<ThouseCard> = (
                 </div>
             </div>
 
-        </div>
+        </a>
     )
 }
 
