@@ -1,7 +1,15 @@
 import './HousePosting.css'
-import StreetNameAutocomplete from "./StreetNameAutocomplete";
 import MapComponent from "../HouseMap/HouseMap";
-import Autocomplete from "react-google-autocomplete";
+
+type TPostings = {
+
+}
+
+const postings = [
+    {
+
+    }
+]
 
 const HousePosting = () =>{
     return(
@@ -138,20 +146,6 @@ const HousePosting = () =>{
                 <div style={{marginTop:'3vh'}}>
                     <span>ՀԱՍՑԵ</span>
                     <div className={'hasce'}>
-                        {/*<input type="text" placeholder={'Փողոց'}/>*/}
-                        {/*<StreetNameAutocomplete/>*/}
-                        {/*<Autocomplete*/}
-                        {/*    apiKey={YOUR_GOOGLE_MAPS_API_KEY}*/}
-                        {/*    style={{ width: "90%" }}*/}
-                        {/*    onPlaceSelected={(place) => {*/}
-                        {/*        console.log(place);*/}
-                        {/*    }}*/}
-                        {/*    options={{*/}
-                        {/*        types: ["(regions)"],*/}
-                        {/*        componentRestrictions: { country: "ru" },*/}
-                        {/*    }}*/}
-                        {/*    defaultValue="Amsterdam"*/}
-                        {/*/>;*/}
                         <input type="text" placeholder={'շենք'}/>
                         <input type="text" placeholder={'Բնակարան'}/>
                     </div>

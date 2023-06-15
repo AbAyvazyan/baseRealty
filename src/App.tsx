@@ -16,6 +16,7 @@ import AddStreet from "./Components/AddStreet";
 import AdminPanel from "./Components/AdminPanel";
 // import AdminDashboard from "./Components/AdminDashboard";
 import Dashboard from "./Components/Dashboard";
+import Register from "./Components/Register";
 
 
 const routes = [
@@ -58,6 +59,10 @@ const routes = [
     {
         path:'/admin--dashboard',
         component:Dashboard
+    },
+    {
+        path:'/register',
+        component:Register
     },
 ]
 

@@ -50,7 +50,7 @@
     background-color: transparent;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:760px) {
     .house_types li{
         width: 70px;
         height: 40px;
