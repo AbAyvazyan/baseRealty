@@ -23,11 +23,10 @@ const Login = () => {
             if (!response) {
                 return
             }
-            localStorage.setItem('userToken', JSON.stringify(response.token))
-            localStorage.setItem('user', JSON.stringify(response.user))
-            navigate('/admin--panel')
+            response.token && localStorage.setItem('userToken', JSON.stringify(response.token))
+            response.user && localStorage.setItem('user', JSON.stringify(response.user))
+            navigate('/admin-panel')
         })
-
 
 
     }, [userName, password])

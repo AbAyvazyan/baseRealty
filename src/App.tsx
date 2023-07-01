@@ -49,15 +49,11 @@ const routes = [
         component:HousePosting
     },
     {
-        path:'/admin--add--street',
-        component:AddStreet
-    },
-    {
-        path:'/admin--panel',
+        path:'/admin-panel',
         component:AdminPanel
     },
     {
-        path:'/admin--dashboard',
+        path:'/admin-dashboard',
         component:Dashboard
     },
     {

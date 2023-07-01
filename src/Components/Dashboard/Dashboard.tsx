@@ -1,4 +1,5 @@
 import './Dashboard.css'
+import withAuthorization from "../../hoc/autorization";
 
 const Dashboard =() =>{
     return(
@@ -220,4 +221,4 @@ const Dashboard =() =>{
     )
 }
 
-export default Dashboard
+export default withAuthorization(Dashboard)

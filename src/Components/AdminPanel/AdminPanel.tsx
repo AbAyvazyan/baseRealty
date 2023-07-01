@@ -1,5 +1,6 @@
 import './AdminPanel.css'
 import {useNavigate} from "react-router";
+import withAuthorization from "../../hoc/autorization";
 
 const AdminPanel = () =>{
 
@@ -8,11 +9,10 @@ const AdminPanel = () =>{
     return(
         <section className={'admin_panel'}>
             <div className={'navigation_panel'}>
-                <div onClick={()=>navigate('/admin--add--street')}>Add Street</div>
-                <div onClick={()=>navigate('/admin--dashboard')}>Open Dashboard</div>
+                <div onClick={()=>navigate('/admin-dashboard')}>Open Dashboard</div>
             </div>
         </section>
     )
 }
 
-export default AdminPanel
+export default withAuthorization(AdminPanel)

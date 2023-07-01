@@ -1,5 +1,6 @@
 import './HousePosting.css'
 import MapComponent from "../HouseMap/HouseMap";
+import withAuthorization from "../../hoc/autorization";
 
 type TPostings = {
 
@@ -521,4 +522,4 @@ const HousePosting = () =>{
     )
 }
 
-export default HousePosting
+export default withAuthorization(HousePosting)
