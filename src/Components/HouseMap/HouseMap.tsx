@@ -1,14 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, {useRef, useEffect} from 'react';
 
 type TMap = {
-    address:string
+    address: string
 }
 
 const MapComponent: React.FC<TMap> = ({address}) => {
     const mapRef = useRef(null);
+    const ymaps = window.ymaps;
+
 
     useEffect(() => {
-        const ymaps = window.ymaps;
         if (!ymaps) return;
 
         ymaps.ready(() => {
@@ -17,7 +18,7 @@ const MapComponent: React.FC<TMap> = ({address}) => {
                 zoom: 10,
             });
 
-            ymaps.geocode(address).then((result:any) => {
+            ymaps.geocode(address).then((result: any) => {
                 const coordinates = result.geoObjects.get(0).geometry.getCoordinates();
                 const circle = new ymaps.Circle([coordinates, 250], {
                     balloonContent: 'Circle',
@@ -27,6 +28,7 @@ const MapComponent: React.FC<TMap> = ({address}) => {
                     strokeOpacity: 0.8,
                     strokeWidth: 2,
                 });
+
 
                 map.geoObjects.add(circle);
 
@@ -38,13 +40,13 @@ const MapComponent: React.FC<TMap> = ({address}) => {
                         e.preventDefault();
                     }
                 });
+
             });
         });
-    }, [address]);
+    }, [ymaps]);
 
-    return <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
+    return <div ref={mapRef} id='housePostingMap' style={{width: '100%', height: '500px'}}/>;
 }
-
 
 
 export default MapComponent

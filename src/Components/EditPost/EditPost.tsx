@@ -1,7 +1,8 @@
-import './HousePosting.css'
-import MapComponent from "../HouseMap/HouseMap";
+import '../HousePosting/HousePosting.css'
+import './EditPost.css'
 import withAuthorization from "../../hoc/autorization";
 import {useEffect, useState} from "react";
+import MapComponent from "../HouseMap/HouseMap";
 
 const region = ['Երևան', 'Արմավիր', 'Արարատ', 'Կոտայք', 'Շիրակ', 'Լոռի', 'Գեղարքունիք', 'Սյունիք', 'Արցախ']
 
@@ -62,7 +63,7 @@ const renovation = [
         title: 'վերանորոգված դիզաիներական ոճով'
     },
 ]
-const buildingType = [
+const buildingType=[
     {
         id: 1,
         title: 'Ստալինկա'
@@ -99,9 +100,8 @@ const buildingType = [
         id: 9,
         title: 'Այլ'
     }]
-const meaning = ['Գրասենյակաին', 'Առևտրաին', 'Արտադրական', 'Պահեստաին', 'Ռեստորան', 'Հյուրանոց', 'Ավտոսպասարկում', 'Բազմաֆունկցիոնալ']
 
-const HousePosting = () => {
+const EditPost = () => {
 
     const [description, setDescription] = useState([
         {
@@ -139,21 +139,6 @@ const HousePosting = () => {
         {
             id: 4,
             title: 'Հողատարածք',
-            checked: false
-        },
-        {
-            id: 5,
-            title: 'Հոսթել',
-            checked: false
-        },
-        {
-            id: 6,
-            title: 'Հյուրատուն',
-            checked: false
-        },
-        {
-            id: 7,
-            title: 'Հյուրանոց',
             checked: false
         }
     ])
@@ -440,7 +425,7 @@ const HousePosting = () => {
                             <span>ՄԱՐԶ</span>
                             <div>
 
-                                <select value={regionState} onChange={(e) => setRegionState(e.target.value)}>
+                                <select value={regionState} onChange={(e)=>setRegionState(e.target.value)}>
                                     {region.map((element: string, loopId: number) => {
                                         return <option key={loopId} value={element}>{element}</option>
                                     })}
@@ -452,7 +437,7 @@ const HousePosting = () => {
                             <span>ՀԱՄԱՅՆՔ</span>
                             <div>
 
-                                <select value={communityState} onChange={(e) => setCommunityState(e.target.value)}>
+                                <select value={communityState} onChange={(e)=>setCommunityState(e.target.value)}>
                                     {community.map((element: string, loopId: number) => {
                                         return <option key={loopId} value={element}>{element}</option>
                                     })}
@@ -518,8 +503,7 @@ const HousePosting = () => {
                             <span>ՇԻՆՈՒԹՅԱՆ ՏԻՊԸ</span>
                             <div>
 
-                                <select value={buildingTypeState}
-                                        onChange={(e) => setBuildingTypeState(e.target.value)}>
+                                <select  value={buildingTypeState} onChange={(e)=>setBuildingTypeState(e.target.value)}>
                                     {buildingType.map(element => {
                                         return <option key={element.id} value={element.title}>{element.title}</option>
                                     })}
@@ -611,272 +595,6 @@ const HousePosting = () => {
                 </div>
 
 
-                {/*ես նեռքեվինը առանդզնատան ինֆօնա*/}
-
-                {/*<div className={'nkaragrutyun_himnakan'}>*/}
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>ԳԻՆ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={price} onChange={(e) => setPrice(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>ՇԻՆՈՒԹՅԱՆ ՏԻՊԸ</span>*/}
-                {/*            <div>*/}
-
-                {/*                <select  value={buildingTypeState} onChange={(e)=>setBuildingTypeState(e.target.value)}>*/}
-                {/*                    {buildingType.map(element => {*/}
-                {/*                        return <option key={element.id} value={element.title}>{element.title}</option>*/}
-                {/*                    })}*/}
-                {/*                </select>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>Հողի մակ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={price} onChange={(e) => setPrice(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Հողի լայն</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={price} onChange={(e) => setPrice(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Հողի երկ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={price} onChange={(e) => setPrice(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>ԸՆԴՀԱՆՈՒՐ ՄԱԿԵՐԵՍ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>ՍԵՆՅԱԿՆԵՐ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={rooms} onChange={(e) => setRooms(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>ՀԱՐԿ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={floor} onChange={(e) => setFloor(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>ՀԱՐԿԱՅՆՈՒԹՅՈՒՆ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={floornes} onChange={(e) => setFloornes(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-
-                {/*    <div className={'div_selects'}>*/}
-
-                {/*        <div className={'div_inputs'}>*/}
-                {/*            <span>ՍԱՆՀԱՆԳՈՒՅՑ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={sanuzel} onChange={(e) => setSanuzel(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-
-                {/*        <div className={'div_inputs'}>*/}
-                {/*            <span>ԱՌԱՍՏԱՂԻ ԲԱՐՁՐՈՒԹՅՈՒՆ</span>*/}
-                {/*            <div>*/}
-
-
-                {/*                <select value={roomHeightState} onChange={(e) => setRoomHeightState(+e.target.value)}>*/}
-                {/*                    {roomHeiht.map(element => {*/}
-                {/*                        return <option key={element.id} value={element.title}>{element.title}</option>*/}
-                {/*                    })}*/}
-                {/*                </select>*/}
-
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-
-                {/*        <div className={'div_inputs'}>*/}
-                {/*            <span>ՎԻՃԱԿԸ</span>*/}
-                {/*            <div>*/}
-
-
-                {/*                <select value={renovationState} onChange={(e) => setRenovationState(e.target.value)}>*/}
-                {/*                    {renovation.map(element => {*/}
-                {/*                        return <option key={element.id} value={element.title}>{element.title}</option>*/}
-                {/*                    })}*/}
-                {/*                </select>*/}
-
-                {/*            </div>*/}
-
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-                {/*</div>*/}
-
-
-                {/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/}
-
-                {/*komercionna nerqviny*/}
-
-                {/*<div className={'nkaragrutyun_himnakan'}>*/}
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>ԳԻՆ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={price} onChange={(e) => setPrice(+e.target.value)}*/}
-                {/*                       placeholder={'Թիվ'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Նշանակություն</span>*/}
-                {/*            <div>*/}
-
-                {/*                <select value={buildingTypeState}*/}
-                {/*                        onChange={(e) => setBuildingTypeState(e.target.value)}>*/}
-                {/*                    {meaning.map((element: string, index: number) => {*/}
-                {/*                        return <option key={index} value={element}>{element}</option>*/}
-                {/*                    })}*/}
-                {/*                </select>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>Հողի ՄԱԿԵՐԵՍ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Հողի լայն</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Հողի երկ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>Սրահի ՄԱԿԵՐԵՍ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Պահեստի լայն</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div>*/}
-                {/*            <span>Վիտչաժ</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-
-                {/*    /!*ete varcova u komercion*!/*/}
-
-                {/*    <div className={'div_selects'}>*/}
-                {/*        <div>*/}
-                {/*            <span>Ազատվում է</span>*/}
-                {/*            <div>*/}
-                {/*                <input type="date" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-                {/*                       placeholder={'մետր քառակուսի'}/>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*    </div>*/}
-
-
-                {/*</div>*/}
-
-
-                {/*//////////////////////////////////////////////////////////////////////////////////////////////////*/}
-
-
-                {/*hoxataracqinna es nerqeviny*/}
-
-            {/*    <div className={'nkaragrutyun_himnakan'}>*/}
-            {/*        <div className={'div_selects'}>*/}
-            {/*                    <div>*/}
-            {/*                        <span>Հողի ՄԱԿԵՐԵՍ</span>*/}
-            {/*                        <div>*/}
-            {/*                            <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-            {/*                                   placeholder={'մետր քառակուսի'}/>*/}
-            {/*                        </div>*/}
-            {/*                    </div>*/}
-
-            {/*                    <div>*/}
-            {/*                        <span>Հողի լայն</span>*/}
-            {/*                        <div>*/}
-            {/*                            <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-            {/*                                   placeholder={'մետր քառակուսի'}/>*/}
-            {/*                        </div>*/}
-            {/*                    </div>*/}
-
-            {/*                    <div>*/}
-            {/*                        <span>Հողի երկ</span>*/}
-            {/*                        <div>*/}
-            {/*                            <input type="number" value={allSqare} onChange={(e) => setAllSqare(e.target.value)}*/}
-            {/*                                   placeholder={'մետր քառակուսի'}/>*/}
-            {/*                        </div>*/}
-            {/*                    </div>*/}
-            {/*                </div>*/}
-
-            {/*    </div>*/}
-
             </div>
 
             <div className={'owner_contact_posting'}>
@@ -935,6 +653,51 @@ const HousePosting = () => {
             </div>
 
 
+            <div className={'images_posting'}>
+
+                <div>
+                    <div className={'file_input_part'}>
+                        <label className={'file_input_label'}>
+                            <input type="file" multiple={true} hidden/>
+                            <span>Լուսանկար մեր համար</span>
+                        </label>
+                    </div>
+
+                    <div className={'images_shower'}>
+
+                    </div>
+                </div>
+
+                <div>
+                    <div className={'file_input_part'}>
+                        <label className={'file_input_label'}>
+                            <input type="file" multiple={true} hidden/>
+                            <span>Լուսանկար Ընդհաննուր</span>
+                        </label>
+                    </div>
+
+                    <div className={'images_shower'}>
+
+                    </div>
+                </div>
+
+                <div>
+                    <div className={'file_input_part'}>
+                        <label className={'file_input_label'}>
+                            <input type="file" multiple={true} hidden/>
+                            <span>Լուսանկար Վկայականի</span>
+                        </label>
+                    </div>
+
+                    <div className={'images_shower'}>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
             <div className={'submit_button'}>Post</div>
 
         </section>
@@ -943,4 +706,4 @@ const HousePosting = () => {
     )
 }
 
-export default withAuthorization(HousePosting)
+export default withAuthorization(EditPost)

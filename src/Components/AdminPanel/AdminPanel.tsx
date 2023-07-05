@@ -10,6 +10,7 @@ const AdminPanel = () =>{
         <section className={'admin_panel'}>
             <div className={'navigation_panel'}>
                 <div onClick={()=>navigate('/admin-dashboard')}>Open Dashboard</div>
+                <div onClick={()=>navigate('/housePosting')}>Post a house</div>
             </div>
         </section>
     )

@@ -17,6 +17,7 @@ import AdminPanel from "./Components/AdminPanel";
 // import AdminDashboard from "./Components/AdminDashboard";
 import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
+import EditPost from "./Components/EditPost";
 
 
 const routes = [
@@ -47,6 +48,10 @@ const routes = [
     {
         path:'/housePosting',
         component:HousePosting
+    },
+    {
+        path:'/editPost/:id',
+        component:EditPost
     },
     {
         path:'/admin-panel',
