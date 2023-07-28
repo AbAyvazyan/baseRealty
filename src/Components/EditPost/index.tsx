@@ -1,3 +1,3 @@
-import EditPost from "./EditPost";
+import EditPostWrapper from "./EditPostWrapper";
 
-export default EditPost
+export default EditPostWrapper

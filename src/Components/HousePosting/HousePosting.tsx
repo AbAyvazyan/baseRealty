@@ -2,6 +2,7 @@ import "./HousePosting.css";
 import MapComponent from "../HouseMap/HouseMap";
 import withAuthorization from "../../hoc/autorization";
 import { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 const region = [
   "Երևան",
@@ -654,7 +655,7 @@ const renovation = [
 const buildingType = [
   {
     id: 1,
-    title: "Ստալինկա",
+    title: 'Ստալինկա',
   },
   {
     id: 2,
@@ -690,7 +691,6 @@ const buildingType = [
   },
 ];
 const meaning = [
-  "Գրասենյակաին",
   "Առևտրաին",
   "Արտադրական",
   "Պահեստաին",
@@ -699,6 +699,13 @@ const meaning = [
   "Ավտոսպասարկում",
   "Բազմաֆունկցիոնալ",
 ];
+
+const date = new Date()
+const year = date.getFullYear();
+const month = String(date.getMonth() + 1).padStart(2, '0');
+const day = String(date.getDate()).padStart(2, '0');
+
+const today = `${year}-${month}-${day}`;
 
 const HousePosting = () => {
   const [thisTimeType, setThisTimeType] = useState("");
@@ -956,6 +963,7 @@ const HousePosting = () => {
   const [reqObj, setReqObj] = useState<any>({});
   const [activeComunal, setActiveComunal] = useState<any>([]);
   const [activeConvinions, setActiveConvinions] = useState<any>([]);
+  const navigate = useNavigate()
 
   const statementCheckedHandler = (setStateAction: any, id: number) => {
     setStateAction((prevState: any) => {
@@ -966,6 +974,8 @@ const HousePosting = () => {
       });
     });
   };
+
+  console.log(buildingTypeState)
 
   const setComunalChecks = (setStateAction: any, id: number) => {
     setStateAction((prevState: any) => {
@@ -1052,21 +1062,21 @@ const HousePosting = () => {
 
   useEffect(() => {
     setReqObj({
-      code,
+      cod:code,
       comunal: activeComunal,
-      meaning: buildingTypeState,
+      meaning: thisTimeType === "Կոմերցիոն" ?buildingTypeState:'Բազմաֆունկցիոնալ',
       ground_area: landSquare,
       ground_width: landLayn,
       ground_height: landErk,
       using_area: allSqare,
-      using_width: "",
-      using_height: "",
+      using_width: 0,
+      using_height: 0,
       description: homeDescription,
       additional_info: detailedHomeDescription,
       hall_area: hallSquare,
       storage_area: storageLength,
       vitrage,
-      day_of_relase: date,
+      day_of_relase: date?date:today,
       contacts: [
         {
           name,
@@ -1085,13 +1095,14 @@ const HousePosting = () => {
       total_area: allSqare,
       room: rooms,
       floors_number: floor,
-      floorness: "",
+      building_floors_number: floornes,
       bathroom_count: sanuzel,
       celing_hegiht: roomHeightState,
       state: renovationState,
       additional_conveniences: activeConvinions,
     });
   }, [
+    floornes,
     code,
     comunal,
     buildingTypeState,
@@ -1125,6 +1136,24 @@ const HousePosting = () => {
     convinions,
     floornes,
   ]);
+
+    const postSubmitHandler = (requestObject:any) =>{
+
+        const token = JSON.parse(localStorage.getItem('userToken') as string)
+
+        if (!token) {
+            navigate('/login')
+        }
+
+        fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: token
+            },
+            body: JSON.stringify(requestObject)
+        }).then(res=>navigate('/admin-panel'))
+    }
 
   return (
     <section className={"house_posting"}>
@@ -1868,7 +1897,7 @@ const HousePosting = () => {
         </div>
       </div>
 
-      <div className={"submit_button"}>Post</div>
+      <div className={"submit_button"} onClick={()=>postSubmitHandler(reqObj)}>Post</div>
     </section>
   );
 };

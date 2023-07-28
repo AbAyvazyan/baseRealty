@@ -63,7 +63,7 @@ const Register = () => {
             }
             localStorage.setItem('userToken', JSON.stringify(response.token))
             localStorage.setItem('user', JSON.stringify(response.user))
-            navigate('/admin--panel')
+            navigate('/admin-panel')
         })
 
 
