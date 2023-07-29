@@ -79,7 +79,8 @@
 
 .single_dash_line{
     display: flex;
-    min-width: 370%;
+    /*min-width: 370%;*/
+    min-width: 185%;
     height: 70px;
     border-bottom: 1px solid rgba(189,189,189,0.23);
     cursor: pointer;
@@ -106,12 +107,24 @@
 
 .single_dash_line > div:last-child{
     border-right: none;
+    display: flex;
+    gap: 5px;
 }
 
 .dashboard_edit_button{
-    width: 50%;
+    width: 45%;
     height: 70%;
     background-color: rgba(13, 147, 13, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard_delete_button{
+    width: 45%;
+    height: 70%;
+    background-color: rgba(227, 0, 0, 0.9);
     color: white;
     display: flex;
     justify-content: center;

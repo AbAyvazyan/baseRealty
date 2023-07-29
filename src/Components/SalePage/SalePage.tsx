@@ -5,94 +5,35 @@ import uuid from "react-uuid";
 import PaginationGroup from "../PaginationGroup/PaginationGroup";
 import MainFiltering from "../MainFiltering";
 import {useTranslation} from "react-i18next";
+import {useEffect, useState} from "react";
 
-
-
-const houses:ThouseCard[] = [
-    {
-        src:'https://www.udr.com/globalassets/corporate/homepage/homepage_4_1274towson.jpg',
-        house_type:'Apartment',
-        code:'dp457899',
-        build_type:'New buildings',
-        location:'Nerqin Charbax',
-        condition:'Fresh repaired',
-        price:3333333,
-        floor:3,
-        building_floors:5,
-        rooms:3,
-        house_space:333
-    },
-    {
-        src:'https://www.udr.com/globalassets/corporate/homepage/homepage_4_1274towson.jpg',
-        house_type:'Apartment',
-        code:'dp457899',
-        build_type:'New buildings',
-        location:'Nerqin Charbax',
-        condition:'Fresh repaired',
-        price:3333333,
-        floor:3,
-        building_floors:5,
-        rooms:3,
-        house_space:333
-    },
-    {
-        src:'https://www.udr.com/globalassets/corporate/homepage/homepage_4_1274towson.jpg',
-        house_type:'Apartment',
-        code:'dp457899',
-        build_type:'New buildings',
-        location:'Nerqin Charbax',
-        condition:'Fresh repaired',
-        price:3333333,
-        floor:3,
-        building_floors:5,
-        rooms:3,
-        house_space:333
-    },
-    {
-        src:'https://www.udr.com/globalassets/corporate/homepage/homepage_4_1274towson.jpg',
-        house_type:'Apartment',
-        code:'dp457899',
-        build_type:'New buildings',
-        location:'Nerqin Charbax',
-        condition:'Fresh repaired',
-        price:3333333,
-        floor:3,
-        building_floors:5,
-        rooms:3,
-        house_space:333
-    },
-    {
-        src:'https://www.udr.com/globalassets/corporate/homepage/homepage_4_1274towson.jpg',
-        house_type:'Apartment',
-        code:'dp457899',
-        build_type:'New buildings',
-        location:'Nerqin Charbax',
-        condition:'Fresh repaired',
-        price:3333333,
-        floor:3,
-        building_floors:5,
-        rooms:3,
-        house_space:333
-    },
-]
 
 const SalePage = () =>{
+    const [houseInfo,setHouseInfo] = useState<any>({})
 
-    const {t} = useTranslation()
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/`)
+            .then((res) => res.json())
+            .then((response) => setHouseInfo(response));
+    }, []);
+
+
+    const { t } = useTranslation()
     return(
         <section className={'sale_page'}>
             <h1>{t("Sale_Page")}</h1>
 
             <div className={'sale_page_content'}>
+                <article>
+                    {houseInfo.posts && houseInfo.posts.map((house:any)=>{
+                        return <HouseCard {...house} key={uuid()}/>
+                    })}
+                </article>
+
 
                 <aside>
                     <MainFiltering/>
                 </aside>
-                <article>
-                    {houses.map(house=>{
-                        return <HouseCard {...house} key={uuid()}/>
-                    })}
-                </article>
             </div>
 
             <PaginationGroup/>

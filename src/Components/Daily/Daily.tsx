@@ -1,4 +1,4 @@
-import './RentPage.css'
+import './Daily.css'
 import HouseCard from "../HouseCard";
 import {ThouseCard} from "../HouseCard/HouseCard";
 import uuid from "react-uuid";
@@ -8,7 +8,7 @@ import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
 
 
-const RentPage = () =>{
+const DailyPage = () =>{
     const [houseInfo,setHouseInfo] = useState<any>({})
 
     useEffect(() => {
@@ -20,10 +20,10 @@ const RentPage = () =>{
 
     const { t } = useTranslation()
     return(
-        <section className={'rent_page'}>
-            <h1>{t("Rent_Page")}</h1>
+        <section className={'daily_page'}>
+            <h1>{t("Daily_Page")}</h1>
 
-            <div className={'rent_page_content'}>
+            <div className={'daily_page_content'}>
                 <article>
                     {houseInfo.posts && houseInfo.posts.map((house:any)=>{
                         return <HouseCard {...house} key={uuid()}/>
@@ -41,4 +41,4 @@ const RentPage = () =>{
     )
 }
 
-export default RentPage
+export default DailyPage

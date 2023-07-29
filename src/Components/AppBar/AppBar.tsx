@@ -26,6 +26,11 @@ const categories:Tcategorise[] = [
     },
 
     {
+        routeTo:'daily',
+        categoryName:'Daily_Page'
+    },
+
+    {
         routeTo:'contact',
         categoryName:'CONTACT'
     },

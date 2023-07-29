@@ -18,6 +18,7 @@ import AdminPanel from "./Components/AdminPanel";
 import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
 import EditPost from "./Components/EditPost";
+import DailyPage from "./Components/Daily";
 
 
 const routes = [
@@ -64,6 +65,10 @@ const routes = [
     {
         path:'/register',
         component:Register
+    },
+    {
+        path:'/daily',
+        component:DailyPage
     },
 ]
 

@@ -6,29 +6,31 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import {FC} from "react";
 import {useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
+import logo from '../../assets/images/logo.png'
 
 const stairsIcon: IconProp = faStairs;
 const houseIcon: IconProp = faHouse;
 
 export type ThouseCard ={
-    src:string,
+    image:string,
     house_type:string,
-    code:string,
-    build_type:string,
+    cod:string,
+    building_type:string,
     location:string,
-    condition:string,
+    state:string,
     price:number,
     floor:number,
     building_floors:number,
     rooms:number,
-    house_space:number
+    house_space:number,
+    id:string
 }
 
 const HouseCard:FC<ThouseCard> = (
     {
-        src,house_type,code,build_type,
-        location,condition,price,floor,
-        building_floors,rooms,house_space
+        image,house_type,cod,building_type,
+        location,state,price,floor,
+        building_floors,rooms,house_space,id
     }
     ) =>{
 
@@ -37,17 +39,17 @@ const HouseCard:FC<ThouseCard> = (
 
 
     return(
-        <a href={`/house/${code}`} target={'_blank'} className={'house_card'}>
-            <div className={'house_card_image'} style={{backgroundImage:`url(${src})`}}></div>
+        <a href={`/house/${id}`} target={'_blank'} className={'house_card'}>
+            <div className={'house_card_image'} style={{backgroundImage:`url(${image?image:logo})`}}></div>
             <div className={'house_card_about'}>
-                <div className={'house_card_code_part'} style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>{t("Code")}: {code}</span></div>
+                <div className={'house_card_code_part'} style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>{t("Code")}: {cod}</span></div>
 
                 <div className={'house_card_main_text_part'} >
 
                     <div>
-                        <p className={'house_card_just_text'}>{t("Build type")} - {build_type}</p>
+                        <p className={'house_card_just_text'}>{t("Build_type")} - {building_type}</p>
                         <p className={'house_card_location_text'}> {location}</p>
-                        <p className={'house_card_just_text'}> {t("Condition")} - {condition}</p>
+                        <p className={'house_card_just_text'}> {t("Condition")} - {state}</p>
                     </div>
 
                     <div className={'house_card_about_price'}>${price}</div>
