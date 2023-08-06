@@ -1157,6 +1157,10 @@ const HousePosting = () => {
 
   return (
     <section className={"house_posting"}>
+      <div style={{width:'100%',display:'flex',justifyContent:'right',paddingRight:'3vw',boxSizing:'border-box'}}>
+        <div className={'go_back'} onClick={()=>navigate('/admin-panel')}>Admin Panel</div>
+      </div>
+
       <div>
         <input
           type="text"

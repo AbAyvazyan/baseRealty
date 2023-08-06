@@ -38,9 +38,10 @@ const HouseCard:FC<ThouseCard> = (
     const { t } = useTranslation()
 
 
+
     return(
         <a href={`/house/${id}`} target={'_blank'} className={'house_card'}>
-            <div className={'house_card_image'} style={{backgroundImage:`url(${image?image:logo})`}}></div>
+            <div className={'house_card_image'} style={{backgroundImage:`url(${image?`http://${image}`:logo})`}}></div>
             <div className={'house_card_about'}>
                 <div className={'house_card_code_part'} style={{display:'flex',justifyContent:'space-between'}}><span>{house_type}</span>  <span>{t("Code")}: {cod}</span></div>
 

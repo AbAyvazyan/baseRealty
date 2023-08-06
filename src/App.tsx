@@ -12,9 +12,7 @@ import ContactPage from "./Components/ContactPage";
 import SingleHouse from "./Components/SingleHouse";
 import Login from './Components/Login'
 import HousePosting from "./Components/HousePosting";
-import AddStreet from "./Components/AddStreet";
 import AdminPanel from "./Components/AdminPanel";
-// import AdminDashboard from "./Components/AdminDashboard";
 import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
 import EditPost from "./Components/EditPost";

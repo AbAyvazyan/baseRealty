@@ -94,6 +94,8 @@
     justify-content: center;
     align-items: center;
     border-right: 1px solid rgba(189,189,189,0.23);
+    overflow-wrap: anywhere!important;
+    word-wrap: break-word;
 }
 
 .single_dash_line > div:first-child{

@@ -10,12 +10,25 @@ import {useEffect, useState} from "react";
 
 const DailyPage = () =>{
     const [houseInfo,setHouseInfo] = useState<any>({})
+    const [pageInfo,setPageInfo] = useState<any>({})
+    const [page,setPage] = useState(1)
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/`)
+        if(!page){
+            return
+        }
+
+        fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/?property_description=Օրավարձ&page=${page}`)
             .then((res) => res.json())
-            .then((response) => setHouseInfo(response));
-    }, []);
+            .then((response) => {
+                setPageInfo(response.pages)
+                setHouseInfo(response.posts)
+            });
+    }, [page]);
+
+    const changePage = (num:number)=>{
+        setPage(num)
+    }
 
 
     const { t } = useTranslation()
@@ -25,7 +38,7 @@ const DailyPage = () =>{
 
             <div className={'daily_page_content'}>
                 <article>
-                    {houseInfo.posts && houseInfo.posts.map((house:any)=>{
+                    {houseInfo.length && houseInfo.map((house:any)=>{
                         return <HouseCard {...house} key={uuid()}/>
                     })}
                 </article>
@@ -36,7 +49,9 @@ const DailyPage = () =>{
                 </aside>
             </div>
 
-            <PaginationGroup/>
+            <PaginationGroup pageInfo={pageInfo} changePage={changePage}/>
+
+
         </section>
     )
 }
