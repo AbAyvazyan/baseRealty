@@ -975,8 +975,6 @@ const HousePosting = () => {
     });
   };
 
-  console.log(buildingTypeState)
-
   const setComunalChecks = (setStateAction: any, id: number) => {
     setStateAction((prevState: any) => {
       return prevState.map((item: any) => {

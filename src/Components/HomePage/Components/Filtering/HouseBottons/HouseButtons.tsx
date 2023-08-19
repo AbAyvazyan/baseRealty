@@ -1,60 +1,81 @@
 import './HouseButtons.css'
-import {useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
+import {useFilterContext} from "../../../../../Contexts/FilterContext";
 
-type ThouseAction={
-    position:number,
-    type:string,
-    active:boolean
+type THouseButtons = {
+    getTypeDirection: (type: string) => void
 }
 
-const houseActionTypes:ThouseAction[]=[
+type ThouseAction = {
+    position: number,
+    type: string,
+    active: boolean
+}
+
+const houseActionTypes: ThouseAction[] = [
     {
-        position:1,
-        type:'BUY',
-        active:true
+        position: 1,
+        type: 'SALE',
+        active: true
     },
     {
         position: 2,
-        type:'RENTING',
+        type: 'RENT',
         active: false
     },
     {
         position: 3,
-        type:'DAILY',
+        type: 'DAILY',
         active: false
     }
 ]
 
-const HouseButtons = () =>{
+const HouseButtons: FC<THouseButtons> = ({getTypeDirection}) => {
+
+    const [code, setCode] = useState('')
 
     const {t} = useTranslation()
+    const {filterState, updateFilterState} = useFilterContext()
 
-    const [houses,setHouses] = useState(houseActionTypes)
+    const [houses, setHouses] = useState(houseActionTypes)
 
     const codePlaceHolder = t('Code')
 
-    const activeTypeHandler = (num:number) =>{
+    const activeTypeHandler = (num: number) => {
         setHouses(prevState => {
-            return prevState.map(elem=>{
+            return prevState.map(elem => {
                 elem.active = elem.position === num;
                 return elem
             })
         })
     }
 
-    return(
+    useEffect(() => {
+        houses.forEach(element => {
+            element.active && getTypeDirection(element.type)
+        })
+    }, [houses])
+
+    useEffect(() => {
+        updateFilterState({...filterState, code: code.trim()})
+    }, [code])
+
+    return (
 
         <ul className={'house_types'}>
-            <div style={{display:'flex'}}>
-            {houses.map(({active,position,type})=>{
-                return <li className={active ? 'activeLi' : 'disactiveLi'} key={position}  onClick={()=>activeTypeHandler(position)}>{t(type)}</li>
-            })
-            }
+            <div style={{display: 'flex'}}>
+                {houses.map(({active, position, type}) => {
+                    return <li className={active ? 'activeLi' : 'disactiveLi'} key={position}
+                               onClick={() => activeTypeHandler(position)}>{t(type)}</li>
+                })
+                }
             </div>
 
-            <label style={{margin:'0'}}>
-            <li className={' codeSearchLi'} ><input type="text" placeholder={codePlaceHolder}/></li>
+            <label style={{margin: '0'}}>
+                <li className={' codeSearchLi'}><input type="text" value={code}
+                                                       onChange={(e) => setCode(e.target.value)}
+                                                       placeholder={codePlaceHolder}/></li>
             </label>
         </ul>
 

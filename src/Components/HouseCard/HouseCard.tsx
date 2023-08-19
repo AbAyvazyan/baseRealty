@@ -22,7 +22,7 @@ export type ThouseCard ={
     floor:number,
     building_floors:number,
     rooms:number,
-    house_space:number,
+    total_area:number,
     id:string
 }
 
@@ -30,7 +30,7 @@ const HouseCard:FC<ThouseCard> = (
     {
         image,house_type,cod,building_type,
         location,state,price,floor,
-        building_floors,rooms,house_space,id
+        building_floors,rooms,total_area,id
     }
     ) =>{
 
@@ -60,7 +60,7 @@ const HouseCard:FC<ThouseCard> = (
                 <div className={'house_card_info'}>
                     <span><FontAwesomeIcon icon={stairsIcon} /> {t("Floor")} {floor}/{building_floors}</span>
                     <span><FontAwesomeIcon icon={houseIcon} /> {t("Rooms")} {rooms}</span>
-                    <span><i className="fa fa-solid fa-filter"></i> {t("Total_space")} {house_space} {t("M")}²</span>
+                    <span><i className="fa fa-solid fa-filter"></i> {t("Total_space")} {total_area} {t("M")}²</span>
                 </div>
             </div>
 
