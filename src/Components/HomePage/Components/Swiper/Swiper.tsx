@@ -1,94 +1,76 @@
-import './Swiper.css'
+import "./Swiper.css";
 
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import SlideCard from "./SlideCard";
 
-
-import {Swiper,SwiperSlide} from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import baseLogo from "../../../../assets/images/logo.png";
 
-
-import { Autoplay, Pagination, Navigation } from "swiper";
+import {Autoplay, Pagination} from "swiper";
 import {useTranslation} from "react-i18next";
 
-const homes = [
-    {
-        image: 'http://cdn.home-designing.com/wp-content/uploads/2014/06/marble-finish-room-divider.jpeg',
-        heading: 'For Sale',
-        place: 'Mongholistan',
-        price: '333.333'
-    },
-    {
-        image: 'http://cdn.home-designing.com/wp-content/uploads/2014/06/white-modern-studio-design.jpeg',
-        heading: 'For Rent',
-        place: 'Mongholistan',
-        price: '333.333'
-    },
-    {
-        image: 'http://cdn.home-designing.com/wp-content/uploads/2014/06/marble-finish-room-divider.jpeg',
-        heading: 'For Sale',
-        place: 'Mongholistan',
-        price: '333.333'
-    },
-    {
-        image: 'http://www.contemporist.com/wp-content/uploads/2019/10/modern-apartment-design-hidden-lighting-111019-1249-01-800x408.jpg',
-        heading: 'For Rent',
-        place: 'Mongholistan',
-        price: '333.333'
-    },
-]
+type Tswiper = {
+    heading: string;
+    homes: any;
+};
 
+const SwiperElement: FC<Tswiper> = ({heading, homes}) => {
+    const [houses, setHouses] = useState<any>([]);
 
-type Tswiper={
-    heading:string
-}
+    const {t} = useTranslation();
 
-const SwiperElement:FC<Tswiper> = ({heading}) =>{
+    useEffect(() => {
+        if (!homes) {
+            return;
+        }
 
-    const {t} = useTranslation()
+        setHouses(homes);
+    }, [homes]);
 
-    return(
+    return (
         <>
-            <section className={'swiper_section'}>
-
+            <section className={"swiper_section"}>
                 <h2>{t(heading)}</h2>
 
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
                     autoplay={{
-                        delay: 5000,
+                        delay: 2000,
                         disableOnInteraction: false,
+                        stopOnLastSlide: false,
                     }}
-                    loop={true}
-
                     pagination={{
                         clickable: true,
                     }}
                     navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
+                    slidesPerView={1}
+                    modules={[Autoplay, Pagination]}
                     className="mySwiper"
                 >
-
-
-                    {
-                        homes.map((item,index)=>{
-                            return <SwiperSlide key={index} style={{opacity:1}}>
-                                <SlideCard houses={{image: item.image,
-                                    heading: item.heading, place: item.place,price:item.price}}/>
+                    {houses.map((item: any) => {
+                        return (
+                            <SwiperSlide key={item.id} style={{opacity: 1}}>
+                                <SlideCard
+                                    houses={{
+                                        image: item.image ? `http://${item.image}` : baseLogo,
+                                        heading: item.property_description,
+                                        place: item.addres,
+                                        price: item.price,
+                                        direction: item.id,
+                                    }}
+                                />
                             </SwiperSlide>
-                        })
-                    }
-
+                        );
+                    })}
                 </Swiper>
-
             </section>
         </>
-    )
-}
+    );
+};
 
-
-export default SwiperElement
+export default SwiperElement;

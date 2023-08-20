@@ -52,8 +52,8 @@
   "Newly_repaired": "Newly repaired",
   "Good": "Good",
   "Old_Renovation": "Old Renovation",
-  "NEW": "NEW",
-  "BEST_OFFERS!": "BEST OFFERS!",
+  "NEW": "New",
+  "BEST_OFFERS!": "Best Offers  ",
   "FREQUENTLY_ASKED": "FREQUENTLY ASKED",
   "Sale_Page": "Sale Page",
   "Location": "Location",
@@ -109,5 +109,8 @@
   "Fenced":"Fenced",
   "Technics":"Technics",
   "Lift": "Elevator",
-  "Daily_Page": "Daily"
+  "Daily_Page": "Daily",
+  "Այո": "Yes",
+  "Ոչ": "No",
+  "Newly_Built": "Newly built"
 }

@@ -7,21 +7,28 @@ import * as React from "react";
 import MenuItem from "@mui/material/MenuItem";
 import {Checkbox} from "@mui/material";
 import {ListItemText} from "@mui/material";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
-
+import {
+    Tmodels
+} from "../../HomePage/Components/Filtering/InputFilterField/MultipleSelectCheckmarks/MultipleSelectCheckmarks";
+import {useFilterContext} from "../../../Contexts/FilterContext";
+import {TFilterSelect} from "../MainFiltering";
 
 
 type TAccordionSelect = {
-    id:number,
-    paragraph:string,
-    selects?:string[]
+    id: number,
+    paragraph: string,
+    selects?: any
 }
 
-const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
+const AccordionSelect: FC<TAccordionSelect> = ({id, paragraph, selects}) => {
 
-    const [expanded, setExpanded] = React.useState<string | false>(false);
-    const [personName, setPersonName] = React.useState<string[]>([]);
+    const [expanded, setExpanded] = useState<string | false>(false);
+    const [personName, setPersonName] = useState<string[]>([]);
+    const [selectState, setSelectState] = useState<any>([])
+
+    const {filterState, updateFilterState} = useFilterContext()
 
     const {t} = useTranslation()
 
@@ -30,27 +37,77 @@ const AccordionSelect:FC<TAccordionSelect> = ({id,paragraph,selects}) =>{
             setExpanded(isExpanded ? panel : false);
         };
 
+    useEffect(() => {
+        if (!selects) {
+            return
+        }
+        setSelectState(selects)
+    }, [selects])
+
+    const checkBoxHandler = (id: number) => {
+        setSelectState((prevState: any) => {
+            return prevState.map((values: any) => {
+                if (values._id === id) {
+                    return {
+                        ...values,
+                        isChecked: !values.isChecked,
+                    };
+                } else {
+                    return values;
+                }
+            });
+        });
+    };
+
+    useEffect(() => {
+        if (!selectState) {
+            return
+        }
+
+        const chosen = selectState
+            .filter((item: TFilterSelect) => item.isChecked)
+            .map((item: TFilterSelect) => item.title);
+
+        paragraph === "Newly_Built" &&
+        updateFilterState({
+            ...filterState,
+            [paragraph.toLowerCase()]: !!chosen.length
+        });
+
+        paragraph !== "Newly_Built" &&
+        updateFilterState({
+            ...filterState,
+            [paragraph.toLowerCase()]: chosen,
+        });
+    }, [selectState])
 
     return (
 
         <Accordion expanded={expanded === `panel${id}`} onChange={handleChange(`panel${id}`)}>
             <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<ExpandMoreIcon/>}
                 aria-controls="panel1bh-content"
                 id={`panel${id}bh-header`}
             >
-                <Typography sx={{ width: '33%', flexShrink: 0,color:'rgb(12,51,58)'}}>
+                <Typography sx={{width: '33%', flexShrink: 0, color: 'rgb(12,51,58)'}}>
                     {t(paragraph)}
                 </Typography>
-                <Typography sx={{ color: 'text.secondary',margin:'0 33px 0 auto',display:'flex',alignItems:'center' }}>All</Typography>
+                <Typography sx={{
+                    color: 'text.secondary',
+                    margin: '0 33px 0 auto',
+                    display: 'flex',
+                    alignItems: 'center'
+                }}>{t('All')}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-                    {selects && selects.map((name) => (
-                        <MenuItem key={name} value={name} sx={{color:'rgb(12,51,58)'}}>
-                            <Checkbox checked={personName.indexOf(name) > -1} />
-                            <ListItemText primary={t(name)} />
-                        </MenuItem>
-                    ))}
+                {selectState.map((name: any) => (
+                    <MenuItem key={name._id} value={name.title} onClick={() => checkBoxHandler(name._id)}
+                              sx={{color: 'rgb(12, 51, 58)'}}>
+                        <Checkbox checked={name.isChecked}/>
+
+                        <ListItemText primary={t(name.title)}/>
+                    </MenuItem>
+                ))}
             </AccordionDetails>
         </Accordion>
     )

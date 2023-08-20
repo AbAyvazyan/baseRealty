@@ -109,7 +109,7 @@ const DailyPage = () =>{
 
 
                 <aside>
-                    <MainFiltering/>
+                    <MainFiltering setPage={setPage}/>
                 </aside>
             </div>
 

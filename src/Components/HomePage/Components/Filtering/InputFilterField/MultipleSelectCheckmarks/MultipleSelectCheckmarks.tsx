@@ -75,7 +75,6 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
     });
   }, [searched]);
 
-  console.log(filterState);
 
   const handleCheckbox = (
     { target }: ChangeEvent<HTMLInputElement>,

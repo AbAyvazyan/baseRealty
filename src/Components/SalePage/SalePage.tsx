@@ -86,9 +86,15 @@ const SalePage = () => {
         }));
     }, [page]);
 
-    const changePage = (num: number) => {
+    const changePage = async(num: number) => {
+        await setPage(NaN)
+        setPageInfo(null)
+        setHouseInfo([])
         setPage(num)
+        console.log(num)
     }
+
+    console.log(page)
 
 
     const {t} = useTranslation()
@@ -109,7 +115,7 @@ const SalePage = () => {
 
 
                 <aside>
-                    <MainFiltering/>
+                    <MainFiltering setPage={changePage}/>
                 </aside>
             </div>
 

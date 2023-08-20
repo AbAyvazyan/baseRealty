@@ -2,11 +2,18 @@
     width: 100%;
     height: 500px;
     display: flex;
+    color: rgb(var(--text-color));
 }
+
+.slide_card:hover{
+    color: rgb(var(--text-color));
+    text-decoration: none;
+}
+
 
 .slide_card_image{
     width: 70%;
-    height: 100%;
+    height: 95%;
     background-size: cover;
     background-position: center;
 }

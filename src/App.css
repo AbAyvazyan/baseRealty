@@ -16,3 +16,9 @@ h1{
 main{
     background-color: rgba(243, 243, 243, 0.5);
 }
+
+.swiper-pagination-bullet{
+    width: 10px!important;
+    height: 10px!important;
+    background-color: rgb(var(--text-color))!important;
+}

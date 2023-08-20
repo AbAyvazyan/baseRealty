@@ -110,7 +110,7 @@ const RentPage = () =>{
 
 
                 <aside>
-                    <MainFiltering/>
+                    <MainFiltering setPage={setPage}/>
                 </aside>
             </div>
 

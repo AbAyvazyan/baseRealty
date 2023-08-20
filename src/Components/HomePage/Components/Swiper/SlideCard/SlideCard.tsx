@@ -21,6 +21,7 @@ type Thouse = {
     heading:string;
     place:string,
     price:string
+    direction:string
 }
 
 
@@ -28,19 +29,25 @@ interface IslideCard {
     houses:Thouse
 }
 
-const SlideCard:FC<IslideCard> = ({houses:{image,heading,place,price}}) => {
+const SlideCard:FC<IslideCard> = ({houses:{image,heading,place,price,direction}}) => {
     return (
-        <div className={'slide_card'}>
-            <div className={'slide_card_image'} style={{backgroundImage:`url(${image})`}}></div>
-            <div className={'slide_card_about'}>
-                <h4 style={{textAlign:'center'}}>{heading}</h4>
+      <a className={"slide_card"} href={`house/${direction}`}>
+        <div
+          className={"slide_card_image"}
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+        <div className={"slide_card_about"}>
+          <h4 style={{ textAlign: "center" }}>{heading}</h4>
 
-                <div className={'slide_card_about_content'}>
-                    <p><FontAwesomeIcon icon={faLocationDot} />{place}</p>
-                    <p>${price}</p>
-                </div>
-            </div>
+          <div className={"slide_card_about_content"}>
+            <p>
+              <FontAwesomeIcon icon={faLocationDot} />
+              {place}
+            </p>
+            <p>${price}</p>
+          </div>
         </div>
+      </a>
     );
 }
 

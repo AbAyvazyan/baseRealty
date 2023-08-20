@@ -19,10 +19,10 @@ const renovation = [
   { id: 5, content: "վերանորոգում 2-5", active: false },
   { id: 6, content: "վերանորոգված 2 տարի", active: false },
   { id: 7, content: "վերանորոգված չբնակեցված", active: false },
-  { id: 8, content: "վերանորոգված դիզաիներական ոճով", active: false }
-]
+  { id: 8, content: "վերանորոգված դիզաիներական ոճով", active: false },
+];
 
-const buildingTypes =  [
+const buildingTypes = [
   { id: 1, content: "Ստալինկա", active: false },
   { id: 2, content: "Քարե", active: false },
   { id: 3, content: "Պոստ Խրյուշովկա", active: false },
@@ -30,9 +30,8 @@ const buildingTypes =  [
   { id: 5, content: "Բարձրահարկ", active: false },
   { id: 6, content: "Խոշոր Պանելային", active: false },
   { id: 7, content: "Կասետաին", active: false },
-  { id: 8, content: "վերանորոգված դիզաիներական ոճով", active: false }
-]
-
+  { id: 8, content: "վերանորոգված դիզաիներական ոճով", active: false },
+];
 
 const MoreFilter: FC<TMoreFilter> = ({ closeModalHandler }) => {
   const { t } = useTranslation();
@@ -64,14 +63,8 @@ const MoreFilter: FC<TMoreFilter> = ({ closeModalHandler }) => {
         <MoreFilterRangePart name={"Floor"} />
         <MoreFilterRangePart name={"Building_Floors"} />
         <MoreFilterButtonGroup />
-        <MultipleChecks
-          title={"House_Type"}
-          houseTypes={buildingTypes}
-        />
-        <MultipleChecks
-          title={"Renovation"}
-          houseTypes={renovation}
-        />
+        <MultipleChecks title={"House_Type"} houseTypes={buildingTypes} />
+        <MultipleChecks title={"Renovation"} houseTypes={renovation} />
       </div>
     </div>
   );

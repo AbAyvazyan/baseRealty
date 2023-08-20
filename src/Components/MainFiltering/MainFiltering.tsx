@@ -1,19 +1,45 @@
 import './MainFiltering.css'
 import AccordionSelect from "./AccordionSelect/AccordionSelect";
 import FromToSelect from "./FromToSelect/FromToSelect";
-import {Component} from "react";
+import {Component, FC} from "react";
 import uuid from "react-uuid";
 import {useTranslation} from "react-i18next";
+
+export type TFilterSelect = {
+    title: string,
+    isChecked: boolean,
+    _id: string,
+}
+
+type TMainFiltering={
+    setPage:(page:number)=>void
+}
 
 const filterList = [
     {
         id:1,
         paragraph:'Property_Type',
         selects:[
-            'Apartment',
-            'House',
-            'Commercial',
-            'Land'
+            {
+                title: "Բնակարան",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Առանձնատուն",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Կոմերցիոն",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Հողատարածք",
+                isChecked: false,
+                _id: uuid(),
+            },
         ],
         component:AccordionSelect
     },
@@ -21,35 +47,73 @@ const filterList = [
         id:2,
         paragraph:'Location',
         selects:[
-            'Yerevan',
-            'Kentron',
-            'Arabkir',
-            'Achapnyak',
-            'Avan',
-            'Qanaqer-Zeytun',
-            'Davtashen',
-            'Erebuni',
-            'Malatia-Sebastia',
-            'Nor-Nork',
-            'Norq-Marash',
-            'Shengavit',
-            'Nubarashen',
+            {
+                title: "Կենտրոն",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Արաբկիր",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Աջափնյակ",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Ավան",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Քանաքեռ Զեյթուն",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Դավթաշեն",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "էրեբունի",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Մալաթիա Սեբաստիա",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Նոր Նորք",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Նորք Մարաշ",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Շենգավիթ",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "Նուբարաշեն",
+                isChecked: false,
+                _id: uuid(),
+            },
         ],
         component:AccordionSelect
     },
      {
          id:3,
          paragraph:'Rooms',
-         selects:[
-             '1',
-             '2',
-             '3',
-             '4',
-             '5',
-             '6',
-             '7+',
-         ],
-         component:AccordionSelect
+         component:FromToSelect
      },
 
     {
@@ -66,8 +130,11 @@ const filterList = [
         id:6,
         paragraph:'Newly_Built',
         selects:[
-            'Yes',
-            'No',
+            {
+                title: "Այո",
+                isChecked: false,
+                _id: uuid(),
+            }
         ],
         component:AccordionSelect
     },
@@ -75,17 +142,6 @@ const filterList = [
         id:7,
         paragraph:'Floor',
         component:FromToSelect
-    },
-    {
-        id:8,
-        paragraph:'Number_of_Bathrooms',
-        selects:[
-            'All',
-            '1',
-            '2',
-            '3+',
-        ],
-        component:AccordionSelect
     },
     {
         id:10,
@@ -96,10 +152,14 @@ const filterList = [
         id:11,
         paragraph:'Building_Type',
         selects:[
-            'Stone',
-            'Monolith',
-            'Panel',
-            'All',
+            { _id: 1, title: "Ստալինկա", isChecked: false },
+            { _id: 2, title: "Քարե", isChecked: false },
+            { _id: 3, title: "Պոստ Խրյուշովկա", isChecked: false },
+            { _id: 4, title: "Խրյուշովկա", isChecked: false },
+            { _id: 5, title: "Բարձրահարկ", isChecked: false },
+            { _id: 6, title: "Խոշոր Պանելային", isChecked: false },
+            { _id: 7, title: "Կասետաին", isChecked: false },
+            { _id: 8, title: "վերանորոգված դիզաիներական ոճով", isChecked: false }
         ],
         component:AccordionSelect
     },
@@ -107,27 +167,26 @@ const filterList = [
         id:12,
         paragraph:'Renovation',
         selects:[
-            'Zero_Condition',
-            'Newly_repaired',
-            'Good',
-            'Old_Renovation',
+            { _id: 1, title: "հին վերանորոգում", isChecked: false },
+            { _id: 2, title: "զրոական", isChecked: false },
+            { _id: 3, title: "վերանորոգում 10 ավել", isChecked: false },
+            { _id: 4, title: "վերանորոգում 5-10", isChecked: false },
+            { _id: 5, title: "վերանորոգում 2-5", isChecked: false },
+            { _id: 6, title: "վերանորոգված 2 տարի", isChecked: false },
+            { _id: 7, title: "վերանորոգված չբնակեցված", isChecked: false },
+            { _id: 8, title: "վերանորոգված դիզաիներական ոճով", isChecked: false },
         ],
         component:AccordionSelect
-    },
-    {
-        id:13,
-        paragraph:'Lift',
-        selects:[
-            'Yes',
-            'No',
-        ],
-        component:AccordionSelect
-    },
+    }
 ]
 
-export default function MainFiltering() {
+const  MainFiltering:FC<TMainFiltering> = ({setPage}) => {
 
     const { t } =  useTranslation()
+
+    const onSearchHandler = ()=>{
+        setPage(1)
+    }
 
     return (
         <div className={'main_filtering'}>
@@ -137,9 +196,11 @@ export default function MainFiltering() {
             })}
 
             <div style={{display:'flex',justifyContent:'flex-end'}}>
-                <div className='single_button search_button'> {t("Search")} </div>
+                <div className='single_button search_button' onClick={onSearchHandler}> {t("Search")} </div>
             </div>
 
         </div>
     );
 }
+
+export default MainFiltering

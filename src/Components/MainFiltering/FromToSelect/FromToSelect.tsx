@@ -6,8 +6,9 @@ import Typography from "@mui/material/Typography";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
+import {useFilterContext} from "../../../Contexts/FilterContext";
 
 type TFromToSelect = {
     id:number,
@@ -17,10 +18,19 @@ type TFromToSelect = {
 
 const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
 
+    const [fromVal,setFromVal] = useState('')
+    const [toVal,setToVal] = useState('')
+
+    const {filterState,updateFilterState} = useFilterContext()
+
     const { t } = useTranslation()
 
     const from = t('from')
     const to = t('to')
+
+    useEffect(()=>{
+        updateFilterState({ ...filterState, [paragraph.toLowerCase()]: [+fromVal, +toVal] });
+    },[fromVal,toVal])
 
 
     return(
@@ -44,11 +54,11 @@ const  FromToSelect:FC<TFromToSelect> = ({id,paragraph}) =>{
                 </Typography>
                 <div style={{ color: 'text.secondary',gap:'25px',padding:'0 25px',boxSizing:'border-box',display:'flex',alignItems:'center' }}>
                     <div>
-                        <TextField id="standard-basic" placeholder={from} variant="standard" />
+                        <TextField id="standard-basic" type={"number"} value={fromVal} onChange={(e)=>setFromVal(e.target.value)} placeholder={from} variant="standard" />
                     </div>
 
                     <div>
-                        <TextField id="standard-basic-1" placeholder={to} variant="standard" />
+                        <TextField id="standard-basic-1" type={"number"} value={toVal} onChange={(e)=>setToVal(e.target.value)}  placeholder={to} variant="standard" />
                     </div>
                 </div>
 

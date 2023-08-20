@@ -1,5 +1,5 @@
 import React, {FC, useRef, useState} from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -7,36 +7,41 @@ import "swiper/css/thumbs";
 
 import './SingleHouseSlider.css';
 
-import SwiperCore, { FreeMode, Navigation, Thumbs } from "swiper";
+import SwiperCore, {FreeMode, Navigation, Thumbs} from "swiper";
 
 SwiperCore.use([FreeMode, Navigation, Thumbs]);
 
-type TSingleHouseSlider={
-    imagesData:any
+type TSingleHouseSlider = {
+    imagesData: any
 }
 
-const SingleHouseSlider:FC<TSingleHouseSlider>=({imagesData})=> {
+const SingleHouseSlider: FC<TSingleHouseSlider> = ({imagesData}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState<any | null>(null);
 
     return (
         <>
             <Swiper
-                style={{
-                    // "--swiper-navigation-color": "#fff",
-                    // "--swiper-pagination-color": "#fff",
-                }}
+                style={
+                    {
+                        // "--swiper-navigation-color": "#fff",
+                        // "--swiper-pagination-color": "#fff",
+                    }
+                }
                 loop={true}
                 spaceBetween={10}
                 navigation={true}
-                thumbs={{ swiper: thumbsSwiper }}
+                thumbs={{swiper: thumbsSwiper}}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper2"
             >
-                {imagesData.length && imagesData.map((item:any)=>{
-                    return <SwiperSlide>
-                        <img src={item.image} />
-                    </SwiperSlide>
-                })}
+                {imagesData.length &&
+                    imagesData.map((item: any) => {
+                        return (
+                            <SwiperSlide key={item.image}>
+                                <img src={item.image}/>
+                            </SwiperSlide>
+                        );
+                    })}
             </Swiper>
             <Swiper
                 onSwiper={(swiper) => setThumbsSwiper(swiper)}
@@ -48,11 +53,14 @@ const SingleHouseSlider:FC<TSingleHouseSlider>=({imagesData})=> {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper"
             >
-                {imagesData.length && imagesData.map((item:any)=>{
-                    return <SwiperSlide>
-                        <img src={item.image} />
-                    </SwiperSlide>
-                })}
+                {imagesData.length &&
+                    imagesData.map((item: any) => {
+                        return (
+                                <SwiperSlide key={item.id}>
+                                    <img src={item.image}/>
+                                </SwiperSlide>
+                        );
+                    })}
             </Swiper>
         </>
     );

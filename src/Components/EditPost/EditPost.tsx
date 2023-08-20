@@ -717,7 +717,7 @@ const imageGettingHandler = (
 
             setLocalArray((prevArray: any) => [...prevArray, base64Data]);
 
-            const filtetype = file.type.split('/')[1]
+            const filtetype = file.type.split("/")[1];
 
             const newFile = new File([file], file.name, {type: filtetype});
             setFileArray((prevArray: any) => [...prevArray, newFile]);
@@ -727,7 +727,6 @@ const imageGettingHandler = (
     }
     event.target.value = "";
 };
-
 
 const statementCheckedHandler = (setStateAction: any, id: number) => {
     setStateAction((prevState: any) => {
@@ -1048,7 +1047,43 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
     const [localVkayakanImages, setLocalVkayakanImages] = useState<any[]>([]);
 
     const navigate = useNavigate();
-    const params = useParams()
+    const params = useParams();
+
+    useEffect(() => {
+        if (!houseInfo.property_description) {
+            return;
+        }
+        setDescription((prevState: any) =>
+            prevState.map((elem: any) => ({
+                ...elem,
+                checked: elem.title === houseInfo.property_description,
+            }))
+        );
+    }, [houseInfo.property_description]);
+
+    useEffect(() => {
+        if (!houseInfo.property_type) {
+            return;
+        }
+        setPropertyType((prevState: any) =>
+            prevState.map((elem: any) => ({
+                ...elem,
+                checked: elem.title === houseInfo.property_type,
+            }))
+        );
+    }, [houseInfo.property_type]);
+
+    useEffect(() => {
+        if (!houseInfo.property_type) {
+            return;
+        }
+        setStatus((prevState: any) =>
+            prevState.map((elem: any) => ({
+                ...elem,
+                checked: elem.title === houseInfo.status,
+            }))
+        );
+    }, [houseInfo.status]);
 
     useEffect(() => {
         houseInfo.comunal.forEach((houseComunal: string) => {
@@ -1223,7 +1258,6 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
         floornes,
     ]);
 
-
     const postSubmitHandler = (requestObject: any) => {
         const token = JSON.parse(localStorage.getItem("userToken") as string);
 
@@ -1232,68 +1266,86 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
         }
 
         fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: token,
-          },
-          body: JSON.stringify(requestObject),
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: token,
+            },
+            body: JSON.stringify(requestObject),
         })
-          .then((res) => res.json())
-          .then((response) => setResponseState(response));
+            .then((res) => res.json())
+            .then((response) => setResponseState(response));
 
         if (allImages.length) {
             const formData = new FormData();
 
             allImages.forEach((image: Blob) => {
-                formData.append("images", image, "image_file_" + Date.now() +"." + image.type);
+                formData.append(
+                    "images",
+                    image,
+                    "image_file_" + Date.now() + "." + image.type
+                );
             });
 
             formData.append("image_type", "Լուսանկար Ընդհաննուր");
 
-            fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/`, {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    Authorization: token,
-                },
-                body: formData,
-            })
+            fetch(
+                `${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/`,
+                {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: token,
+                    },
+                    body: formData,
+                }
+            )
                 .then((res) => res.json())
                 .then((response) => {
-                    setResponseState(response)
+                    setResponseState(response);
 
-                    !houseInfo.length && fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/${Object.keys(response)[0]}/set_general/`, {
-                        method: "POST",
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: token,
+                    !houseInfo.length &&
+                    fetch(
+                        `${process.env.REACT_APP_RUN_ENVIRONMENT}post/${
+                            params.id
+                        }/image/${Object.keys(response)[0]}/set_general/`,
+                        {
+                            method: "POST",
+                            headers: {
+                                Accept: "application/json",
+                                Authorization: token,
+                            },
                         }
-                    })
+                    )
                         .then((res) => res.json())
                         .then((response) => setResponseState(response));
                 });
-
-
         }
 
         if (ourImages.length) {
             const formData = new FormData();
 
             ourImages.forEach((image: Blob) => {
-                formData.append("images", image, "image_file_" + Date.now() +"." + image.type);
+                formData.append(
+                    "images",
+                    image,
+                    "image_file_" + Date.now() + "." + image.type
+                );
             });
 
             formData.append("image_type", "Լուսանկար մեր համար");
 
-            fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/`, {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    Authorization: token,
-                },
-                body: formData,
-            })
+            fetch(
+                `${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/`,
+                {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: token,
+                    },
+                    body: formData,
+                }
+            )
                 .then((res) => res.json())
                 .then((response) => setResponseState(response));
         }
@@ -1302,32 +1354,47 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             const formData = new FormData();
 
             vkayakanImages.forEach((image: Blob) => {
-                formData.append("images", image, "image_file_" + Date.now() +"." + image.type);
+                formData.append(
+                    "images",
+                    image,
+                    "image_file_" + Date.now() + "." + image.type
+                );
             });
 
             formData.append("image_type", "Լուսանկար Վկայականի");
 
-            fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/`, {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    Authorization: token,
-                },
-                body: formData,
-            })
+            fetch(
+                `${process.env.REACT_APP_RUN_ENVIRONMENT}post/${params.id}/image/`,
+                {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: token,
+                    },
+                    body: formData,
+                }
+            )
                 .then((res) => res.json())
                 .then((response) => setResponseState(response));
         }
 
-        navigate('/admin-dashboard')
-
+        navigate("/admin-dashboard");
     };
 
     return (
         <section className={"house_posting"}>
-
-            <div style={{width:'100%',display:'flex',justifyContent:'right',paddingRight:'3vw',boxSizing:'border-box'}}>
-                <div className={'go_back'} onClick={()=>navigate('/admin-panel')}>Admin Panel</div>
+            <div
+                style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "right",
+                    paddingRight: "3vw",
+                    boxSizing: "border-box",
+                }}
+            >
+                <div className={"go_back"} onClick={() => navigate("/admin-panel")}>
+                    Admin Panel
+                </div>
             </div>
             <div>
                 <input
