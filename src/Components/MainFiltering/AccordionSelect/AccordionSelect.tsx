@@ -105,7 +105,7 @@ const AccordionSelect: FC<TAccordionSelect> = ({id, paragraph, selects}) => {
                               sx={{color: 'rgb(12, 51, 58)'}}>
                         <Checkbox checked={name.isChecked}/>
 
-                        <ListItemText primary={t(name.title)}/>
+                        <ListItemText primary={`${t(name.title)}${name.title==='7'?'+':''}`}/>
                     </MenuItem>
                 ))}
             </AccordionDetails>

@@ -80,7 +80,7 @@
 .single_dash_line{
     display: flex;
     /*min-width: 370%;*/
-    min-width: 185%;
+    min-width: 250%;
     height: 70px;
     border-bottom: 1px solid rgba(189,189,189,0.23);
     cursor: pointer;
@@ -89,6 +89,7 @@
 
 .single_dash_line > div{
     width: 200px;
+    text-align: center;
     height: 100%;
     display: flex;
     justify-content: center;

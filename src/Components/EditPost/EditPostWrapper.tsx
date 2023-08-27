@@ -1,6 +1,5 @@
 import EditPost from "./EditPost";
 import { useParams } from "react-router";
-import { useNavigate } from "react-router-dom";
 import {useEffect, useState} from "react";
 
 const EditPostWrapper = () => {

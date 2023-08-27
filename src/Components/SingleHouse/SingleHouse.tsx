@@ -89,17 +89,21 @@ const SingleHouse = () => {
         return <div>No data found.</div>;
     }
 
+    const isLand = houseInfo.property_type === "Հողատարածք";
+
     return (
         <section className={"single_house_section"}>
-            <h1>Apartment for {houseInfo.property_description}</h1>
+            <h1>
+                {t(`${houseInfo.property_type} ${houseInfo.property_description}`)}
+            </h1>
 
             <div className={"single_house"}>
                 <article>
                     <h3 className={"single_house_heading"}>
-                        <span>{houseInfo.address}</span>
+                        <span>{t(houseInfo.address)}</span>
                         <span>
-              {t("Code")}:{houseInfo.cod}
-            </span>
+                {t("Code")}:{houseInfo.cod}
+              </span>
                     </h3>
                     <div
                         style={{
@@ -115,40 +119,54 @@ const SingleHouse = () => {
                     <div className={"single_house_options"}>
                         <div>
                             <div className={"single_house_option_icons"}>
-                <span>
-                  <FontAwesomeIcon icon={faBed}/>
-                    {houseInfo.room} {t("Rooms")}
-                </span>
+                                {!isLand && (
+                                    <span>
+                      <FontAwesomeIcon icon={faBed}/>
+                                        {houseInfo.room} {t("Rooms")}
+                    </span>
+                                )}
                                 <span>
-                  <FontAwesomeIcon icon={faHome}/> {houseInfo.total_area}{" "}
+                    <FontAwesomeIcon icon={faHome}/> {houseInfo.total_area}{" "}
                                     {t("M")}²
-                </span>
-                                <span>
-                  <FontAwesomeIcon icon={faBuilding}/>{" "}
-                                    {houseInfo.floors_number}/{houseInfo.building_floors_number}
-                </span>
-                                <span>
-                  <FontAwesomeIcon icon={faArrowsAltV}/>{" "}
-                                    {houseInfo.celing_hegiht}
-                                    {t("M")}
-                </span>
-                                <span>
-                  <FontAwesomeIcon icon={faBath}/> {houseInfo.bathroom_count}
-                </span>
+                  </span>
+                                {!isLand && (
+                                    <span>
+                      <FontAwesomeIcon icon={faBuilding}/>{" "}
+                                        {houseInfo.floors_number}/
+                                        {houseInfo.building_floors_number}
+                    </span>
+                                )}
+                                {!isLand && (
+                                    <span>
+                      <FontAwesomeIcon icon={faArrowsAltV}/>{" "}
+                                        {houseInfo.celing_hegiht}
+                                        {t("M")}
+                    </span>
+                                )}
+                                {!isLand && (
+                                    <span>
+                      <FontAwesomeIcon icon={faBath}/>{" "}
+                                        {houseInfo.bathroom_count}
+                    </span>
+                                )}
                             </div>
                             <div>
-                <span>
-                  {t("Building_Type")} : {houseInfo.building_type}
-                </span>
-                                <span>
-                  {t("Renovation")} : {houseInfo.state}
-                </span>
+                                {!isLand && (
+                                    <span>
+                      {t("Building_Type")} : {houseInfo.building_type}
+                    </span>
+                                )}
+                                {!isLand && (
+                                    <span>
+                      {t("Renovation")} : {houseInfo.state}
+                    </span>
+                                )}
                             </div>
                         </div>
                         <div>
-              <span className={"single_house_price"}>
-                {t("Price")}: ${houseInfo.price}
-              </span>
+                <span className={"single_house_price"}>
+                  {t("Price")}: ${houseInfo.price}
+                </span>
                         </div>
                     </div>
 
@@ -158,14 +176,18 @@ const SingleHouse = () => {
                         <p>{houseInfo.description} </p>
                     </div>
 
-                    <HouseAdvantages
-                        sectionName={"FACILITIES"}
-                        advantages={houseInfo.comunal}
-                    />
-                    <HouseAdvantages
-                        sectionName={"More_Information"}
-                        advantages={houseInfo.additional_conveniences}
-                    />
+                    {!isLand && (
+                        <>
+                            <HouseAdvantages
+                                sectionName={"FACILITIES"}
+                                advantages={houseInfo.comunal}
+                            />
+                            <HouseAdvantages
+                                sectionName={"More_Information"}
+                                advantages={houseInfo.additional_conveniences}
+                            />
+                        </>
+                    )}
 
                     <div className={"number_for_contact"}>
                         <div>

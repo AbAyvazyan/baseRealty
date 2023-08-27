@@ -178,7 +178,7 @@
     font-size: 14px;
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1500px) {
     .single_house_heading{
         gap: 50px;
         padding: 0 5%;
@@ -215,7 +215,7 @@
 
 }
 
-@media only screen and (max-width: 1215px) {
+@media only screen and (max-width: 1360px) {
 
     .single_house_option_icons{
         gap: 13px!important;
@@ -229,7 +229,7 @@
 }
 
 
-@media only screen and (max-width: 1145px) {
+@media only screen and (max-width: 1170px) {
 
     .single_house_options{
         font-size: 16px;
@@ -245,7 +245,7 @@
 
 }
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: 1120px) {
 
     .single_house_option_icons{
         gap: 10px!important;
@@ -266,7 +266,7 @@
 
 }
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1090px) {
 
     .single_house_options{
         font-size: 15px;
@@ -291,7 +291,7 @@
 }
 
 
-@media only screen and (max-width: 1010px) {
+@media only screen and (max-width: 1060px) {
     .single_house_option_icons{
         gap: 5px!important;
         font-size: 17px;
@@ -299,7 +299,7 @@
 
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1010px) {
 
     .single_house{
         flex-wrap: wrap;
@@ -381,7 +381,7 @@
     }
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 770px) {
     .number_for_contact{
         flex-wrap: wrap;
         height: 150px;
@@ -421,6 +421,9 @@
         font-size: 25px;
         order:1;
     }
+    .single_house_price{
+        width: 100%!important;
+    }
 
 
     .single_house_options > div:last-child{
@@ -442,9 +445,7 @@
         width: 100%;
     }
 
-    .single_house_price{
-        width: 100%!important;
-    }
+
 
     .single_house_heading{
         font-size: 18px;
@@ -489,7 +490,7 @@
 
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 480px) {
 
     .single_house_options {
         padding: 10px ;
@@ -529,7 +530,7 @@
 
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 440px) {
 
     .single_house_option_icons{
         gap: 3px!important;
@@ -542,7 +543,7 @@
 
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 410px) {
 
     .single_house_option_icons{
         gap: 3px!important;

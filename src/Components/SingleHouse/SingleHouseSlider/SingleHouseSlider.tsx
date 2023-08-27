@@ -7,6 +7,8 @@ import "swiper/css/thumbs";
 
 import './SingleHouseSlider.css';
 
+import logo from '../../../assets/images/logo.png'
+
 import SwiperCore, {FreeMode, Navigation, Thumbs} from "swiper";
 
 SwiperCore.use([FreeMode, Navigation, Thumbs]);
@@ -34,14 +36,18 @@ const SingleHouseSlider: FC<TSingleHouseSlider> = ({imagesData}) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper2"
             >
-                {imagesData.length &&
+                {imagesData.length ?
                     imagesData.map((item: any) => {
                         return (
                             <SwiperSlide key={item.image}>
                                 <img src={item.image}/>
                             </SwiperSlide>
                         );
-                    })}
+                    }):
+                    <SwiperSlide>
+                        <img src={logo}/>
+                    </SwiperSlide>
+                }
             </Swiper>
             <Swiper
                 onSwiper={(swiper) => setThumbsSwiper(swiper)}
@@ -53,14 +59,18 @@ const SingleHouseSlider: FC<TSingleHouseSlider> = ({imagesData}) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper"
             >
-                {imagesData.length &&
+                {imagesData.length ?
                     imagesData.map((item: any) => {
                         return (
-                                <SwiperSlide key={item.id}>
-                                    <img src={item.image}/>
-                                </SwiperSlide>
+                            <SwiperSlide key={item.image}>
+                                <img src={item.image}/>
+                            </SwiperSlide>
                         );
-                    })}
+                    }):
+                    <SwiperSlide>
+                        <img src={logo}/>
+                    </SwiperSlide>
+                }
             </Swiper>
         </>
     );

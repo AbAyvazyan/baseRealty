@@ -117,7 +117,44 @@ const initialState: Tstate[] = [
     {
         _id: uuid(),
         holder: "Rooms",
-        fromTo: true,
+        models: [
+            {
+                title: "1",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "2",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "3",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "4",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "5",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "6",
+                isChecked: false,
+                _id: uuid(),
+            },
+            {
+                title: "7",
+                isChecked: false,
+                _id: uuid(),
+            },
+        ],
+        fromTo: false,
         isOpen: false,
         singleCheck: false,
     },

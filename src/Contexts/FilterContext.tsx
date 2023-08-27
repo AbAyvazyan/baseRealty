@@ -1,6 +1,6 @@
 import React, {createContext, FC, useContext, useState} from "react";
 
-type FilterState = {
+export type FilterState = {
     property_type: string[],
     place: string[],
     rooms: number[],

@@ -127,6 +127,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
       updateFilterState({ ...filterState, [changingHolder]: Chosen });
   }, [Chosen, changingHolder, from, to, checkSingle]);
 
+
   return (
     <>
       {!singleCheck ? (
@@ -174,7 +175,7 @@ const MultipleSelectCheckmarks: FC<TSelect> = ({
                               handleCheckbox(e, _id, isChecked, state)
                             }
                           />
-                          {t(title)}
+                          {t(title)}{title==='7' && '+'}
                         </label>
                       </div>
                     );
