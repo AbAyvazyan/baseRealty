@@ -266,7 +266,7 @@
 
 }
 
-@media only screen and (max-width: 1090px) {
+@media only screen and (max-width: 1135px) {
 
     .single_house_options{
         font-size: 15px;
@@ -299,7 +299,7 @@
 
 }
 
-@media only screen and (max-width: 1010px) {
+@media only screen and (max-width: 1070px) {
 
     .single_house{
         flex-wrap: wrap;
@@ -329,7 +329,7 @@
 
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 900px) {
 
     .single_house_options{
         font-size: 16px;
@@ -420,18 +420,17 @@
     .single_house_price {
         font-size: 25px;
         order:1;
-    }
-    .single_house_price{
         width: 100%!important;
     }
 
 
     .single_house_options > div:last-child{
         height: unset;
+        width: 100%;
     }
 }
 
-@media only screen and (max-width: 690px) {
+@media only screen and (max-width: 710px) {
 
     .single_house_options{
         font-size: 14px;
@@ -444,8 +443,6 @@
     .single_house_options > div:last-child{
         width: 100%;
     }
-
-
 
     .single_house_heading{
         font-size: 18px;

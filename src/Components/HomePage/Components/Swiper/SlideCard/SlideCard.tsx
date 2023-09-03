@@ -14,6 +14,7 @@ import HouseCard from "../../../../HouseCard";
 import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useTranslation} from "react-i18next";
+import favicon from '../../../../../assets/images/logo.png'
 
 
 
@@ -35,7 +36,7 @@ const SlideCard:FC<IslideCard> = ({houses:{image,heading,place,price,direction}}
     const {t} = useTranslation()
 
     return (
-      <a className={"slide_card"} href={`house/${direction}`}>
+      <a className="slide_card" href={`house/${direction}`} rel="noopener noreferrer" target="_blank">
         <div
           className={"slide_card_image"}
           style={{ backgroundImage: `url(${image})` }}

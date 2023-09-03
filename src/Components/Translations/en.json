@@ -457,5 +457,12 @@
   "Առանձնատուն Վաճառք": "Private house for sale",
   "Վաճառք": "For Sale",
   "Վարձ": "For Rent",
-  "Օրավարձ": "Daily"
+  "Օրավարձ": "Daily",
+  "Առանձնատուն Օրավարձ": "Private house for daily rent,",
+  "Բնակարան Օրավարձ": "Apartment for daily rent",
+  "Կոմերցիոն Օրավարձ": "Commercial space for daily rent",
+  "Հողատարածք Օրավարձ": "Land for daily rent",
+  "Հոսթել Օրավարձ": "Hostel with daily rent",
+  "Հյուրատուն Օրավարձ": "Guesthouse with daily rent",
+  "Հյուրանոց Օրավարձ": "Hotel with daily rent"
 }

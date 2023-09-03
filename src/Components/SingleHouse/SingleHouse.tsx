@@ -2,6 +2,7 @@ import "./SingleHouse.css";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import favicon from '../../assets/images/logo.png'
 
 import {
     faBed,
@@ -17,6 +18,14 @@ import LittleHouseCard from "./LittleHouseCard/LittleHouseCard";
 import HouseAdvantages from "./HouseAdvantages/HouseAdvantages";
 import MapComponent from "../HouseMap/HouseMap";
 import {useTranslation} from "react-i18next";
+
+const addFaviconInTab = () => {
+    const link:any = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'icon';
+    link.href = favicon; // Replace with the actual path to your new favicon
+    document.getElementsByTagName('head')[0].appendChild(link);
+};
 
 const SingleHouse = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -58,6 +67,8 @@ const SingleHouse = () => {
     }, [routeParameter.code]);
 
     useEffect(() => {
+        addFaviconInTab()
+
         fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/?&community=Կենտրոն`)
             .then((res) => res.json())
             .then((response) => setBestOffer(response.posts));

@@ -40,7 +40,7 @@ const HouseCard: FC<ThouseCard> = (
 
 
     return (
-        <a href={`/house/${id}`} target={'_blank'} className={'house_card'}>
+        <a href={`/house/${id}`} target={'_blank'} rel="noopener noreferrer" className={'house_card'}>
             <div className={'house_card_image'}
                  style={{backgroundImage: `url(${image ? `http://${image}` : logo})`}}></div>
             <div className={'house_card_about'}>

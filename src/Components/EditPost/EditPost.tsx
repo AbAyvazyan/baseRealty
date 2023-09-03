@@ -497,12 +497,14 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
         };
     }, [communityState, address, buildingNumber, apartment]);
 
+    console.log(buildingTypeState,thisTimeType)
+
     useEffect(() => {
         setReqObj({
             cod: code,
             comunal: activeComunal,
-            meaning:
-                thisTimeType === "Կոմերցիոն" ? buildingTypeState : "Բազմաֆունկցիոնալ",
+            meaning:"Բազմաֆունկցիոնալ",
+                // thisTimeType === "Կոմերցիոն" && buildingTypeState==="Այլ"  ? "Բազմաֆունկցիոնալ" : buildingTypeState,
             ground_area: landSquare,
             ground_width: landLayn,
             ground_height: landErk,
