@@ -35,6 +35,7 @@ const SwiperElement: FC<Tswiper> = ({heading, homes}) => {
         <>
             <section className={"swiper_section"}>
                 <h2>{t(heading)}</h2>
+                <div className={'swipe_line'}></div>
 
                 <Swiper
                     spaceBetween={30}

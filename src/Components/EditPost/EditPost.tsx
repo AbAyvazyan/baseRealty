@@ -497,7 +497,6 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
         };
     }, [communityState, address, buildingNumber, apartment]);
 
-    console.log(buildingTypeState,thisTimeType)
 
     useEffect(() => {
         setReqObj({
@@ -837,7 +836,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 value={address}
                                 onChange={(e) => setAddress(e.target.value.trim())}
                             >
-                                {street[communityState].map((elem) => {
+                                {street[communityState] && street[communityState].map((elem) => {
                                     return (
                                         <option key={uuid()} value={elem}>
                                             {elem}

@@ -2,8 +2,16 @@ import "./Dashboard.css";
 import withAuthorization from "../../hoc/autorization";
 import {useEffect, useState, useRef} from "react";
 import {useNavigate} from "react-router-dom";
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import {faHouse} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {convertToISODate, getDateDifference} from "../../helpers/dateManipulators";
+
+const statuses = {
+    0: 'Ակտիվ',
+    1: 'Ժամանակավոր',
+    2: 'Վաճառված',
+    3: 'Չանրադառնալ',
+}
 
 const Dashboard = () => {
     const [houseInfo, setHouseInfo] = useState<any>([]);
@@ -11,7 +19,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [page, setPage] = useState(1)
-    const [allPagesCount,setAllPagesCount] = useState(0)
+    const [allPagesCount, setAllPagesCount] = useState(0)
 
     useEffect(() => {
         if (!page) {
@@ -21,7 +29,7 @@ const Dashboard = () => {
         const token = JSON.parse(localStorage.getItem("userToken") as string);
 
 
-        fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/?page=${page}`,{
+        fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/?page=${page}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: token,
@@ -31,7 +39,7 @@ const Dashboard = () => {
             .then((response) => {
                 response.posts && setHouseInfo((prevState: any) => [...prevState, ...response.posts])
                 response.pages && setPageInfo(response.pages)
-                response.all_count && setAllPagesCount( response.all_count)
+                response.all_count && setAllPagesCount(response.all_count)
             });
     }, [page]);
 
@@ -54,15 +62,17 @@ const Dashboard = () => {
 
     useEffect(() => {
 
+        const refValue = containerRef.current
+
         if (!pageInfo.has_next) {
             return
         }
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', handleScroll);
+        if (refValue) {
+            refValue.addEventListener('scroll', handleScroll);
         }
         return () => {
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', handleScroll);
+            if (refValue) {
+                refValue.removeEventListener('scroll', handleScroll);
             }
         };
     }, [pageInfo.has_next]);
@@ -70,7 +80,7 @@ const Dashboard = () => {
 
     return (
         <section className={"dashboard"}>
-            <div className={'go_back'} onClick={()=>navigate('/admin-panel')}>Admin Panel</div>
+            <div className={'go_back'} onClick={() => navigate('/admin-panel')}>Admin Panel</div>
             <div className={"dashboard_part"}>
                 <div className={"dashboard_tables"} ref={containerRef}>
                     {/*<div className={'dashboard_inputs'}>*/}
@@ -224,6 +234,7 @@ const Dashboard = () => {
                     <div className={"single_dash_line"}>
                         <div style={{fontWeight: "bold"}}><FontAwesomeIcon icon={faHouse}/>&nbsp;{allPagesCount}</div>
                         <div style={{fontWeight: "bold"}}>#Կոդ</div>
+                        <div style={{fontWeight: "bold"}}>Կարգավիճակ</div>
                         <div style={{fontWeight: "bold"}}>Նկարներ</div>
                         <div style={{fontWeight: "bold"}}>Գույքի տիպը</div>
                         <div style={{fontWeight: "bold"}}>Կարգավիճակը</div>
@@ -234,20 +245,24 @@ const Dashboard = () => {
                         <div style={{fontWeight: "bold"}}>Հարկայնություն</div>
                         <div style={{fontWeight: "bold"}}>Ընդ.Տարածք</div>
                         <div style={{fontWeight: "bold"}}>Բնակելի Տարածք</div>
-                        <div style={{fontWeight: "bold",width:'350px'}}>Վիճակ</div>
+                        <div style={{fontWeight: "bold", width: '350px'}}>Վիճակ</div>
                         {/*<div style={{fontWeight: "bold"}}>Տիպ</div>*/}
                         <div style={{fontWeight: "bold"}}>Սանհանգույց</div>
                         <div style={{fontWeight: "bold"}}>Շին. Տեսակը</div>
                         <div style={{fontWeight: "bold"}}>Գին</div>
                         <div style={{fontWeight: "bold"}}>Մասնագետ</div>
+                        <div style={{fontWeight: "bold"}}>Ստեղծվել է</div>
+                        <div style={{fontWeight: "bold"}}>Նորացվել է</div>
                         <div style={{fontWeight: "bold"}}>Փոփոխություն</div>
                     </div>
 
 
                     {houseInfo.length &&
                         houseInfo.map((item: any) => {
+
+                            const timeExpired = getDateDifference(item.updated_at ? item.updated_at : item.created_at)
                             return (
-                                <div key={item.id} className={"single_dash_line"}>
+                                <div key={item.id} className={`single_dash_line ${timeExpired}`}>
                                     <div>
                                         <input
                                             type="checkbox"
@@ -255,6 +270,8 @@ const Dashboard = () => {
                                         />
                                     </div>
                                     <div>{item.cod}</div>
+                                    {/*@ts-ignore*/}
+                                    <div>{statuses[Number(item.status)]}</div>
                                     <div>{item.image ? 'Այո' : 'Ոչ'}</div>
                                     <div>{item.property_type}</div>
                                     <div>{item.property_description}</div>
@@ -265,11 +282,13 @@ const Dashboard = () => {
                                     <div>{item.building_floors_number}</div>
                                     <div>{item.total_area}</div>
                                     <div>{item.using_area}</div>
-                                    <div style={{overflow:'auto',width:'350px'}}>{item.state}</div>
+                                    <div style={{overflow: 'auto', width: '350px'}}>{item.state}</div>
                                     <div>{item.bathroom_count}</div>
                                     <div>{item.building_type}</div>
                                     <div>{item.price}</div>
                                     <div>{item.creator}</div>
+                                    <div>{convertToISODate(item.created_at)}</div>
+                                    <div>{convertToISODate(item.updated_at)}</div>
                                     {/*<div>$333333</div>*/}
                                     {/*<div>$333333</div>*/}
                                     {/*<div>$333333</div>*/}
