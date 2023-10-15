@@ -90,6 +90,10 @@
     background-color: rgba(255, 0, 0, 0.15);
 }
 
+.warningLimit{
+    background-color: rgba(238, 213, 140, 0.15);
+}
+
 .single_dash_line > div{
     width: 200px;
     text-align: center;

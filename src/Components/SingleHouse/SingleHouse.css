@@ -1,10 +1,10 @@
-.single_house_section{
+.single_house_section {
     width: 100%;
-    padding: 5vh 0 10vh ;
+    padding: 5vh 0 10vh;
 }
 
 
-.single_house{
+.single_house {
     width: 95%;
     border-radius: 7px;
     margin: 10vh auto;
@@ -15,19 +15,19 @@
     box-sizing: border-box;
 }
 
-.single_house article{
+.single_house article {
     width: 75%;
     display: flex;
     flex-wrap: wrap;
 }
 
 
-.single_house aside{
+.single_house aside {
     width: 25%;
     box-sizing: border-box;
 }
 
-.single_house_options{
+.single_house_options {
     width: 90%;
     height: 150px;
     border: 2px solid rgb(var(--text-color));
@@ -42,7 +42,7 @@
 }
 
 
-.single_house_options > div:last-child{
+.single_house_options > div:last-child {
     width: 40%;
     height: 100%;
     display: flex;
@@ -50,7 +50,7 @@
     justify-content: center;
 }
 
-.single_house_options > div:first-child{
+.single_house_options > div:first-child {
     height: 100%;
     width: 60%;
     display: flex;
@@ -59,21 +59,21 @@
     flex-wrap: wrap;
 }
 
-.single_house_option_icons{
+.single_house_option_icons {
     font-size: 20px;
 }
 
-.single_house_options > div:first-child > div:last-child{
+.single_house_options > div:first-child > div:last-child {
     font-size: 18px;
     word-spacing: 1px;
 }
 
-.single_house_options > div:first-child div{
+.single_house_options > div:first-child div {
     display: flex;
     gap: 33px;
 }
 
-.single_house_advantages{
+.single_house_advantages {
     width: 40%;
     min-height: 200px;
     border: 2px solid rgb(var(--text-color));
@@ -82,18 +82,18 @@
     font-size: 14px;
 }
 
-.single_house_map_part{
+.single_house_map_part {
     width: 90%;
     margin: 5vh auto;
 }
 
-.single_house_aside_content{
+.single_house_aside_content {
     width: 100%;
-    margin: 5vh 0 ;
+    margin: 5vh 0;
 
 }
 
-.single_house_about{
+.single_house_about {
     width: 90%;
     min-height: 200px;
     /*border: 2px solid rgb(var(--text-color));*/
@@ -105,11 +105,11 @@
     font-size: 14px;
 }
 
-.single_house_about p{
+.single_house_about p {
     margin: 3vh auto 0;
 }
 
-.single_house_advantages_part{
+.single_house_advantages_part {
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: 40px;
@@ -117,26 +117,26 @@
     justify-items: center;
 }
 
-.single_house_advantages_part span{
+.single_house_advantages_part span {
     width: 100%;
     font-size: 17px;
     letter-spacing: 1px;
 }
 
-.single_house_heading{
-    width:100%;
+.single_house_heading {
+    width: 100%;
     padding: 0 10%;
-    display:flex;
-    justify-content:space-between
+    display: flex;
+    justify-content: space-between
 }
 
-.single_house_price{
-    font-size:25px;
+.single_house_price {
+    font-size: 25px;
     font-weight: 700;
 }
 
 
-.number_for_contact{
+.number_for_contact {
     width: 90%;
     height: 80px;
     margin: 2vh auto;
@@ -151,11 +151,21 @@
     width: 80%;
 }
 
-.number_for_contact > div:first-child input{
+.sortingWrapper {
+    width: 200px;
+    height: 40px;
+}
+
+.sortingWrapper select {
+    width: 100%;
+    height: 100%;
+}
+
+.number_for_contact > div:first-child input {
     width: 100%;
     height: 50px;
     outline: none;
-    border: 1px solid rgb(189,189,189);
+    border: 1px solid rgb(189, 189, 189);
     border-radius: 3px;
     padding-left: 15px;
 }
@@ -174,41 +184,41 @@
     align-items: center;
     border-radius: 3px;
     cursor: pointer;
-    margin-left:  auto;
+    margin-left: auto;
     font-size: 14px;
 }
 
 @media only screen and (max-width: 1500px) {
-    .single_house_heading{
+    .single_house_heading {
         gap: 50px;
         padding: 0 5%;
     }
 
-    .single_house_price{
+    .single_house_price {
         font-size: 22px;
     }
 
-    .single_house_options{
+    .single_house_options {
         padding: 0 30px;
         gap: 35px;
     }
 
-    .single_house_option_icons{
-        gap: 20px!important;
+    .single_house_option_icons {
+        gap: 20px !important;
     }
 
-    .single_house_options > div:first-child >  div:last-child {
+    .single_house_options > div:first-child > div:last-child {
         font-size: 16px;
     }
 }
 
 @media only screen and (max-width: 1310px) {
 
-    .single_house_option_icons{
-        gap: 15px!important;
+    .single_house_option_icons {
+        gap: 15px !important;
     }
 
-    .single_house_options > div:first-child >  div:last-child {
+    .single_house_options > div:first-child > div:last-child {
         font-size: 14.7px;
     }
 
@@ -217,12 +227,12 @@
 
 @media only screen and (max-width: 1360px) {
 
-    .single_house_option_icons{
-        gap: 13px!important;
+    .single_house_option_icons {
+        gap: 13px !important;
         font-size: 17px;
     }
 
-    .single_house_options > div:first-child >  div:last-child {
+    .single_house_options > div:first-child > div:last-child {
         font-size: 12.5px;
     }
 
@@ -231,15 +241,15 @@
 
 @media only screen and (max-width: 1170px) {
 
-    .single_house_options{
+    .single_house_options {
         font-size: 16px;
     }
 
-    .single_house_price{
-        font-size:23px
+    .single_house_price {
+        font-size: 23px
     }
 
-    .single_house_heading{
+    .single_house_heading {
         font-size: 20px;
     }
 
@@ -247,19 +257,19 @@
 
 @media only screen and (max-width: 1120px) {
 
-    .single_house_option_icons{
-        gap: 10px!important;
+    .single_house_option_icons {
+        gap: 10px !important;
         font-size: 17px;
     }
 
-    .single_house_options > div:first-child >  div:last-child {
+    .single_house_options > div:first-child > div:last-child {
         display: flex;
         flex-wrap: wrap;
         font-size: 12px;
         gap: 10px;
     }
 
-    .single_house_options > div:first-child >  div:last-child  span{
+    .single_house_options > div:first-child > div:last-child span {
         width: 100%;
         font-size: 18px;
     }
@@ -268,23 +278,23 @@
 
 @media only screen and (max-width: 1135px) {
 
-    .single_house_options{
+    .single_house_options {
         font-size: 15px;
     }
 
-    .single_house_price{
-        font-size:22px
+    .single_house_price {
+        font-size: 22px
     }
 
-    .single_house_heading{
+    .single_house_heading {
         font-size: 20px;
     }
 
-    .single_house_options > div:first-child{
+    .single_house_options > div:first-child {
         gap: 10px;
     }
 
-    .single_house_options{
+    .single_house_options {
         padding: 0 20px;
     }
 
@@ -292,8 +302,8 @@
 
 
 @media only screen and (max-width: 1060px) {
-    .single_house_option_icons{
-        gap: 5px!important;
+    .single_house_option_icons {
+        gap: 5px !important;
         font-size: 17px;
     }
 
@@ -301,29 +311,29 @@
 
 @media only screen and (max-width: 1070px) {
 
-    .single_house{
+    .single_house {
         flex-wrap: wrap;
     }
 
-    .single_house article{
+    .single_house article {
         width: 100%;
     }
 
-    .single_house aside{
+    .single_house aside {
         width: 100%;
         margin-top: 5vh;
     }
 
-    .single_house_options{
+    .single_house_options {
         font-size: 19px;
     }
 
 
-    .single_house_price{
-        font-size:25px
+    .single_house_price {
+        font-size: 25px
     }
 
-    .single_house_heading{
+    .single_house_heading {
         font-size: 23px;
     }
 
@@ -331,27 +341,27 @@
 
 @media only screen and (max-width: 900px) {
 
-    .single_house_options{
+    .single_house_options {
         font-size: 16px;
     }
 
-    .single_house_options > div:first-child{
+    .single_house_options > div:first-child {
         gap: 13px;
     }
 
-    .single_house_price{
-        font-size:20px
+    .single_house_price {
+        font-size: 20px
     }
 
-    .single_house_heading{
+    .single_house_heading {
         font-size: 20px;
     }
 
-    .single_house_advantages{
-    width: 90%;
+    .single_house_advantages {
+        width: 90%;
     }
 
-    .single_house_advantages_part{
+    .single_house_advantages_part {
         grid-template-columns: 1fr 1fr;
         padding-left: 130px;
     }
@@ -359,15 +369,16 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .number_for_contact{
+    .number_for_contact {
         flex-wrap: wrap;
         height: 150px;
     }
+
     .number_for_contact > div:first-child {
         width: 100%;
     }
 
-    .number_for_contact > div:first-child input{
+    .number_for_contact > div:first-child input {
         width: 100%;
     }
 
@@ -382,15 +393,16 @@
 }
 
 @media only screen and (max-width: 770px) {
-    .number_for_contact{
+    .number_for_contact {
         flex-wrap: wrap;
         height: 150px;
     }
+
     .number_for_contact > div:first-child {
         width: 100%;
     }
 
-    .number_for_contact > div:first-child input{
+    .number_for_contact > div:first-child input {
         width: 100%;
     }
 
@@ -403,7 +415,7 @@
         margin-right: auto;
     }
 
-    .single_house_options{
+    .single_house_options {
         flex-wrap: wrap;
         gap: 5px;
         height: 200px;
@@ -419,12 +431,12 @@
 
     .single_house_price {
         font-size: 25px;
-        order:1;
-        width: 100%!important;
+        order: 1;
+        width: 100% !important;
     }
 
 
-    .single_house_options > div:last-child{
+    .single_house_options > div:last-child {
         height: unset;
         width: 100%;
     }
@@ -432,19 +444,19 @@
 
 @media only screen and (max-width: 710px) {
 
-    .single_house_options{
+    .single_house_options {
         font-size: 14px;
     }
 
-    .single_house_options > div:first-child{
+    .single_house_options > div:first-child {
         gap: 10px;
     }
 
-    .single_house_options > div:last-child{
+    .single_house_options > div:last-child {
         width: 100%;
     }
 
-    .single_house_heading{
+    .single_house_heading {
         font-size: 18px;
     }
 
@@ -460,7 +472,6 @@
     .single_house_options > div:first-child {
         gap: 5px;
     }
-
 
 
     .single_house_heading {
@@ -490,7 +501,7 @@
 @media only screen and (max-width: 480px) {
 
     .single_house_options {
-        padding: 10px ;
+        padding: 10px;
         font-size: 13px;
     }
 
@@ -507,20 +518,20 @@
         padding: 20px 50px;
     }
 
-    .single_house_option_icons{
-        gap: 10px!important;
+    .single_house_option_icons {
+        gap: 10px !important;
         font-size: 15px;
         margin-bottom: 10px;
     }
 
-    .single_house_options > div:first-child >  div:last-child {
+    .single_house_options > div:first-child > div:last-child {
         display: flex;
         flex-wrap: wrap;
         font-size: 12px;
         gap: 10px;
     }
 
-    .single_house_options > div:first-child >  div:last-child  span{
+    .single_house_options > div:first-child > div:last-child span {
         width: 100%;
         font-size: 15px;
     }
@@ -529,12 +540,12 @@
 
 @media only screen and (max-width: 440px) {
 
-    .single_house_option_icons{
-        gap: 3px!important;
+    .single_house_option_icons {
+        gap: 3px !important;
         font-size: 15px;
     }
 
-    .single_house_options > div:first-child >  div:last-child  span{
+    .single_house_options > div:first-child > div:last-child span {
         font-size: 15px;
     }
 
@@ -542,8 +553,8 @@
 
 @media only screen and (max-width: 410px) {
 
-    .single_house_option_icons{
-        gap: 3px!important;
+    .single_house_option_icons {
+        gap: 3px !important;
         font-size: 13px;
     }
 
@@ -555,13 +566,13 @@
         font-size: 17px
     }
 
-    .single_house_advantages_part span{
+    .single_house_advantages_part span {
         font-size: 14px;
         letter-spacing: 0;
     }
 
-    .single_house_option_icons{
-        gap: 3px!important;
+    .single_house_option_icons {
+        gap: 3px !important;
         font-size: 11px;
     }
 

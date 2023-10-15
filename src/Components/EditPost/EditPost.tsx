@@ -502,8 +502,8 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
         setReqObj({
             cod: code,
             comunal: activeComunal,
-            meaning:"Բազմաֆունկցիոնալ",
-                // thisTimeType === "Կոմերցիոն" && buildingTypeState==="Այլ"  ? "Բազմաֆունկցիոնալ" : buildingTypeState,
+            meaning:
+                buildingTypeState === "Այլ" ? "Բազմաֆունկցիոնալ" : buildingTypeState,
             ground_area: landSquare,
             ground_width: landLayn,
             ground_height: landErk,

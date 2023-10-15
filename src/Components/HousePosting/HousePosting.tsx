@@ -7,6 +7,28 @@ import uuid from "react-uuid";
 import {buildingType, community, meaning, region, renovation, roomHeight, street} from "../../helpers/constants";
 
 
+const codeStates = {
+    "Աջափնյակ": 'J',
+    "Արաբկիր": 'A',
+    "Ավան": 'V',
+    "Դավիթաշեն": 'D',
+    "Էրեբունի": 'E',
+    "Քանաքեռ Զեյթուն": 'Z',
+    "Կենտրոն": 'K',
+    "Մալաթիա Սեբաստիա": 'M',
+    "Նոր Նորք": 'N',
+    "Շենգավիթ": 'S',
+    "Նորք Մարաշ": 'O',
+    "Նուբարաշեն": 'E',
+}
+
+const codeFirstChars: { [key: string]: number } = {
+    'RAP': 5,
+    'RCM': 6,
+    'RHS': 7,
+    'RLD': 8,
+    'DAP': 9
+}
 
 const date = new Date();
 const year = date.getFullYear();
@@ -18,8 +40,8 @@ const today = `${year}-${month}-${day}`;
 const HousePosting = () => {
     const [thisTimeType, setThisTimeType] = useState("");
 
-    const [buildingNumber,setBuildingNumber] = useState('')
-    const [myAddress,setMyAddress] = useState('')
+    const [buildingNumber, setBuildingNumber] = useState('')
+    const [myAddress, setMyAddress] = useState('')
 
     const [description, setDescription] = useState([
         {
@@ -275,6 +297,7 @@ const HousePosting = () => {
     const [reqObj, setReqObj] = useState<any>({});
     const [activeComunal, setActiveComunal] = useState<any>([]);
     const [activeConvinions, setActiveConvinions] = useState<any>([]);
+    const [generatedCode, setGeneratedCode] = useState<string>('')
     const navigate = useNavigate();
 
     const statementCheckedHandler = (setStateAction: any, id: number) => {
@@ -364,7 +387,7 @@ const HousePosting = () => {
 
     useEffect(() => {
 
-        if(!communityState || !address || !buildingNumber || !apartment){
+        if (!communityState || !address || !buildingNumber || !apartment) {
             return
         }
 
@@ -372,16 +395,16 @@ const HousePosting = () => {
             setMapAddress(`${communityState} ${address} ${buildingNumber}`);
         }, 3000);
 
-        setMyAddress(`${communityState}${address} ${buildingNumber}${apartment}`)
+        setMyAddress(`${communityState}/${address}/${buildingNumber}/${apartment}`)
 
         return () => {
             clearTimeout(debounceTimeout);
         };
-    }, [communityState,address,buildingNumber,apartment]);
+    }, [communityState, address, buildingNumber, apartment]);
 
     useEffect(() => {
         setReqObj({
-            cod: code,
+            cod: code?code:generatedCode,
             comunal: activeComunal,
             meaning:
                 thisTimeType === "Կոմերցիոն" ? buildingTypeState : "Բազմաֆունկցիոնալ",
@@ -404,7 +427,7 @@ const HousePosting = () => {
                     email: mail,
                 },
             ],
-            address_for_me:myAddress,
+            address_for_me: myAddress,
             property_description: thisTimeDescription,
             property_type: thisTimeType,
             status: thisTimeStatus,
@@ -418,7 +441,7 @@ const HousePosting = () => {
             floors_number: floor,
             building_floors_number: floornes,
             bathroom_count: sanuzel,
-            celing_hegiht: typeof roomHeightState === 'number'?roomHeightState:0,
+            celing_hegiht: typeof roomHeightState === 'number' ? roomHeightState : 0,
             state: renovationState,
             additional_conveniences: activeConvinions,
         });
@@ -456,11 +479,28 @@ const HousePosting = () => {
         renovationState,
         convinions,
         floornes,
-        myAddress
+        myAddress,
+        generatedCode
     ]);
+
+    useEffect(() => {
+        const firstLetter = thisTimeDescription === 'Վաճառք' ? 'B' : thisTimeDescription === 'Վարձ' ? 'R' : 'D'
+        const houseLetters = thisTimeType === 'Բնակարան' ? 'AP' : thisTimeType === 'Առանձնատուն' ? 'HS' : thisTimeType === 'Հողատարածք' ? 'LD' : 'CM'
+        let generatedLetters = firstLetter + houseLetters
+        const firstCharacterOfCode = thisTimeDescription === 'Վաճառք' ? (rooms <= 4 ? rooms : 4) : codeFirstChars[generatedLetters]
+        const min = 10000;
+        const max = 99999;
+
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        generatedLetters+=`-${firstCharacterOfCode}`+randomNumber
+
+        setGeneratedCode(generatedLetters)
+
+    }, [thisTimeType, thisTimeDescription, communityState, rooms])
 
     const postSubmitHandler = (requestObject: any) => {
         const token = JSON.parse(localStorage.getItem("userToken") as string);
+
 
         if (!token) {
             navigate("/login");
@@ -474,7 +514,7 @@ const HousePosting = () => {
             },
             body: JSON.stringify(requestObject),
         })
-            // .then((res) => navigate("/admin-panel"));
+        .then((res) => navigate("/admin-panel"));
     };
 
     return (
