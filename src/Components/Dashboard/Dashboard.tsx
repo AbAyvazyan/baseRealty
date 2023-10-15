@@ -22,6 +22,21 @@ const Dashboard = () => {
     const [allPagesCount, setAllPagesCount] = useState(0)
     const [sortValue, setSortValue] = useState<string>('')
 
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isBrokerLead, setIsBrokerLead] = useState(false);
+    const [agentLocation, setAgentLocation] = useState('');
+
+    useEffect(() => {
+        const storageUser = localStorage.getItem('user');
+
+        if (storageUser) {
+            const user = JSON.parse(storageUser);
+            setIsAdmin(user.role === 'Super Admin');
+            setIsBrokerLead(user.role === 'Broker Lead');
+            setAgentLocation(user.community);
+        }
+    }, []);
+
     useEffect(() => {
         if (!page) {
             return
@@ -79,21 +94,26 @@ const Dashboard = () => {
     }, [pageInfo.has_next]);
 
     useEffect(() => {
-        setHouseInfo((prevState: any) => {
-            const sortedHouseInfo = [...prevState];
+        const sortHouseInfo = () => {
+            setHouseInfo((prevState:any) => {
+                const sortedHouseInfo = [...prevState];
 
-            if (sortValue === 'priceLowToHigh') {
-                sortedHouseInfo.sort((a, b) => (a.price || 0) - (b.price || 0));
-            } else if (sortValue === 'priceHighToLow') {
-                sortedHouseInfo.sort((a, b) => (b.price || 0) - (a.price || 0));
-            } else {
-                sortedHouseInfo.sort((a, b) => (a[sortValue] || '').localeCompare(b[sortValue] || ''));
-            }
+                if (sortValue === 'priceLowToHigh') {
+                    sortedHouseInfo.sort((a, b) => (a.price || 0) - (b.price || 0));
+                } else if (sortValue === 'priceHighToLow') {
+                    sortedHouseInfo.sort((a, b) => (b.price || 0) - (a.price || 0));
+                } else {
+                    sortedHouseInfo.sort((a, b) => (b[sortValue] || '').localeCompare(a[sortValue] || ''));
+                }
 
+                return sortedHouseInfo;
+            });
+        };
 
-            return sortedHouseInfo;
-        });
-    }, [sortValue, houseInfo.length]);
+        sortHouseInfo(); // Initial sorting
+
+        // Ensure that the array is sorted whenever sortValue or houseInfo changes
+    }, [sortValue, houseInfo]);
 
 
     return (
@@ -257,6 +277,7 @@ const Dashboard = () => {
                                 <option value="updated_at">Թարմացման ամսաթվի</option>
                                 <option value="creator">Մասնագետի</option>
                                 <option value="image">Նկարների</option>
+                                {!isAdmin && <option value='community'>Իմ Տարածք</option>}
                             </select>
                         </div>
 
@@ -320,9 +341,10 @@ const Dashboard = () => {
                                     <div>{convertToISODate(item.created_at)}</div>
                                     <div>{convertToISODate(item.updated_at)}</div>
                                     <div>
-                                        <div className={"dashboard_edit_button"}
-                                             onClick={() => onEditButtonClickHandler(item.id)}>Edit
-                                        </div>
+                                        {isAdmin || (isBrokerLead && agentLocation === item.community) ?
+                                            <div className={"dashboard_edit_button"}
+                                                 onClick={() => onEditButtonClickHandler(item.id)}>Edit
+                                            </div> : <></>}
                                         {/*<div className={"dashboard_delete_button"}>Delete</div>*/}
                                     </div>
                                 </div>

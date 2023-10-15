@@ -367,7 +367,6 @@ export const region = [
 ];
 
 export const community = [
-    "",
     "Աջափնյակ",
     "Արաբկիր",
     "Ավան",
