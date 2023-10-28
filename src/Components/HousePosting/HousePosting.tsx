@@ -450,7 +450,7 @@ const HousePosting = () => {
             status: thisTimeStatus,
             community: communityState,
             region: regionState,
-            address,
+            address:myAddress,
             price,
             building_type: buildingTypeState,
             total_area: allSqare,

@@ -490,7 +490,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             setMapAddress(`${communityState} ${address} ${buildingNumber}`);
         }, 3000);
 
-        setMyAddress(`${communityState}${address} ${buildingNumber}${apartment}`)
+        setMyAddress(`${communityState}/${address}/${buildingNumber}/${apartment}`)
 
         return () => {
             clearTimeout(debounceTimeout);
@@ -503,7 +503,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             cod: code,
             comunal: activeComunal,
             meaning:
-                buildingTypeState === "Այլ" ? "Բազմաֆունկցիոնալ" : buildingTypeState,
+                thisTimeType === "Կոմերցիոն" ? buildingTypeState : "Բազմաֆունկցիոնալ",
             ground_area: landSquare,
             ground_width: landLayn,
             ground_height: landErk,
@@ -529,7 +529,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             status: thisTimeStatus,
             community: communityState,
             region: regionState,
-            address,
+            address:myAddress,
             price,
             building_type: thisTimeType !== "Կոմերցիոն" ? buildingTypeState : 'Այլ',
             total_area: allSqare,

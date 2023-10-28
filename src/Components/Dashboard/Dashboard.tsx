@@ -48,7 +48,7 @@ const Dashboard = () => {
         fetch(`${process.env.REACT_APP_RUN_ENVIRONMENT}post/?page=${page}`, {
             headers: {
                 "Content-Type": "application/json",
-                Authorization: token,
+                Authorization: `Bearer ${token}`,
             },
         })
             .then((res) => res.json())
@@ -113,7 +113,7 @@ const Dashboard = () => {
         sortHouseInfo(); // Initial sorting
 
         // Ensure that the array is sorted whenever sortValue or houseInfo changes
-    }, [sortValue, houseInfo]);
+    }, [sortValue, houseInfo.toString()]);
 
 
     return (
@@ -293,6 +293,8 @@ const Dashboard = () => {
                         <div style={{fontWeight: "bold"}}>Մարզ</div>
                         <div style={{fontWeight: "bold"}}>Տարածք</div>
                         <div style={{fontWeight: "bold"}}>Փողոց</div>
+                        <div style={{fontWeight: "bold"}}>Շենք</div>
+                        <div style={{fontWeight: "bold"}}>Բնակարան</div>
                         <div style={{fontWeight: "bold"}}>Հարկ</div>
                         <div style={{fontWeight: "bold"}}>Հարկայնություն</div>
                         <div style={{fontWeight: "bold"}}>Ընդ.Տարածք</div>
@@ -328,7 +330,9 @@ const Dashboard = () => {
                                     <div>{item.property_description}</div>
                                     <div>{item.region}</div>
                                     <div>{item.community}</div>
-                                    <div>{item.addres}</div>
+                                    <div>{item.addres.split('/')[1]}</div>
+                                    <div>{item.addres.split('/')[2]}</div>
+                                    <div>{item.addres.split('/')[3]}</div>
                                     <div>{item.floors_number}</div>
                                     <div>{item.building_floors_number}</div>
                                     <div>{item.total_area}</div>

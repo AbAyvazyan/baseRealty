@@ -1,8 +1,6 @@
 const convertToISODate = (inputDate: string) => {
     const date = new Date(inputDate);
 
-    console.log(date)
-
     if (!date) {
         return "Invalid Date";
     }
