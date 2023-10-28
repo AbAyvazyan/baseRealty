@@ -32,16 +32,36 @@ const Login = () => {
     }, [userName, password])
 
     return (
-        <section style={{width: '100%', height: '82.7vh'}}>
-
-
-            <form className={'login_form'}>
+        <section style={{ width: '100%', height: '82.7vh' }}>
+            <form className={'login_form'} onSubmit={onEnterHandler} onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    onEnterHandler();
+                }
+            }}>
                 <h2>Login</h2>
-                <input type="text" placeholder={'username'} value={userName}
-                       onChange={(e: ChangeEvent<HTMLInputElement>) => setUserName(e.target.value.trim())}/>
-                <input type="password" placeholder={'password'} value={password}
-                       onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value.trim())}/>
-                <div onClick={onEnterHandler}>Enter</div>
+                <input
+                    type="text"
+                    placeholder={'username'}
+                    value={userName}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        setUserName(e.target.value.trim())
+                    }
+                />
+                <input
+                    type="password"
+                    placeholder={'password'}
+                    value={password}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        setPassword(e.target.value.trim())
+                    }
+                />
+                <button
+                    onClick={onEnterHandler}
+                    tabIndex={0}
+                    type="button"
+                >
+                    Enter
+                </button>
             </form>
         </section>
     )

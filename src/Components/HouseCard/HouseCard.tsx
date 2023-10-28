@@ -51,7 +51,7 @@ const HouseCard: FC<ThouseCard> = (
 
                     <div>
                         <p className={'house_card_just_text'}>{t("Build_type")} - {t(property_type!=='Հողատարածք'?building_type:property_type)}</p>
-                        <p className={'house_card_location_text'}> {t(addres)}</p>
+                        <p className={'house_card_location_text'}> {t(addres.split('/')[1])}</p>
                         {property_type!=='Հողատարածք'&&<p className={'house_card_just_text'}> {t("Condition")} - {t(state)}</p>}
                     </div>
 

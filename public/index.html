@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="./favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
     <meta
-      name="Brokerage"
-      content="Base Reality, find your dream house with us"
+            name="Brokerage"
+            content="Base Reality, find your dream house with us"
     />
-    <link rel="apple-touch-icon" href="./favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -31,20 +31,85 @@
     -->
     <title>Base Reality</title>
 
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5555;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*#loading > div{*/
+        /*    position: relative;*/
+        /*    width: 230px;*/
+        /*    height: 230px;*/
+        /*    border: 10px solid rgb(63,168,171);*/
+        /*    border-top: 10px solid rgb(12,51,58);*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*    border-radius: 50%;*/
+        /*    animation: spinner 1s linear infinite;*/
+        /*}*/
+
+        #loading  img {
+            width: 150px;
+            /*position: absolute;*/
+            animation: logoAnimate 2s linear infinite;
+        }
+
+
+        @keyframes logoAnimate {
+            0%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.4);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+    </style>
+
     <script src="https://api-maps.yandex.ru/2.1/?apikey=e0908983-f78d-42b6-b3eb-fca2a5202813&lang=en_US"></script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<div id="loading">
+    <img src="./favicon.ico" alt="logo"/>
+</div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<script>
+    window.addEventListener('load', (event) => {
+        const loader = document.getElementById('loading')
+        document.body.style.height = 'unset'
+        document.body.style.overflow = 'auto'
+        loader.style.display = 'none'
+    });
+</script>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
 </html>

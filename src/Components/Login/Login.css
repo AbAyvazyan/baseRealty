@@ -24,7 +24,7 @@
 }
 
 
-.login_form div{
+.login_form button{
     width: 100px;
     height: 40px;
     background-color: rgb(var(--text-color));
@@ -34,4 +34,5 @@
     justify-content: center;
     align-items: center;
     cursor:pointer;
+    border:none;
 }

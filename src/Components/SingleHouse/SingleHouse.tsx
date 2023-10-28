@@ -113,7 +113,7 @@ const SingleHouse = () => {
       <div className={"single_house"}>
         <article>
           <h3 className={"single_house_heading"}>
-            <span>{t(houseInfo.address)}</span>
+            <span>{t(houseInfo.address.split('/')[1])}</span>
             <span>
               {t("Code")}:{houseInfo.cod}
             </span>

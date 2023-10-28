@@ -60,7 +60,7 @@ const SwiperElement: FC<Tswiper> = ({heading, homes}) => {
                                     houses={{
                                         image: item.image ? `http://${item.image}` : baseLogo,
                                         heading: item.property_description,
-                                        place: item.addres,
+                                        place: item.addres.split('/')[1],
                                         price: item.price,
                                         direction: item.id,
                                     }}
