@@ -104,6 +104,8 @@ const SingleHouse = () => {
 
   const isLand = houseInfo.property_type === "Հողատարածք";
 
+  console.log(houseInfo.address.split('/')[1])
+
   return (
     <section className={"single_house_section"}>
       <h1>

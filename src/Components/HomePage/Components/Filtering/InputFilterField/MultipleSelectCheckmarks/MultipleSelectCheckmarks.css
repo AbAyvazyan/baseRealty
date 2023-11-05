@@ -139,6 +139,11 @@
 }
 
 @media screen and (max-width:790px) {
+
+    .multiple_select{
+        border-bottom: 1px solid rgba(233,233,233,0.5);
+    }
+
     .multiple_select > span{
         font-size: 15px;
     }
