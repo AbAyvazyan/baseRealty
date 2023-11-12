@@ -21,9 +21,9 @@ function getDateDifference(inputDate: string): "timeLimited" | "warningLimit" | 
     const currentDate = new Date();
     const daysDifference = Math.floor((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
 
-    if (daysDifference <= 7) {
+    if (daysDifference <= 15) {
         return ''
-    } else if (daysDifference <= 15) {
+    } else if (daysDifference <= 25) {
         return "warningLimit";
     } else {
         return "timeLimited";

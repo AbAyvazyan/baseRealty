@@ -32,10 +32,10 @@ const routes = [
         path:'/rent',
         component:RentPage
     },
-    {
-        path:'/contact',
-        component:ContactPage
-    },
+    // {
+    //     path:'/contact',
+    //     component:ContactPage
+    // },
     {
         path:'/house/:code',
         component:SingleHouse

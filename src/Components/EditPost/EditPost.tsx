@@ -718,6 +718,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             </div>
             <div>
                 <input
+                    style={{display:'none'}}
                     type="text"
                     value={code}
                     onChange={(e) => setCode(e.target.value)}

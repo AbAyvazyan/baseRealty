@@ -30,10 +30,10 @@ const categories:Tcategorise[] = [
         categoryName:'Daily_Page'
     },
 
-    {
-        routeTo:'contact',
-        categoryName:'CONTACT'
-    },
+    // {
+    //     routeTo:'contact',
+    //     categoryName:'CONTACT'
+    // },
 ]
 
 let activeStyle = {
