@@ -450,7 +450,7 @@ const HousePosting = () => {
             status: thisTimeStatus,
             community: communityState,
             region: regionState,
-            address:myAddress,
+            address: myAddress,
             price,
             building_type: buildingTypeState,
             total_area: allSqare,
@@ -566,7 +566,7 @@ const HousePosting = () => {
 
             <div>
                 <input
-                    style={{display:'none'}}
+                    style={{display: 'none'}}
                     type="text"
                     value={code}
                     onChange={(e) => setCode(e.target.value)}
@@ -765,7 +765,7 @@ const HousePosting = () => {
                                     <div>
                                         <input
                                             type="number"
-                                            value={price}
+                                            value={price || ''}
                                             onChange={(e) => setPrice(+e.target.value)}
                                             placeholder={"Թիվ"}
                                         />
@@ -797,7 +797,7 @@ const HousePosting = () => {
                                     <div>
                                         <input
                                             type="number"
-                                            value={allSqare}
+                                            value={allSqare || ''}
                                             onChange={(e) => setAllSqare(+e.target.value)}
                                             placeholder={"մետր քառակուսի"}
                                         />
@@ -809,7 +809,7 @@ const HousePosting = () => {
                                     <div>
                                         <input
                                             type="number"
-                                            value={rooms}
+                                            value={rooms || ''}
                                             onChange={(e) => setRooms(+e.target.value)}
                                             placeholder={"Թիվ"}
                                         />
@@ -823,7 +823,7 @@ const HousePosting = () => {
                                     <div>
                                         <input
                                             type="number"
-                                            value={floor}
+                                            value={floor || ''}
                                             onChange={(e) => setFloor(+e.target.value)}
                                             placeholder={"Թիվ"}
                                         />
@@ -835,7 +835,7 @@ const HousePosting = () => {
                                     <div>
                                         <input
                                             type="number"
-                                            value={floornes}
+                                            value={floornes || ''}
                                             onChange={(e) => setFloornes(+e.target.value)}
                                             placeholder={"Թիվ"}
                                         />
@@ -849,7 +849,7 @@ const HousePosting = () => {
                                     <div>
                                         <input
                                             type="number"
-                                            value={sanuzel}
+                                            value={sanuzel || ''}
                                             max={20}
                                             onChange={(e) => setSanuzel(+e.target.value)}
                                             placeholder={"Թիվ"}

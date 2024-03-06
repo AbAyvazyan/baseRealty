@@ -26,11 +26,11 @@ const buildingTypes = [
   { id: 1, content: "Ստալինկա", active: false },
   { id: 2, content: "Քարե", active: false },
   { id: 3, content: "Պոստ Խրյուշովկա", active: false },
-  { id: 4, content: "Խրյուշովկա", active: false },
+  { id: 4, content: "Խրուշչովկա", active: false },
   { id: 5, content: "Բարձրահարկ", active: false },
   { id: 6, content: "Խոշոր Պանելային", active: false },
   { id: 7, content: "Կասետաին", active: false },
-  { id: 8, content: "վերանորոգված դիզաիներական ոճով", active: false },
+  { id: 8, content: "վերանորոգված դիզայներական ոճով", active: false },
 ];
 
 const MoreFilter: FC<TMoreFilter> = ({ closeModalHandler }) => {

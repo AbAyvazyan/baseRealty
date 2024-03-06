@@ -529,7 +529,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             status: thisTimeStatus,
             community: communityState,
             region: regionState,
-            address:myAddress,
+            address: myAddress,
             price,
             building_type: thisTimeType !== "Կոմերցիոն" ? buildingTypeState : 'Այլ',
             total_area: allSqare,
@@ -718,7 +718,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
             </div>
             <div>
                 <input
-                    style={{display:'none'}}
+                    style={{display: 'none'}}
                     type="text"
                     value={code}
                     onChange={(e) => setCode(e.target.value)}
@@ -1050,7 +1050,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={price}
+                                        value={price || ''}
                                         onChange={(e) => setPrice(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1082,7 +1082,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={landSquare}
+                                        value={landSquare || ''}
                                         onChange={(e) => setLandSquare(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1094,7 +1094,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={landLayn}
+                                        value={landLayn || ''}
                                         onChange={(e) => setLandLayn(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1106,7 +1106,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={landErk}
+                                        value={landErk || ''}
                                         onChange={(e) => setLandErk(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1120,7 +1120,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={allSqare}
+                                        value={allSqare || ''}
                                         onChange={(e) => setAllSqare(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1132,7 +1132,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={rooms}
+                                        value={rooms || ''}
                                         onChange={(e) => setRooms(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1146,7 +1146,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={floor}
+                                        value={floor || ''}
                                         onChange={(e) => setFloor(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1158,7 +1158,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={floornes}
+                                        value={floornes || ''}
                                         onChange={(e) => setFloornes(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1172,7 +1172,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={sanuzel}
+                                        value={sanuzel || ''}
                                         onChange={(e) => setSanuzel(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1226,7 +1226,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={price}
+                                        value={price || ''}
                                         onChange={(e) => setPrice(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
@@ -1258,7 +1258,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={landSquare}
+                                        value={landSquare || ''}
                                         onChange={(e) => setLandSquare(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1270,7 +1270,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={landLayn}
+                                        value={landLayn || ''}
                                         onChange={(e) => setLandLayn(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1282,7 +1282,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={landErk}
+                                        value={landErk || ''}
                                         onChange={(e) => setLandErk(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1296,7 +1296,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={hallSquare}
+                                        value={hallSquare || ''}
                                         onChange={(e) => setHallSquare(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1308,7 +1308,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={storageLength}
+                                        value={storageLength || ''}
                                         onChange={(e) => setStorageLength(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1320,7 +1320,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={vitrage}
+                                        value={vitrage || ''}
                                         onChange={(e) => setVitrage(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1355,7 +1355,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={allSqare}
+                                        value={allSqare || ''}
                                         onChange={(e) => setAllSqare(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1367,7 +1367,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={allSqare}
+                                        value={allSqare || ''}
                                         onChange={(e) => setAllSqare(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1379,7 +1379,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={allSqare}
+                                        value={allSqare || ''}
                                         onChange={(e) => setAllSqare(+e.target.value)}
                                         placeholder={"մետր քառակուսի"}
                                     />
@@ -1393,7 +1393,7 @@ const EditPost: FC<TEditHouse> = ({houseInfo}) => {
                                 <div>
                                     <input
                                         type="number"
-                                        value={price}
+                                        value={price || ''}
                                         onChange={(e) => setPrice(+e.target.value)}
                                         placeholder={"Թիվ"}
                                     />
