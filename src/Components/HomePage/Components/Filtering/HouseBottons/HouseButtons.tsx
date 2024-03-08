@@ -67,15 +67,15 @@ const HouseButtons: FC<THouseButtons> = ({getTypeDirection}) => {
             <div style={{display: 'flex'}}>
                 {houses.map(({active, position, type}) => {
                     return <li className={active ? 'activeLi' : 'disactiveLi'} key={position}
-                               onClick={() => activeTypeHandler(position)}>{t(type)}</li>
+                               onClick={() => activeTypeHandler(position)}>{t(type) === 'Վարձակալություն' ? 'Վարձ' : t(type)}</li>
                 })
                 }
             </div>
 
             <label style={{margin: '0'}}>
-                <li className={' codeSearchLi'}><input type="text" value={code}
-                                                       onChange={(e) => setCode(e.target.value)}
-                                                       placeholder={codePlaceHolder}/></li>
+                <li className={'codeSearchLi'}><input type="text" value={code}
+                                                      onChange={(e) => setCode(e.target.value)}
+                                                      placeholder={codePlaceHolder}/></li>
             </label>
         </ul>
 
