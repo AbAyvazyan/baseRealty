@@ -21,7 +21,7 @@ const houseActionTypes: ThouseAction[] = [
     },
     {
         position: 2,
-        type: 'RENT',
+        type: 'FOR_RENT',
         active: false
     },
     {
